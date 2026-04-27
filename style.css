@@ -65,6 +65,7 @@ html {
     scroll-padding-top: 80px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    cursor: url('assets/abeja_cursor.png') 0 31, auto;
 }
 
 body {
@@ -73,6 +74,12 @@ body {
     color: var(--gray-300);
     line-height: 1.7;
     overflow-x: hidden;
+    cursor: url('assets/abeja_cursor.png') 0 31, auto;
+}
+
+/* Custom pointer cursor for clickable elements */
+a, button, .btn, .navbar__toggle, [role="button"], input[type="submit"], input[type="button"], label, select {
+    cursor: url('assets/abeja_pointer.png') 0 0, pointer !important;
 }
 
 ::selection {
