@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -33,19 +33,7 @@
     <!-- ===================== PRELOADER ===================== -->
     <div id="preloader" class="preloader">
         <div class="preloader__inner">
-            <svg class="preloader__logo" viewBox="0 0 120 120" width="80" height="80">
-                <defs>
-                    <linearGradient id="preloaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#D4A843" />
-                        <stop offset="50%" style="stop-color:#F0D060" />
-                        <stop offset="100%" style="stop-color:#B8922E" />
-                    </linearGradient>
-                </defs>
-                <polygon points="60,10 105,35 105,85 60,110 15,85 15,35" fill="none" stroke="url(#preloaderGrad)"
-                    stroke-width="3" class="hex-draw" />
-                <polygon points="60,25 92,42 92,78 60,95 28,78 28,42" fill="none" stroke="url(#preloaderGrad)"
-                    stroke-width="2" class="hex-draw-inner" />
-            </svg>
+            <img src="assets/Isotipo Vye.png" alt="VyE" class="preloader__logo" width="80" height="80">
             <div class="preloader__bar">
                 <div class="preloader__progress"></div>
             </div>
@@ -56,32 +44,9 @@
     <nav id="navbar" class="navbar">
         <div class="navbar__container">
             <a href="#hero" class="navbar__logo" aria-label="VyE Ingeniería - Inicio">
-                <svg class="navbar__logo-icon" viewBox="0 0 200 180" width="48" height="43">
-                    <defs>
-                        <linearGradient id="logoGold1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#D4A843" />
-                            <stop offset="50%" style="stop-color:#F0D060" />
-                            <stop offset="100%" style="stop-color:#B8922E" />
-                        </linearGradient>
-                        <linearGradient id="logoGold2" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#B8922E" />
-                            <stop offset="50%" style="stop-color:#E8C84A" />
-                            <stop offset="100%" style="stop-color:#D4A843" />
-                        </linearGradient>
-                    </defs>
-                    <!-- Outer hexagon -->
-                    <polygon points="100,8 180,50 180,130 100,172 20,130 20,50" fill="none" stroke="url(#logoGold1)"
-                        stroke-width="6" stroke-linejoin="round" />
-                    <!-- Inner hexagon -->
-                    <polygon points="100,38 148,63 148,117 100,142 52,117 52,63" fill="none" stroke="url(#logoGold2)"
-                        stroke-width="5" stroke-linejoin="round" />
-                    <!-- Center diamond -->
-                    <polygon points="100,58 125,90 100,122 75,90" fill="url(#logoGold1)" opacity="0.8" />
-                    <!-- Vertical line accent -->
-                    <line x1="100" y1="8" x2="100" y2="38" stroke="url(#logoGold1)" stroke-width="2" />
-                </svg>
+                <img src="assets/Isotipo Vye.png" alt="VyE Isotipo" class="navbar__logo-icon" width="40" height="40">
                 <div class="navbar__logo-text">
-                    <span class="navbar__brand">VYE</span>
+                    <img src="assets/Logotipo Vye.svg" alt="VYE" class="navbar__logotipo" height="18">
                     <span class="navbar__sub">INGENIERÍA</span>
                 </div>
             </a>
@@ -112,16 +77,19 @@
                 Software &amp; Automatización para Empresas
             </div>
             <h1 class="hero__title">
-                <span class="hero__title-line">VyE</span>
-                <span class="hero__title-line hero__title-line--accent">Ingeniería</span>
+                <span class="hero__title-line">
+                    <img src="assets/Logotipo Vye.svg" alt="VyE" class="hero__title-logo">
+                </span>
+                <span class="hero__title-line hero__title-line--accent">INGENIERIA</span>
             </h1>
             <p class="hero__tagline">Diseñamos <span class="text-gold">eficiencia</span></p>
             <p class="hero__description">
-                Desarrollamos software, automatización y soluciones tecnológicas que optimizan tu operación, reducen
-                errores y generan <strong>resultados reales</strong> en tu negocio.
+                Diseñamos software plataformas web y automatizaciones que se adaptan a tu negocio
+                desde operaciones comerciales y contables hasta sistemas escolares e industriales <strong>resultados
+                    reales</strong> en tu negocio.
             </p>
             <p class="hero__sub-description">
-                Convertimos procesos desordenados en sistemas claros, eficientes y rentables.
+                Convertimos el desorden en eficiencia. La eficiencia en resultados.
             </p>
             <div class="hero__actions">
                 <a href="#contacto" class="btn btn--primary" id="heroCta1">
@@ -151,28 +119,53 @@
                 </div>
             </div>
         </div>
-        <!-- Floating code snippet -->
-        <div class="hero__code-float" aria-hidden="true">
-            <div class="code-window">
-                <div class="code-window__header">
-                    <span class="code-dot code-dot--red"></span>
-                    <span class="code-dot code-dot--yellow"></span>
-                    <span class="code-dot code-dot--green"></span>
-                    <span class="code-window__title">optimizer.py</span>
-                </div>
-                <pre class="code-window__body"><code><span class="code-kw">from</span> ortools.sat.python <span class="code-kw">import</span> cp_model
-
-<span class="code-kw">class</span> <span class="code-cls">BusinessOptimizer</span>:
-    <span class="code-kw">def</span> <span class="code-fn">__init__</span>(self):
-        self.model = cp_model.CpModel()
-        self.solver = cp_model.CpSolver()
-
-    <span class="code-kw">def</span> <span class="code-fn">optimize</span>(self, data):
-        <span class="code-cm"># Diseñamos eficiencia</span>
-        solution = self.solver.Solve(
-            self.model
-        )
-        <span class="code-kw">return</span> solution.optimal_value</code></pre>
+        <!-- Engineering hexagon visual -->
+        <div class="hero__hex-float" aria-hidden="true">
+            <div class="engineering-visual">
+                <svg class="engineering-svg" viewBox="0 0 400 400">
+                    <defs>
+                        <linearGradient id="engGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#D4A843;stop-opacity:0.6" />
+                            <stop offset="100%" style="stop-color:#F0D060;stop-opacity:0.1" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Blueprint grid -->
+                    <g opacity="0.15" stroke="#D4A843" stroke-width="0.5">
+                        <line x1="0" y1="50" x2="400" y2="50" />
+                        <line x1="0" y1="100" x2="400" y2="100" />
+                        <line x1="0" y1="150" x2="400" y2="150" />
+                        <line x1="0" y1="200" x2="400" y2="200" />
+                        <line x1="0" y1="250" x2="400" y2="250" />
+                        <line x1="0" y1="300" x2="400" y2="300" />
+                        <line x1="0" y1="350" x2="400" y2="350" />
+                        <line x1="50" y1="0" x2="50" y2="400" />
+                        <line x1="100" y1="0" x2="100" y2="400" />
+                        <line x1="150" y1="0" x2="150" y2="400" />
+                        <line x1="200" y1="0" x2="200" y2="400" />
+                        <line x1="250" y1="0" x2="250" y2="400" />
+                        <line x1="300" y1="0" x2="300" y2="400" />
+                        <line x1="350" y1="0" x2="350" y2="400" />
+                    </g>
+                    <!-- Main hexagon -->
+                    <polygon points="200,30 350,110 350,290 200,370 50,290 50,110" fill="url(#engGrad1)"
+                        stroke="#D4A843" stroke-width="1.5" class="eng-hex" />
+                    <!-- Inner hexagon -->
+                    <polygon points="200,80 310,140 310,260 200,320 90,260 90,140" fill="none" stroke="#D4A843"
+                        stroke-width="1" opacity="0.5" class="eng-hex-inner" />
+                    <!-- Center elements -->
+                    <circle cx="200" cy="200" r="40" fill="none" stroke="#F0D060" stroke-width="1.5" opacity="0.6" />
+                    <circle cx="200" cy="200" r="5" fill="#F0D060" opacity="0.8" />
+                    <!-- Connection lines -->
+                    <line x1="200" y1="160" x2="200" y2="80" stroke="#D4A843" stroke-width="1" opacity="0.4" />
+                    <line x1="235" y1="220" x2="310" y2="260" stroke="#D4A843" stroke-width="1" opacity="0.4" />
+                    <line x1="165" y1="220" x2="90" y2="260" stroke="#D4A843" stroke-width="1" opacity="0.4" />
+                    <!-- Data points -->
+                    <circle cx="200" cy="80" r="4" fill="#D4A843" class="eng-dot" />
+                    <circle cx="310" cy="260" r="4" fill="#D4A843" class="eng-dot" />
+                    <circle cx="90" cy="260" r="4" fill="#D4A843" class="eng-dot" />
+                    <circle cx="350" cy="110" r="3" fill="#F0D060" class="eng-dot" />
+                    <circle cx="50" cy="110" r="3" fill="#F0D060" class="eng-dot" />
+                </svg>
             </div>
         </div>
     </section>
@@ -184,14 +177,15 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
-                <span>CFDI 4.0 Compatible</span>
+
+                <span>Soporte continuo</span>
             </div>
             <div class="trust-bar__item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                     <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                <span>Cumplimiento SAT</span>
+                <span>Acompañamiento personalizado</span>
             </div>
             <div class="trust-bar__item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -269,7 +263,7 @@
                     <h3>Decisiones sin información clara</h3>
                     <p>Tomas decisiones basándote en intuición porque no tienes datos confiables.</p>
                 </div>
-                <div class="problema__card" data-reveal>
+                <div class="problema__card problema__card--featured" data-reveal>
                     <div class="problema__icon">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5">
@@ -280,10 +274,6 @@
                     <h3>Dependencia excesiva del dueño</h3>
                     <p>Si tú no estás, el negocio no funciona. Todo pasa por ti.</p>
                 </div>
-            </div>
-            <div class="problema__conclusion" data-reveal>
-                <p class="problema__bold">El problema no es tu negocio.</p>
-                <p class="problema__highlight">Es la falta de <span class="text-gold">estructura.</span></p>
             </div>
         </div>
     </section>
@@ -296,8 +286,10 @@
                     <span class="section__label">NUESTRA SOLUCIÓN</span>
                     <h2 class="section__title">Convertimos procesos en <span class="text-gold">sistemas
                             eficientes</span></h2>
-                    <p class="section__subtitle">En VyE Ingeniería analizamos tu operación y diseñamos soluciones
-                        tecnológicas que te permiten trabajar con más control, menos esfuerzo y mejores resultados.</p>
+                    <p class="section__subtitle">En VyE Ingeniería analizamos tu operación y diseñamos la lógica que la
+                        hace funcionar mejor,
+                        desarrollando soluciones tecnológicas que te permiten operar con más control, menos esfuerzo y
+                        mejores resultados.</p>
                     <div class="solucion__accent">
                         <div class="solucion__accent-line"></div>
                         <p>No vendemos software genérico.<br><strong>Diseñamos exactamente lo que tu negocio
@@ -350,7 +342,8 @@
                                 <div class="dash-card dash-card--list">
                                     <div class="dash-list-item"><span class="dash-check">✓</span> Inventario
                                         sincronizado</div>
-                                    <div class="dash-list-item"><span class="dash-check">✓</span> CFDI 4.0 activo</div>
+                                    <div class="dash-list-item"><span class="dash-check">✓</span> Alertas inteligentes
+                                    </div>
                                     <div class="dash-list-item"><span class="dash-check">✓</span> Reportes en tiempo
                                         real</div>
                                 </div>
@@ -494,8 +487,8 @@
                 <span class="section__label">CAPACIDADES DE INGENIERÍA</span>
                 <h2 class="section__title">Convertimos datos complejos en <span class="text-gold">decisiones
                         rentables</span></h2>
-                <p class="section__subtitle">En VyE Ingeniería no solo desarrollamos software. Diseñamos la lógica que
-                    hace que tu empresa funcione mejor.</p>
+                <p class="section__subtitle">Por qué un negocio no crece con más trabajo
+                    Crece con buenas decisiones.</p>
                 <p class="section__subtitle section__subtitle--small">Utilizamos modelos matemáticos, algoritmos y
                     herramientas de ingeniería para maximizar tus recursos.</p>
             </div>
@@ -568,66 +561,92 @@
                 <span class="section__label">BENEFICIOS</span>
                 <h2 class="section__title">Resultados que puedes <span class="text-gold">esperar</span></h2>
             </div>
-            <div class="beneficios__grid">
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
+            <div class="beneficios__layout">
+                <div class="beneficios__grid">
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Más control sobre tu negocio</span>
                     </div>
-                    <span>Más control sobre tu negocio</span>
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Menos errores operativos</span>
+                    </div>
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Ahorro de tiempo</span>
+                    </div>
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Procesos claros y estructurados</span>
+                    </div>
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Mejor toma de decisiones</span>
+                    </div>
+                    <div class="beneficio__item" data-reveal>
+                        <div class="beneficio__check">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+                        <span>Crecimiento con bases sólidas</span>
+                    </div>
                 </div>
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
+                <!-- Floating code snippet -->
+                <div class="beneficios__code" data-reveal>
+                    <div class="code-window">
+                        <div class="code-window__header">
+                            <span class="code-dot code-dot--red"></span>
+                            <span class="code-dot code-dot--yellow"></span>
+                            <span class="code-dot code-dot--green"></span>
+                            <span class="code-window__title">optimizer.py</span>
+                        </div>
+                        <pre class="code-window__body"><code><span class="code-kw">from</span> ortools.sat.python <span class="code-kw">import</span> cp_model
+
+<span class="code-kw">class</span> <span class="code-cls">BusinessOptimizer</span>:
+    <span class="code-kw">def</span> <span class="code-fn">__init__</span>(self):
+        self.model = cp_model.CpModel()
+        self.solver = cp_model.CpSolver()
+
+    <span class="code-kw">def</span> <span class="code-fn">optimize</span>(self, data):
+        <span class="code-cm"># Diseñamos eficiencia</span>
+        solution = self.solver.Solve(
+            self.model
+        )
+        <span class="code-kw">return</span> solution.optimal_value</code></pre>
                     </div>
-                    <span>Menos errores operativos</span>
-                </div>
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                    <span>Ahorro de tiempo</span>
-                </div>
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                    <span>Procesos claros y estructurados</span>
-                </div>
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                    <span>Mejor toma de decisiones</span>
-                </div>
-                <div class="beneficio__item" data-reveal>
-                    <div class="beneficio__check">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                    </div>
-                    <span>Crecimiento con bases sólidas</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== PROCESO ===================== -->
+    <!-- ===================== PROCESO ===================== 
     <section id="proceso" class="section section--proceso">
         <div class="section__container">
             <div class="section__header">
@@ -677,9 +696,9 @@
             </div>
         </div>
     </section>
-
+-->
     <!-- ===================== NOSOTROS ===================== -->
-    <section id="nosotros" class="section section--nosotros">
+    <!--<section id="nosotros" class="section section--nosotros">
         <div class="section__container">
             <div class="nosotros__layout">
                 <div class="nosotros__text" data-reveal>
@@ -694,58 +713,10 @@
                         <p class="text-gold nosotros__bold">Diseñamos eficiencia.</p>
                     </div>
                 </div>
-                <div class="nosotros__visual" data-reveal>
-                    <!-- Engineering visual element -->
-                    <div class="engineering-visual">
-                        <svg class="engineering-svg" viewBox="0 0 400 400">
-                            <defs>
-                                <linearGradient id="engGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#D4A843;stop-opacity:0.6" />
-                                    <stop offset="100%" style="stop-color:#F0D060;stop-opacity:0.1" />
-                                </linearGradient>
-                            </defs>
-                            <!-- Blueprint grid -->
-                            <g opacity="0.15" stroke="#D4A843" stroke-width="0.5">
-                                <line x1="0" y1="50" x2="400" y2="50" />
-                                <line x1="0" y1="100" x2="400" y2="100" />
-                                <line x1="0" y1="150" x2="400" y2="150" />
-                                <line x1="0" y1="200" x2="400" y2="200" />
-                                <line x1="0" y1="250" x2="400" y2="250" />
-                                <line x1="0" y1="300" x2="400" y2="300" />
-                                <line x1="0" y1="350" x2="400" y2="350" />
-                                <line x1="50" y1="0" x2="50" y2="400" />
-                                <line x1="100" y1="0" x2="100" y2="400" />
-                                <line x1="150" y1="0" x2="150" y2="400" />
-                                <line x1="200" y1="0" x2="200" y2="400" />
-                                <line x1="250" y1="0" x2="250" y2="400" />
-                                <line x1="300" y1="0" x2="300" y2="400" />
-                                <line x1="350" y1="0" x2="350" y2="400" />
-                            </g>
-                            <!-- Main hexagon -->
-                            <polygon points="200,30 350,110 350,290 200,370 50,290 50,110" fill="url(#engGrad1)"
-                                stroke="#D4A843" stroke-width="1.5" class="eng-hex" />
-                            <!-- Inner hexagon -->
-                            <polygon points="200,80 310,140 310,260 200,320 90,260 90,140" fill="none" stroke="#D4A843"
-                                stroke-width="1" opacity="0.5" class="eng-hex-inner" />
-                            <!-- Center elements -->
-                            <circle cx="200" cy="200" r="40" fill="none" stroke="#F0D060" stroke-width="1.5"
-                                opacity="0.6" />
-                            <circle cx="200" cy="200" r="5" fill="#F0D060" opacity="0.8" />
-                            <!-- Connection lines -->
-                            <line x1="200" y1="160" x2="200" y2="80" stroke="#D4A843" stroke-width="1" opacity="0.4" />
-                            <line x1="235" y1="220" x2="310" y2="260" stroke="#D4A843" stroke-width="1" opacity="0.4" />
-                            <line x1="165" y1="220" x2="90" y2="260" stroke="#D4A843" stroke-width="1" opacity="0.4" />
-                            <!-- Data points -->
-                            <circle cx="200" cy="80" r="4" fill="#D4A843" class="eng-dot" />
-                            <circle cx="310" cy="260" r="4" fill="#D4A843" class="eng-dot" />
-                            <circle cx="90" cy="260" r="4" fill="#D4A843" class="eng-dot" />
-                            <circle cx="350" cy="110" r="3" fill="#F0D060" class="eng-dot" />
-                            <circle cx="50" cy="110" r="3" fill="#F0D060" class="eng-dot" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <div class="nosotros__visual" data-reveal> -->
+    </div>
+    </div>
+    </div>
     </section>
 
     <!-- ===================== CASO DE ÉXITO ===================== -->
@@ -769,81 +740,6 @@
                         <div class="caso__result-value">100%</div>
                         <div class="caso__result-label">Asignación óptima de horarios</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== TECNOLOGÍAS ===================== -->
-    <section id="tecnologias" class="section section--tecnologias">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">TECNOLOGÍAS</span>
-                <h2 class="section__title">Herramientas de nivel <span class="text-gold">profesional</span></h2>
-            </div>
-            <div class="tech__grid">
-                <div class="tech__item" data-reveal>
-                    <div class="tech__icon-box">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5" />
-                            <path d="M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <span>Python</span>
-                </div>
-                <div class="tech__item" data-reveal>
-                    <div class="tech__icon-box">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                            <line x1="14" y1="4" x2="10" y2="20" />
-                        </svg>
-                    </div>
-                    <span>C++</span>
-                </div>
-                <div class="tech__item" data-reveal>
-                    <div class="tech__icon-box">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3" />
-                            <path
-                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-                        </svg>
-                    </div>
-                    <span>Google OR-Tools</span>
-                </div>
-                <div class="tech__item" data-reveal>
-                    <div class="tech__icon-box">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
-                            <rect x="9" y="9" width="6" height="6" />
-                            <line x1="9" y1="1" x2="9" y2="4" />
-                            <line x1="15" y1="1" x2="15" y2="4" />
-                            <line x1="9" y1="20" x2="9" y2="23" />
-                            <line x1="15" y1="20" x2="15" y2="23" />
-                            <line x1="20" y1="9" x2="23" y2="9" />
-                            <line x1="20" y1="14" x2="23" y2="14" />
-                            <line x1="1" y1="9" x2="4" y2="9" />
-                            <line x1="1" y1="14" x2="4" y2="14" />
-                        </svg>
-                    </div>
-                    <span>Sistemas embebidos</span>
-                </div>
-                <div class="tech__item" data-reveal>
-                    <div class="tech__icon-box">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                        </svg>
-                    </div>
-                    <span>Desarrollo web moderno</span>
                 </div>
             </div>
         </div>
@@ -885,13 +781,8 @@
         <div class="footer__container">
             <div class="footer__top">
                 <div class="footer__brand">
-                    <svg class="footer__logo-icon" viewBox="0 0 200 180" width="52" height="47">
-                        <polygon points="100,8 180,50 180,130 100,172 20,130 20,50" fill="none" stroke="url(#logoGold1)"
-                            stroke-width="6" stroke-linejoin="round" />
-                        <polygon points="100,38 148,63 148,117 100,142 52,117 52,63" fill="none"
-                            stroke="url(#logoGold2)" stroke-width="5" stroke-linejoin="round" />
-                        <polygon points="100,58 125,90 100,122 75,90" fill="url(#logoGold1)" opacity="0.8" />
-                    </svg>
+                    <img src="assets/Isotipo Vye.png" alt="VyE Isotipo" class="footer__logo-icon" width="48"
+                        height="48">
                     <div>
                         <div class="footer__brand-name">VyE Ingeniería</div>
                         <div class="footer__brand-tagline">Diseñamos eficiencia</div>

@@ -1,2 +1,0 @@
-# Pagina-VyE
-Pagina web
