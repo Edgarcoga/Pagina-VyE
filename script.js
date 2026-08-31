@@ -89,45 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // ── COUNTER ANIMATION ──
-    const counterElements = document.querySelectorAll('.hero__metric-value');
 
-    function animateCounter(el) {
-        const target = parseInt(el.getAttribute('data-count'));
-        const duration = 2000;
-        const start = performance.now();
-
-        function update(currentTime) {
-            const elapsed = currentTime - start;
-            const progress = Math.min(elapsed / duration, 1);
-
-            // Ease out cubic
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.round(eased * target);
-
-            el.textContent = current;
-
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            }
-        }
-
-        requestAnimationFrame(update);
-    }
-
-    const counterObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter(entry.target);
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.5 }
-    );
-
-    counterElements.forEach(el => counterObserver.observe(el));
 
     // ── PARTICLES ──
     const particleContainer = document.getElementById('heroParticles');
@@ -164,51 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Continuously add particles
     setInterval(createParticle, 800);
 
-    // ── TYPING EFFECT IN CODE WINDOW ──
-    const codeBody = document.querySelector('.code-window__body code');
 
-    if (codeBody) {
-        const originalHTML = codeBody.innerHTML;
-        const lines = originalHTML.split('\n');
-
-        // Initially hide code
-        codeBody.style.opacity = '0';
-
-        const codeObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        codeBody.style.opacity = '1';
-                        codeBody.style.transition = 'opacity 0.5s';
-                        codeObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.3 }
-        );
-
-        codeObserver.observe(codeBody);
-    }
-
-    // ── DASHBOARD ANIMATION ──
-    const dashBars = document.querySelectorAll('.dash-bar');
-    const dashObserver = new IntersectionObserver(
-        (entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Trigger bar animations
-                    entry.target.style.animationPlayState = 'running';
-                    dashObserver.unobserve(entry.target);
-                }
-            });
-        },
-        { threshold: 0.3 }
-    );
-
-    dashBars.forEach(bar => {
-        bar.style.animationPlayState = 'paused';
-        dashObserver.observe(bar);
-    });
 
     // ── MAGNETIC EFFECT ON CTA BUTTONS ──
     document.querySelectorAll('.btn--primary').forEach(btn => {
@@ -294,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ── TILT EFFECT ON CARDS ──
-    document.querySelectorAll('.diferencial__card, .servicio__card, .ingenieria__card').forEach(card => {
+    document.querySelectorAll('.diferencial__value, .servicio__card, .problema__point').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -332,28 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollProgress.style.width = scrollPct + '%';
     }, { passive: true });
 
-    // ── ENGINEERING SVG MOUSE INTERACTION ──
-    const engSvg = document.querySelector('.engineering-svg');
-    if (engSvg) {
-        engSvg.addEventListener('mousemove', (e) => {
-            const rect = engSvg.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
 
-            engSvg.style.transform = `
-                perspective(800px)
-                rotateY(${x * 10}deg)
-                rotateX(${-y * 10}deg)
-            `;
-        });
-
-        engSvg.addEventListener('mouseleave', () => {
-            engSvg.style.transform = '';
-            engSvg.style.transition = 'transform 0.5s ease';
-            setTimeout(() => {
-                engSvg.style.transition = '';
-            }, 500);
-        });
-    }
 
 });
