@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const progress = Math.min(window.scrollY / 340, 1);
         const remaining = 1 - progress;
         document.documentElement.style.setProperty('--brand-scroll-progress', progress.toFixed(3));
-        document.documentElement.style.setProperty('--brand-offset-y', `${(remaining * 138).toFixed(1)}px`);
+        document.documentElement.style.setProperty('--brand-offset-y', `${(remaining * 95).toFixed(1)}px`);
         document.documentElement.style.setProperty('--brand-scale', (1 + (remaining * 2.15)).toFixed(3));
     }
 

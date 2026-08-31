@@ -2702,7 +2702,7 @@ a {
 /* ── PHASE 1: CORPORATE PAGE NORMALIZATION ── */
 :root {
     --brand-scroll-progress: 0;
-    --brand-offset-y: 138px;
+    --brand-offset-y: 95px;
     --brand-scale: 3.15;
 }
 
@@ -2748,7 +2748,7 @@ a {
     .homepage .navbar__logo {
         position: fixed;
         z-index: 1001;
-        top: 16px;
+        top: 12px;
         left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
         transform-origin: left top;
         transform: translateY(var(--brand-offset-y)) scale(var(--brand-scale));
@@ -2757,7 +2757,43 @@ a {
     }
 
     .homepage .hero__content {
-        padding-top: 172px;
+        padding-top: 125px;
+    }
+
+    .homepage .hero__title {
+        margin-bottom: 18px;
+    }
+
+    .homepage .hero__title-line--accent {
+        font-size: clamp(2.25rem, 4.5vw, 3.9rem);
+        letter-spacing: 2px;
+    }
+
+    .homepage .hero__brand-phrase {
+        margin-bottom: 22px;
+    }
+
+    .homepage .hero__brand-phrase-text {
+        font-size: clamp(1.15rem, 2vw, 1.55rem);
+        line-height: 1.4;
+    }
+
+    .homepage .hero__description {
+        margin-bottom: 28px;
+    }
+
+    .homepage .navbar.scrolled {
+        padding: 14px 0;
+    }
+
+    .homepage .navbar__link {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    .homepage .navbar__cta-btn {
+        font-size: 0.95rem;
+        padding: 12px 24px;
     }
 
     .homepage .navbar__logo:hover {
