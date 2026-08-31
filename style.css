@@ -443,9 +443,7 @@ a {
 
 .hero__title-line--accent {
     font-size: clamp(2.5rem, 5.5vw, 4.8rem);
-    position: relative;
     display: inline-block;
-    isolation: isolate;
     color: var(--white);
     -webkit-text-fill-color: var(--white);
     letter-spacing: 3px;
@@ -453,18 +451,83 @@ a {
     animation-delay: 0.4s !important;
 }
 
-.hero__title-line--accent::after {
+.hero__marker-word {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    padding-inline: 0.025em;
+}
+
+.hero__marker-word::after {
     content: '';
     position: absolute;
     z-index: -1;
-    left: -0.05em;
-    right: -0.06em;
-    bottom: 0.13em;
-    height: 0.35em;
+    left: -0.07em;
+    right: -0.08em;
+    bottom: 0.03em;
+    height: 0.82em;
     background: var(--gold);
-    border-radius: 3px 1px 2px 1px;
-    opacity: 0.96;
-    transform: rotate(-0.7deg);
+    clip-path: polygon(
+        0 13%, 8% 7%, 18% 11%, 29% 4%, 41% 9%, 53% 3%,
+        66% 8%, 78% 2%, 90% 7%, 100% 1%, 99% 88%, 91% 94%,
+        80% 89%, 69% 97%, 56% 91%, 43% 96%, 31% 90%, 18% 98%,
+        8% 91%, 0 96%
+    );
+    opacity: 0;
+    transform: scaleX(0) rotate(-0.55deg);
+    transform-origin: left center;
+}
+
+.hero__marker-word:last-child::after {
+    left: -0.16em;
+    clip-path: polygon(
+        0 6%, 11% 11%, 23% 4%, 36% 9%, 49% 2%, 61% 8%,
+        73% 3%, 86% 10%, 100% 4%, 99% 93%, 88% 88%, 76% 97%,
+        63% 91%, 50% 98%, 38% 90%, 25% 96%, 12% 89%, 0 95%
+    );
+    transform: scaleX(0) rotate(0.45deg);
+}
+
+.hero__marker-word:first-child::after {
+    right: -0.2em;
+}
+
+.hero--ink-ready .hero__marker-word:first-child::after {
+    animation: marker-draw 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 80ms both;
+}
+
+.hero--ink-ready .hero__marker-word:last-child::after {
+    animation: marker-draw-second 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 620ms both;
+}
+
+@keyframes marker-draw {
+    0% {
+        opacity: 0.35;
+        transform: scaleX(0) rotate(-0.55deg);
+    }
+    72% {
+        opacity: 0.98;
+        transform: scaleX(1.025) rotate(-0.55deg);
+    }
+    100% {
+        opacity: 0.96;
+        transform: scaleX(1) rotate(-0.55deg);
+    }
+}
+
+@keyframes marker-draw-second {
+    0% {
+        opacity: 0.35;
+        transform: scaleX(0) rotate(0.45deg);
+    }
+    72% {
+        opacity: 0.98;
+        transform: scaleX(1.025) rotate(0.45deg);
+    }
+    100% {
+        opacity: 0.96;
+        transform: scaleX(1) rotate(0.45deg);
+    }
 }
 
 /* ── Brand Phrase ── */
@@ -515,14 +578,42 @@ a {
 .text-pen-underline::after {
     content: '';
     position: absolute;
-    left: -0.02em;
-    right: -0.02em;
-    bottom: 0.08em;
-    height: 2px;
-    background: var(--gold);
-    border-radius: 100%;
-    transform: rotate(0.6deg);
-    box-shadow: 2px 2px 0 rgba(212, 168, 67, 0.5);
+    left: -0.04em;
+    right: -0.04em;
+    bottom: -0.08em;
+    height: 0.34em;
+    background: center / 100% 100% no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 22' preserveAspectRatio='none'%3E%3Cpath d='M3 12 C42 6 83 15 126 9 S211 14 260 8 S345 15 407 9 S468 13 497 7' fill='none' stroke='%23d4a843' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M8 16 C58 12 95 18 145 13 S241 17 301 12 S411 17 492 11' fill='none' stroke='%23f0c75e' stroke-width='1.5' stroke-linecap='round' opacity='.65'/%3E%3C/svg%3E");
+    clip-path: inset(0 100% 0 0);
+}
+
+.hero--ink-ready .text-pen-underline::after {
+    animation: pen-draw 780ms cubic-bezier(0.2, 0.72, 0.3, 1) 1450ms both;
+}
+
+@keyframes pen-draw {
+    0% { clip-path: inset(0 100% 0 0); }
+    70% { clip-path: inset(0 -2% 0 0); }
+    100% { clip-path: inset(0 0 0 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__marker-word::after,
+    .hero__marker-word:first-child::after {
+        animation: none !important;
+        opacity: 0.96;
+        transform: scaleX(1) rotate(-0.55deg);
+    }
+
+    .hero__marker-word:last-child::after {
+        animation: none !important;
+        opacity: 0.96;
+        transform: scaleX(1) rotate(0.45deg);
+    }
+
+    .text-pen-underline::after {
+        animation: none !important;
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 .code-window {

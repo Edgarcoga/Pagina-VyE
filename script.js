@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── PRELOADER ──
     const preloader = document.getElementById('preloader');
+    const hero = document.querySelector('.hero');
+
+    function startHeroInkAnimation() {
+        hero?.classList.add('hero--ink-ready');
+    }
+
     window.addEventListener('load', () => {
         if (preloader) {
             setTimeout(() => {
@@ -14,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             }, 1800);
         }
+        setTimeout(startHeroInkAnimation, preloader ? 2000 : 250);
     });
 
     // Fallback: hide preloader after 3s regardless
@@ -21,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
             document.body.style.overflow = '';
+            startHeroInkAnimation();
         }, 3000);
     }
 
