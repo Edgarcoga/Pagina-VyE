@@ -8,17 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── PRELOADER ──
     const preloader = document.getElementById('preloader');
     window.addEventListener('load', () => {
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-            document.body.style.overflow = '';
-        }, 1800);
+        if (preloader) {
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 1800);
+        }
     });
 
     // Fallback: hide preloader after 3s regardless
-    setTimeout(() => {
-        preloader.classList.add('hidden');
-        document.body.style.overflow = '';
-    }, 3000);
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 3000);
+    }
 
     // ── NAVBAR SCROLL ──
     const navbar = document.getElementById('navbar');
@@ -26,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleScroll() {
         const scrollY = window.scrollY;
+        if (!navbar) return;
         if (scrollY > 60) {
             navbar.classList.add('scrolled');
         } else {
@@ -40,16 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
 
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', navToggle.classList.contains('active').toString());
+        });
+    }
 
     // Close menu on link click
     document.querySelectorAll('.navbar__link, .navbar__cta-btn').forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            navToggle?.classList.remove('active');
+            navMenu?.classList.remove('active');
         });
     });
 
@@ -72,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
                     // Stagger animations
-                    const delay = Array.from(entry.target.parentElement.children)
+                    const delay = Array.from(entry.target.parentElement?.children || [])
                         .filter(child => child.hasAttribute('data-reveal'))
                         .indexOf(entry.target) * 100;
 
@@ -95,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const particleContainer = document.getElementById('heroParticles');
 
     function createParticle() {
+        if (!particleContainer) return;
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
@@ -119,12 +128,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Create initial particles
-    for (let i = 0; i < 30; i++) {
-        createParticle();
-    }
+    if (particleContainer) {
+        for (let i = 0; i < 30; i++) {
+            createParticle();
+        }
 
-    // Continuously add particles
-    setInterval(createParticle, 800);
+        // Continuously add particles only on the page that contains the hero.
+        setInterval(createParticle, 800);
+    }
 
 
 
@@ -246,7 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(scrollProgress);
 
     window.addEventListener('scroll', () => {
-        const scrollPct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        const scrollableHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPct = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
         scrollProgress.style.width = scrollPct + '%';
     }, { passive: true });
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EduCore — Sistema Integral de Gestión Escolar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="vye-globals.css">
+    <link rel="stylesheet" href="vye-globals.css?v=phase1">
     <style>
         :root {
             --ink: #f4f4f5;
@@ -1932,6 +1932,28 @@
     }
 }
 
+/* Shared VyE shell: EduCore keeps its product palette, not a separate layout system. */
+.savings-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+
+@media (max-width: 900px) {
+    .footer__top { grid-template-columns: 1fr !important; gap: 32px; }
+    .footer__contact-item { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 480px) {
+    .hero, .modules, .ai-section, .why-section, .savings-section, .plans-section,
+    .trust-section, .testimonials-section, .faq-section, .about-section, .banner {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .footer { padding-left: 20px; padding-right: 20px; }
+}
+
 </style>
 </head>
 
@@ -1964,12 +1986,9 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="navbar__menu" id="navMenu">
-                <li><a href="index.html#problema" class="navbar__link">Problema</a></li>
-                <li><a href="index.html#solucion" class="navbar__link">Solución</a></li>
-                <li><a href="index.html#diferencial" class="navbar__link">Diferencial</a></li>
+                <li><a href="index.html#hero" class="navbar__link">Inicio VyE</a></li>
                 <li><a href="index.html#servicios" class="navbar__link">Servicios</a></li>
-                <li><a href="index.html#ingenieria" class="navbar__link">Ingeniería</a></li>
-                <li><a href="index.html#proceso" class="navbar__link">Proceso</a></li>
+                <li><a href="#hero" class="navbar__link active">EduCore</a></li>
                 <li><a href="nosotros.html" class="navbar__link">Nosotros</a></li>
                 <li><a href="javascript:void(0)" onclick="openM('mDemo')" class="navbar__cta-btn">Solicitar Demo</a></li>
             </ul>
@@ -3653,19 +3672,19 @@
         const sidebarOverlay = document.getElementById('sidebarOverlay');
 
         function toggleSidebar() {
-            hamburgerBtn.classList.toggle('active');
-            sidebar.classList.toggle('open');
-            sidebarOverlay.classList.toggle('open');
+            hamburgerBtn?.classList.toggle('active');
+            sidebar?.classList.toggle('open');
+            sidebarOverlay?.classList.toggle('open');
         }
 
         function closeSidebar() {
-            hamburgerBtn.classList.remove('active');
-            sidebar.classList.remove('open');
-            sidebarOverlay.classList.remove('open');
+            hamburgerBtn?.classList.remove('active');
+            sidebar?.classList.remove('open');
+            sidebarOverlay?.classList.remove('open');
         }
 
-        hamburgerBtn.addEventListener('click', toggleSidebar);
-        sidebarOverlay.addEventListener('click', closeSidebar);
+        hamburgerBtn?.addEventListener('click', toggleSidebar);
+        sidebarOverlay?.addEventListener('click', closeSidebar);
 
         // Close sidebar when a nav link is clicked
         document.querySelectorAll('.sidebar-nav a').forEach(link => {
@@ -3769,7 +3788,7 @@
             </div>
         </div>
     </footer>
-<script src="script.js"></script>
+<script src="script.js?v=phase1"></script>
 </body>
 
 </html>

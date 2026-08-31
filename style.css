@@ -1,3 +1,5 @@
+@import url('vye-globals.css?v=phase1');
+
 /* ================================================================
    VyE INGENIERÍA — DESIGN SYSTEM
    Diseñamos Eficiencia
@@ -2695,6 +2697,42 @@ a {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--gold-dark);
+}
+
+/* ── PHASE 1: CORPORATE PAGE NORMALIZATION ── */
+.section__header > .section__subtitle {
+    max-width: var(--content-max);
+}
+
+.solucion__text .section__subtitle {
+    max-width: 62ch;
+}
+
+.solucion__visual > div {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    .navbar__menu {
+        right: -100%;
+        width: min(84vw, 340px);
+        height: 100dvh;
+        padding: 96px 28px 32px;
+        align-items: stretch;
+        overflow-y: auto;
+    }
+
+    .navbar__menu.active { right: 0; }
+    .navbar__link { width: 100%; }
+    .navbar__cta-btn { display: block; }
+}
+
+@media (max-width: 768px) {
+    .section__header { margin-bottom: 40px; }
+    .solucion__visual > div[style*="height: 400px"],
+    .solucion__visual > div[style*="height: 500px"] { height: clamp(240px, 70vw, 400px) !important; }
+    .beneficios__grid[style*="minmax(350px"] { grid-template-columns: 1fr !important; }
+    .diferencial__grid[style*="repeat(2"] { grid-template-columns: 1fr !important; }
 }
 
 /* ── PARTICLE STYLES ── */
