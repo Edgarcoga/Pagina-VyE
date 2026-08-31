@@ -2700,6 +2700,12 @@ a {
 }
 
 /* ── PHASE 1: CORPORATE PAGE NORMALIZATION ── */
+:root {
+    --brand-scroll-progress: 0;
+    --brand-offset-y: 138px;
+    --brand-scale: 3.15;
+}
+
 .section__header > .section__subtitle {
     max-width: var(--content-max);
 }
@@ -2733,6 +2739,30 @@ a {
     .solucion__visual > div[style*="height: 500px"] { height: clamp(240px, 70vw, 400px) !important; }
     .beneficios__grid[style*="minmax(350px"] { grid-template-columns: 1fr !important; }
     .diferencial__grid[style*="repeat(2"] { grid-template-columns: 1fr !important; }
+}
+
+/* ── HOMEPAGE BRAND TRANSITION ── */
+@media (min-width: 769px) {
+    .homepage .navbar__menu { margin-left: auto; }
+
+    .homepage .navbar__logo {
+        position: fixed;
+        z-index: 1001;
+        top: 16px;
+        left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+        transform-origin: left top;
+        transform: translateY(var(--brand-offset-y)) scale(var(--brand-scale));
+        transition: transform 80ms linear;
+        will-change: transform;
+    }
+
+    .homepage .hero__content {
+        padding-top: 172px;
+    }
+
+    .homepage .navbar__logo:hover {
+        transform: translateY(var(--brand-offset-y)) scale(calc(var(--brand-scale) + 0.05));
+    }
 }
 
 /* ── PARTICLE STYLES ── */

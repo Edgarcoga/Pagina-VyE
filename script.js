@@ -26,7 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── NAVBAR SCROLL ──
     const navbar = document.getElementById('navbar');
+    const brandTransition = document.getElementById('brandTransition');
+    const isHomepage = document.body.classList.contains('homepage');
     let lastScroll = 0;
+
+    function updateBrandTransition() {
+        if (!isHomepage || !brandTransition || window.innerWidth < 769) return;
+        const progress = Math.min(window.scrollY / 340, 1);
+        const remaining = 1 - progress;
+        document.documentElement.style.setProperty('--brand-scroll-progress', progress.toFixed(3));
+        document.documentElement.style.setProperty('--brand-offset-y', `${(remaining * 138).toFixed(1)}px`);
+        document.documentElement.style.setProperty('--brand-scale', (1 + (remaining * 2.15)).toFixed(3));
+    }
 
     function handleScroll() {
         const scrollY = window.scrollY;
@@ -37,9 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
         lastScroll = scrollY;
+        updateBrandTransition();
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', updateBrandTransition, { passive: true });
+    updateBrandTransition();
 
     // ── MOBILE MENU ──
     const navToggle = document.getElementById('navToggle');
