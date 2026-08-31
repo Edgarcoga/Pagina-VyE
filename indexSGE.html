@@ -1978,7 +1978,11 @@
 }
 
 /* Page-level accent overrides: no corporate-gold progress line in EduCore. */
-.educore-page .navbar.scrolled { border-bottom-color: transparent; }
+.educore-page .navbar,
+.educore-page .navbar.scrolled {
+    border-bottom: 0 !important;
+    box-shadow: none;
+}
 .educore-page .scroll-progress { display: none; }
 .educore-page .footer__brand-tagline,
 .educore-page .footer__contact-item svg { color: var(--teal); }
