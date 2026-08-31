@@ -14,15 +14,17 @@
             --ink-mute: #71717a;
             --cream: #050505;
             --cream-dark: #0a0a0a;
-            --gold: #D4A843;
-            --gold-light: #F2CC68;
-            --teal: #D4A843;
-            --teal-light: rgba(212, 168, 67, 0.15);
-            --blue: #D4A843;
-            --blue-light: rgba(212, 168, 67, 0.15);
-            --coral: #D4A843;
-            --coral-light: rgba(212, 168, 67, 0.15);
-            --amber-light: rgba(212, 168, 67, 0.15);
+            /* EduCore product palette — intentionally independent from VyE gold. */
+            --gold: #E6B64A;
+            --gold-light: #F5D37A;
+            --teal: #32B7A6;
+            --teal-light: rgba(50, 183, 166, 0.15);
+            --blue: #6D9BF1;
+            --blue-light: rgba(109, 155, 241, 0.15);
+            --coral: #EE806D;
+            --coral-light: rgba(238, 128, 109, 0.15);
+            --amber-light: rgba(230, 182, 74, 0.15);
+            --border: 1px solid rgba(244, 244, 245, 0.09);
         }
 
         * {
@@ -1954,10 +1956,37 @@
     .footer { padding-left: 20px; padding-right: 20px; }
 }
 
+/* EduCore uses the shared VyE structure, with product-specific accents. */
+.navbar.scrolled { border-bottom-color: rgba(244, 244, 245, 0.09); }
+.navbar__link::after { background: var(--teal); }
+.navbar__toggle span { background: var(--teal); }
+.navbar__cta-btn {
+    background: var(--teal);
+    color: #061614;
+    box-shadow: none;
+}
+.navbar__cta-btn:hover { background: #4acabb; box-shadow: 0 8px 24px rgba(50, 183, 166, 0.22); }
+
+.badge-teal { background: var(--teal-light); border-color: rgba(50, 183, 166, 0.4); color: var(--teal); }
+.badge-blue { background: var(--blue-light); border-color: rgba(109, 155, 241, 0.4); color: var(--blue); }
+.badge-coral { background: var(--coral-light); border-color: rgba(238, 128, 109, 0.4); color: var(--coral); }
+.badge-gold { background: var(--amber-light); border-color: rgba(230, 182, 74, 0.4); color: var(--gold-light); }
+
+@media (max-width: 768px) {
+    /* Keeps the first EduCore label below the shared fixed header. */
+    .hero { padding-top: 118px !important; }
+}
+
+/* Page-level accent overrides: no corporate-gold progress line in EduCore. */
+.educore-page .navbar.scrolled { border-bottom-color: transparent; }
+.educore-page .scroll-progress { display: none; }
+.educore-page .footer__brand-tagline,
+.educore-page .footer__contact-item svg { color: var(--teal); }
+
 </style>
 </head>
 
-<body>
+<body class="educore-page">
 
     <!-- PRELOADER -->
     <div class="preloader" id="preloader">
@@ -3788,7 +3817,7 @@
             </div>
         </div>
     </footer>
-<script src="script.js?v=phase1"></script>
+<script src="script.js?v=phase2"></script>
 </body>
 
 </html>

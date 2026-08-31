@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── SCROLL PROGRESS ──
     const scrollProgress = document.createElement('div');
+    scrollProgress.className = 'scroll-progress';
     scrollProgress.style.cssText = `
         position: fixed;
         top: 0;
