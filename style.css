@@ -443,7 +443,9 @@ a {
 
 .hero__title-line--accent {
     font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+    position: relative;
     display: inline-block;
+    isolation: isolate;
     color: var(--white);
     -webkit-text-fill-color: var(--white);
     letter-spacing: 3px;
@@ -452,13 +454,10 @@ a {
 }
 
 .hero__marker-word {
-    position: relative;
-    display: inline-block;
-    isolation: isolate;
-    padding-inline: 0.025em;
+    display: inline;
 }
 
-.hero__marker-word::after {
+.hero__title-line--accent::after {
     content: '';
     position: absolute;
     z-index: -1;
@@ -478,26 +477,8 @@ a {
     transform-origin: left center;
 }
 
-.hero__marker-word:last-child::after {
-    left: -0.16em;
-    clip-path: polygon(
-        0 6%, 11% 11%, 23% 4%, 36% 9%, 49% 2%, 61% 8%,
-        73% 3%, 86% 10%, 100% 4%, 99% 93%, 88% 88%, 76% 97%,
-        63% 91%, 50% 98%, 38% 90%, 25% 96%, 12% 89%, 0 95%
-    );
-    transform: scaleX(0) rotate(0.45deg);
-}
-
-.hero__marker-word:first-child::after {
-    right: -0.2em;
-}
-
-.hero--ink-ready .hero__marker-word:first-child::after {
-    animation: marker-draw 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 80ms both;
-}
-
-.hero--ink-ready .hero__marker-word:last-child::after {
-    animation: marker-draw-second 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 620ms both;
+.hero--ink-ready .hero__title-line--accent::after {
+    animation: marker-draw 1050ms cubic-bezier(0.22, 0.78, 0.32, 1) 80ms both;
 }
 
 @keyframes marker-draw {
@@ -515,18 +496,71 @@ a {
     }
 }
 
-@keyframes marker-draw-second {
-    0% {
-        opacity: 0.35;
+@media (max-width: 600px) {
+    .hero__title-line--accent {
+        isolation: auto;
+    }
+
+    .hero__title-line--accent::after {
+        display: none;
+    }
+
+    .hero__marker-word {
+        position: relative;
+        display: inline-block;
+        isolation: isolate;
+    }
+
+    .hero__marker-word::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -0.07em;
+        right: -0.08em;
+        bottom: 0.03em;
+        height: 0.82em;
+        background: var(--gold);
+        clip-path: polygon(
+            0 13%, 8% 7%, 18% 11%, 29% 4%, 41% 9%, 53% 3%,
+            66% 8%, 78% 2%, 90% 7%, 100% 1%, 99% 88%, 91% 94%,
+            80% 89%, 69% 97%, 56% 91%, 43% 96%, 31% 90%, 18% 98%,
+            8% 91%, 0 96%
+        );
+        opacity: 0;
+        transform: scaleX(0) rotate(-0.55deg);
+        transform-origin: left center;
+    }
+
+    .hero__marker-word:last-child::after {
+        clip-path: polygon(
+            0 6%, 11% 11%, 23% 4%, 36% 9%, 49% 2%, 61% 8%,
+            73% 3%, 86% 10%, 100% 4%, 99% 93%, 88% 88%, 76% 97%,
+            63% 91%, 50% 98%, 38% 90%, 25% 96%, 12% 89%, 0 95%
+        );
         transform: scaleX(0) rotate(0.45deg);
     }
-    72% {
-        opacity: 0.98;
-        transform: scaleX(1.025) rotate(0.45deg);
+
+    .hero--ink-ready .hero__marker-word:first-child::after {
+        animation: marker-draw 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 80ms both;
     }
-    100% {
-        opacity: 0.96;
-        transform: scaleX(1) rotate(0.45deg);
+
+    .hero--ink-ready .hero__marker-word:last-child::after {
+        animation: marker-draw-second 680ms cubic-bezier(0.22, 0.78, 0.32, 1) 620ms both;
+    }
+
+    @keyframes marker-draw-second {
+        0% {
+            opacity: 0.35;
+            transform: scaleX(0) rotate(0.45deg);
+        }
+        72% {
+            opacity: 0.98;
+            transform: scaleX(1.025) rotate(0.45deg);
+        }
+        100% {
+            opacity: 0.96;
+            transform: scaleX(1) rotate(0.45deg);
+        }
     }
 }
 
@@ -594,26 +628,6 @@ a {
     0% { clip-path: inset(0 100% 0 0); }
     70% { clip-path: inset(0 -2% 0 0); }
     100% { clip-path: inset(0 0 0 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero__marker-word::after,
-    .hero__marker-word:first-child::after {
-        animation: none !important;
-        opacity: 0.96;
-        transform: scaleX(1) rotate(-0.55deg);
-    }
-
-    .hero__marker-word:last-child::after {
-        animation: none !important;
-        opacity: 0.96;
-        transform: scaleX(1) rotate(0.45deg);
-    }
-
-    .text-pen-underline::after {
-        animation: none !important;
-        clip-path: inset(0 0 0 0);
-    }
 }
 
 .code-window {

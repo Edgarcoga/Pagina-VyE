@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.querySelector('.hero');
 
     function startHeroInkAnimation() {
+        if (!hero || hero.classList.contains('hero--ink-ready')) return;
         hero?.classList.add('hero--ink-ready');
     }
 
@@ -18,9 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 preloader.classList.add('hidden');
                 document.body.style.overflow = '';
+                // Wait until the preloader fade has finished so the drawing is visible.
+                setTimeout(startHeroInkAnimation, 650);
             }, 1800);
+        } else {
+            setTimeout(startHeroInkAnimation, 250);
         }
-        setTimeout(startHeroInkAnimation, preloader ? 2000 : 250);
     });
 
     // Fallback: hide preloader after 3s regardless
@@ -28,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             preloader.classList.add('hidden');
             document.body.style.overflow = '';
-            startHeroInkAnimation();
+            setTimeout(startHeroInkAnimation, 650);
         }, 3000);
     }
 
