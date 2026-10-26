@@ -9,8 +9,123 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloader = document.getElementById('preloader');
     const hero = document.querySelector('.hero');
 
+    function drawHeroMarker() {
+        const title = hero?.querySelector('.hero__title-line--accent');
+        if (!title) return;
+        const canvas = document.createElement('canvas');
+        canvas.className = 'hero__marker-canvas';
+        canvas.setAttribute('aria-hidden', 'true');
+        title.appendChild(canvas);
+        let frame;
+        let startedAt;
+
+        function prepare() {
+            cancelAnimationFrame(frame);
+            const bounds = title.getBoundingClientRect();
+            const ratio = Math.min(window.devicePixelRatio || 1, 2);
+            const pad = 10;
+            const width = bounds.width + pad * 2;
+            const height = bounds.height + pad * 2;
+            canvas.style.inset = `-${pad}px`;
+            canvas.style.width = `${width}px`;
+            canvas.style.height = `${height}px`;
+            canvas.width = Math.ceil(width * ratio);
+            canvas.height = Math.ceil(height * ratio);
+            const context = canvas.getContext('2d');
+            context.setTransform(ratio, 0, 0, ratio, 0, 0);
+            const lines = [];
+            title.querySelectorAll('.hero__marker-word').forEach(word => {
+                const rect = word.getBoundingClientRect();
+                const previous = lines[lines.length - 1];
+                if (previous && Math.abs(previous.top - rect.top) < 3) {
+                    previous.right = rect.right;
+                } else {
+                    lines.push({ left: rect.left, right: rect.right, top: rect.top, height: rect.height });
+                }
+            });
+            let delay = 80;
+            const passes = lines.flatMap((line, lineIndex) => {
+                return [false, true].map(returning => {
+                    const layer = document.createElement('canvas');
+                    layer.width = canvas.width;
+                    layer.height = canvas.height;
+                    const ink = layer.getContext('2d');
+                    ink.setTransform(ratio, 0, 0, ratio, 0, 0);
+                    ink.fillStyle = returning ? '#e6b747' : '#d4a843';
+                    const duration = returning ? 1500 : 1400;
+                    const pass = { layer, ink, line, lineIndex, returning, delay, duration, drawn: 0 };
+                    delay += duration + 200;
+                    return pass;
+                });
+            });
+            const pen = hero.querySelector('.text-pen-underline');
+            pen?.style.setProperty('--pen-forward-delay', `${delay}ms`);
+            pen?.style.setProperty('--pen-return-delay', `${delay + 600}ms`);
+
+            // A tilted felt tip deposits short connected strips. Only new ink is
+            // added each frame; the existing waviness and pressure stay in place.
+            function nib(pass, distance) {
+                const { line, returning, lineIndex } = pass;
+                const u = returning ? 1 - distance : distance;
+                const x = line.left - bounds.left + pad - 3 + u * (line.right - line.left + 6);
+                const phase = returning ? 2.1 : 0.3;
+                const wave = Math.sin(u * 13 + phase + lineIndex) * 1.7
+                    + Math.sin(u * 31 + phase) * 0.65;
+                const y = line.top - bounds.top + pad + line.height * (returning ? 0.65 : 0.69)
+                    + wave + (returning ? 1.8 - u * 3.5 : -u * 2.5);
+                const pressure = 0.93 + Math.sin(u * 17 + phase) * 0.055
+                    + Math.sin(u * 43 + phase) * 0.025;
+                const half = line.height * (returning ? 0.255 : 0.28) * pressure;
+                return { x, y, half };
+            }
+
+            function render(now) {
+                if (startedAt === undefined) startedAt = now;
+                const elapsed = now - startedAt;
+                context.clearRect(0, 0, width, height);
+                passes.forEach(pass => {
+                    const t = Math.max(0, Math.min(1, (elapsed - pass.delay) / pass.duration));
+                    // Gentle acceleration with small changes of hand speed.
+                    const progress = t - Math.sin(t * Math.PI * 2) * 0.055;
+                    const steps = Math.ceil((pass.line.right - pass.line.left) * 2);
+                    const target = Math.floor(progress * steps);
+                    if (target > pass.drawn) {
+                        // One continuous ink surface avoids seams between nib samples.
+                        pass.ink.clearRect(0, 0, width, height);
+                        pass.ink.beginPath();
+                        for (let i = 0; i <= target; i++) {
+                            const point = nib(pass, i / steps);
+                            if (i === 0) pass.ink.moveTo(point.x - 2, point.y - point.half);
+                            else pass.ink.lineTo(point.x - 2, point.y - point.half);
+                        }
+                        for (let i = target; i >= 0; i--) {
+                            const point = nib(pass, i / steps);
+                            pass.ink.lineTo(point.x + 2, point.y + point.half);
+                        }
+                        pass.ink.closePath();
+                        pass.ink.fill();
+                    }
+                    pass.drawn = target;
+                    context.globalAlpha = pass.returning ? 0.44 : 0.78;
+                    context.drawImage(pass.layer, 0, 0, width, height);
+                });
+                context.globalAlpha = 1;
+                if (elapsed < delay) frame = requestAnimationFrame(render);
+            }
+            frame = requestAnimationFrame(render);
+        }
+
+        prepare();
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(prepare, 150);
+        }, { passive: true });
+    }
+
     function startHeroInkAnimation() {
         if (!hero || hero.classList.contains('hero--ink-ready')) return;
+        drawHeroMarker();
         hero?.classList.add('hero--ink-ready');
     }
 

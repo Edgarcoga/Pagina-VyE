@@ -457,185 +457,20 @@ a {
     display: inline;
 }
 
-.hero__title-line--accent::before,
-.hero__title-line--accent::after {
-    content: '';
+/* Ink is deposited along a moving nib; completed marks never scale. */
+.hero__marker-canvas {
     position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
     z-index: -1;
-    transform: scaleX(0);
-}
-
-.hero__title-line--accent::before {
-    left: -0.07em;
-    right: -0.08em;
-    bottom: 0.02em;
-    height: 0.8em;
-    background: linear-gradient(
-        91deg,
-        rgba(212, 168, 67, 0.68) 0%,
-        rgba(212, 168, 67, 0.8) 18%,
-        rgba(212, 168, 67, 0.7) 39%,
-        rgba(212, 168, 67, 0.84) 63%,
-        rgba(212, 168, 67, 0.69) 82%,
-        rgba(212, 168, 67, 0.77) 100%
-    );
-    clip-path: polygon(
-        0 13%, 8% 7%, 18% 11%, 29% 4%, 41% 9%, 53% 3%,
-        66% 8%, 78% 2%, 90% 7%, 100% 1%, 99% 88%, 91% 94%,
-        80% 89%, 69% 97%, 56% 91%, 43% 96%, 31% 90%, 18% 98%,
-        8% 91%, 0 96%
-    );
-    opacity: 0;
-    transform: scaleX(0) rotate(-0.65deg);
-    transform-origin: left center;
-}
-
-.hero__title-line--accent::after {
-    left: -0.04em;
-    right: -0.1em;
-    bottom: 0.075em;
-    height: 0.73em;
-    background: linear-gradient(
-        268deg,
-        rgba(238, 190, 67, 0.3) 0%,
-        rgba(238, 190, 67, 0.54) 22%,
-        rgba(238, 190, 67, 0.34) 46%,
-        rgba(238, 190, 67, 0.58) 69%,
-        rgba(238, 190, 67, 0.38) 100%
-    );
-    clip-path: polygon(
-        0 5%, 9% 12%, 21% 4%, 34% 10%, 47% 2%, 59% 9%,
-        72% 3%, 84% 11%, 100% 5%, 99% 91%, 87% 86%, 75% 96%,
-        62% 89%, 49% 98%, 36% 88%, 23% 95%, 11% 87%, 0 94%
-    );
-    opacity: 0;
-    transform: scaleX(0) rotate(0.45deg);
-    transform-origin: right center;
-}
-
-.hero--ink-ready .hero__title-line--accent::before {
-    animation: marker-forward 1400ms cubic-bezier(0.35, 0.15, 0.45, 1) 80ms both;
-}
-
-.hero--ink-ready .hero__title-line--accent::after {
-    animation: marker-return 1500ms cubic-bezier(0.35, 0.15, 0.45, 1) 1680ms both;
-}
-
-@keyframes marker-forward {
-    0% {
-        opacity: 0.3;
-        transform: scaleX(0) rotate(-0.65deg);
-    }
-    78% {
-        opacity: 1;
-        transform: scaleX(1.025) rotate(-0.65deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scaleX(1) rotate(-0.65deg);
-    }
-}
-
-@keyframes marker-return {
-    0% {
-        opacity: 0.25;
-        transform: scaleX(0) rotate(0.45deg);
-    }
-    76% {
-        opacity: 1;
-        transform: scaleX(1.02) rotate(0.45deg);
-    }
-    100% {
-        opacity: 1;
-        transform: scaleX(1) rotate(0.45deg);
-    }
+    pointer-events: none;
 }
 
 @media (max-width: 600px) {
-    .hero__title-line--accent {
-        isolation: auto;
-    }
-
-    .hero__title-line--accent::before,
-    .hero__title-line--accent::after {
-        display: none;
-    }
-
     .hero__marker-word {
-        position: relative;
         display: inline-block;
-        isolation: isolate;
-    }
-
-    .hero__marker-word::before,
-    .hero__marker-word::after {
-        content: '';
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
-        transform: scaleX(0);
-    }
-
-    .hero__marker-word::before {
-        left: -0.07em;
-        right: -0.08em;
-        bottom: 0.02em;
-        height: 0.8em;
-        background: linear-gradient(
-            91deg,
-            rgba(212, 168, 67, 0.68) 0%,
-            rgba(212, 168, 67, 0.8) 18%,
-            rgba(212, 168, 67, 0.7) 39%,
-            rgba(212, 168, 67, 0.84) 63%,
-            rgba(212, 168, 67, 0.69) 82%,
-            rgba(212, 168, 67, 0.77) 100%
-        );
-        clip-path: polygon(
-            0 13%, 8% 7%, 18% 11%, 29% 4%, 41% 9%, 53% 3%,
-            66% 8%, 78% 2%, 90% 7%, 100% 1%, 99% 88%, 91% 94%,
-            80% 89%, 69% 97%, 56% 91%, 43% 96%, 31% 90%, 18% 98%,
-            8% 91%, 0 96%
-        );
-        transform: scaleX(0) rotate(-0.65deg);
-        transform-origin: left center;
-    }
-
-    .hero__marker-word::after {
-        left: -0.04em;
-        right: -0.1em;
-        bottom: 0.075em;
-        height: 0.73em;
-        background: linear-gradient(
-            268deg,
-            rgba(238, 190, 67, 0.3) 0%,
-            rgba(238, 190, 67, 0.54) 22%,
-            rgba(238, 190, 67, 0.34) 46%,
-            rgba(238, 190, 67, 0.58) 69%,
-            rgba(238, 190, 67, 0.38) 100%
-        );
-        clip-path: polygon(
-            0 5%, 9% 12%, 21% 4%, 34% 10%, 47% 2%, 59% 9%,
-            72% 3%, 84% 11%, 100% 5%, 99% 91%, 87% 86%, 75% 96%,
-            62% 89%, 49% 98%, 36% 88%, 23% 95%, 11% 87%, 0 94%
-        );
-        transform: scaleX(0) rotate(0.45deg);
-        transform-origin: right center;
-    }
-
-    .hero--ink-ready .hero__marker-word:first-child::before {
-        animation: marker-forward 900ms cubic-bezier(0.35, 0.15, 0.45, 1) 80ms both;
-    }
-
-    .hero--ink-ready .hero__marker-word:first-child::after {
-        animation: marker-return 1000ms cubic-bezier(0.35, 0.15, 0.45, 1) 1120ms both;
-    }
-
-    .hero--ink-ready .hero__marker-word:last-child::before {
-        animation: marker-forward 900ms cubic-bezier(0.35, 0.15, 0.45, 1) 2320ms both;
-    }
-
-    .hero--ink-ready .hero__marker-word:last-child::after {
-        animation: marker-return 1000ms cubic-bezier(0.35, 0.15, 0.45, 1) 3360ms both;
     }
 }
 
@@ -706,11 +541,11 @@ a {
 }
 
 .hero--ink-ready .text-pen-underline::before {
-    animation: pen-draw-forward 700ms cubic-bezier(0.2, 0.72, 0.3, 1) 3350ms both;
+    animation: pen-draw-forward 700ms cubic-bezier(0.2, 0.72, 0.3, 1) var(--pen-forward-delay, 3350ms) both;
 }
 
 .hero--ink-ready .text-pen-underline::after {
-    animation: pen-draw-return 760ms cubic-bezier(0.24, 0.7, 0.28, 1) 3950ms both;
+    animation: pen-draw-return 760ms cubic-bezier(0.24, 0.7, 0.28, 1) var(--pen-return-delay, 3950ms) both;
 }
 
 @keyframes pen-draw-forward {
@@ -727,11 +562,11 @@ a {
 
 @media (max-width: 600px) {
     .hero--ink-ready .text-pen-underline::before {
-        animation-delay: 4500ms;
+        animation-delay: var(--pen-forward-delay, 4500ms);
     }
 
     .hero--ink-ready .text-pen-underline::after {
-        animation-delay: 5100ms;
+        animation-delay: var(--pen-return-delay, 5100ms);
     }
 }
 
