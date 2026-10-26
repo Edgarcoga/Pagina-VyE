@@ -514,11 +514,11 @@ a {
 }
 
 .hero--ink-ready .hero__title-line--accent::before {
-    animation: marker-forward 820ms cubic-bezier(0.2, 0.76, 0.3, 1) 80ms both;
+    animation: marker-forward 1400ms cubic-bezier(0.35, 0.15, 0.45, 1) 80ms both;
 }
 
 .hero--ink-ready .hero__title-line--accent::after {
-    animation: marker-return 900ms cubic-bezier(0.24, 0.7, 0.28, 1) 820ms both;
+    animation: marker-return 1500ms cubic-bezier(0.35, 0.15, 0.45, 1) 1680ms both;
 }
 
 @keyframes marker-forward {
@@ -623,19 +623,19 @@ a {
     }
 
     .hero--ink-ready .hero__marker-word:first-child::before {
-        animation: marker-forward 560ms cubic-bezier(0.2, 0.76, 0.3, 1) 80ms both;
+        animation: marker-forward 900ms cubic-bezier(0.35, 0.15, 0.45, 1) 80ms both;
     }
 
     .hero--ink-ready .hero__marker-word:first-child::after {
-        animation: marker-return 600ms cubic-bezier(0.24, 0.7, 0.28, 1) 550ms both;
+        animation: marker-return 1000ms cubic-bezier(0.35, 0.15, 0.45, 1) 1120ms both;
     }
 
     .hero--ink-ready .hero__marker-word:last-child::before {
-        animation: marker-forward 560ms cubic-bezier(0.2, 0.76, 0.3, 1) 1050ms both;
+        animation: marker-forward 900ms cubic-bezier(0.35, 0.15, 0.45, 1) 2320ms both;
     }
 
     .hero--ink-ready .hero__marker-word:last-child::after {
-        animation: marker-return 600ms cubic-bezier(0.24, 0.7, 0.28, 1) 1520ms both;
+        animation: marker-return 1000ms cubic-bezier(0.35, 0.15, 0.45, 1) 3360ms both;
     }
 }
 
@@ -706,11 +706,11 @@ a {
 }
 
 .hero--ink-ready .text-pen-underline::before {
-    animation: pen-draw-forward 700ms cubic-bezier(0.2, 0.72, 0.3, 1) 1850ms both;
+    animation: pen-draw-forward 700ms cubic-bezier(0.2, 0.72, 0.3, 1) 3350ms both;
 }
 
 .hero--ink-ready .text-pen-underline::after {
-    animation: pen-draw-return 760ms cubic-bezier(0.24, 0.7, 0.28, 1) 2450ms both;
+    animation: pen-draw-return 760ms cubic-bezier(0.24, 0.7, 0.28, 1) 3950ms both;
 }
 
 @keyframes pen-draw-forward {
@@ -727,11 +727,11 @@ a {
 
 @media (max-width: 600px) {
     .hero--ink-ready .text-pen-underline::before {
-        animation-delay: 2250ms;
+        animation-delay: 4500ms;
     }
 
     .hero--ink-ready .text-pen-underline::after {
-        animation-delay: 2850ms;
+        animation-delay: 5100ms;
     }
 }
 
