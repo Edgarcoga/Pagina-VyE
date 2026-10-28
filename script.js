@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     layer.height = canvas.height;
                     const ink = layer.getContext('2d');
                     ink.setTransform(ratio, 0, 0, ratio, 0, 0);
-                    ink.fillStyle = returning ? '#e5b84a' : '#d4a843';
+                    ink.fillStyle = returning ? '#F0D060' : '#D4A843';
                     const duration = returning ? 720 : 850;
                     const pass = { layer, ink, line, lineIndex, returning, delay, duration, drawn: 0 };
                     delay += duration + 90;
@@ -159,20 +159,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 preloader.classList.add('hidden');
                 document.body.style.overflow = '';
                 // Wait until the preloader fade has finished so the drawing is visible.
-                setTimeout(startHeroInkAnimation, 650);
-            }, 1800);
+                setTimeout(startHeroInkAnimation, 150);
+            }, 250);
         } else {
-            setTimeout(startHeroInkAnimation, 250);
+            setTimeout(startHeroInkAnimation, 100);
         }
     });
 
-    // Fallback: hide preloader after 3s regardless
+    // Fallback: hide preloader promptly regardless
     if (preloader) {
         setTimeout(() => {
             preloader.classList.add('hidden');
             document.body.style.overflow = '';
-            setTimeout(startHeroInkAnimation, 650);
-        }, 3000);
+            setTimeout(startHeroInkAnimation, 150);
+        }, 900);
     }
 
     // ── NAVBAR SCROLL ──
@@ -271,76 +271,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // ── PARTICLES ──
+    // ── PARTICLES (MODERADAS Y ESTÁTICAS PARA EVITAR DISTRACCIÓN) ──
     const particleContainer = document.getElementById('heroParticles');
-
-    function createParticle() {
-        if (!particleContainer) return;
-        const particle = document.createElement('div');
-        particle.classList.add('particle');
-
-        const x = Math.random() * 100;
-        const duration = 8 + Math.random() * 12;
-        const size = 1 + Math.random() * 3;
-        const delay = Math.random() * 5;
-
-        particle.style.left = x + '%';
-        particle.style.bottom = '-10px';
-        particle.style.width = size + 'px';
-        particle.style.height = size + 'px';
-        particle.style.animationDuration = duration + 's';
-        particle.style.animationDelay = delay + 's';
-
-        particleContainer.appendChild(particle);
-
-        // Remove after animation
-        setTimeout(() => {
-            particle.remove();
-        }, (duration + delay) * 1000);
-    }
-
-    // Create initial particles
     if (particleContainer) {
-        for (let i = 0; i < 30; i++) {
-            createParticle();
+        // Reducido a 8 partículas sutiles de fondo, sin bucles infinitos de inserción
+        for (let i = 0; i < 8; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.left = (i * 12 + Math.random() * 8) + '%';
+            particle.style.bottom = (Math.random() * 80) + '%';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.opacity = '0.35';
+            particleContainer.appendChild(particle);
         }
-
-        // Continuously add particles only on the page that contains the hero.
-        setInterval(createParticle, 800);
     }
 
-
-
-    // ── MAGNETIC EFFECT ON CTA BUTTONS ──
+    // ── MAGNETIC EFFECT ON CTA BUTTONS (Sutil y confinado al botón) ──
     document.querySelectorAll('.btn--primary').forEach(btn => {
         btn.addEventListener('mousemove', (e) => {
             const rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
 
-            btn.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+            btn.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
         });
 
         btn.addEventListener('mouseleave', () => {
             btn.style.transform = '';
         });
-    });
-
-    // ── PARALLAX ON HERO ──
-    const heroGlow = document.querySelector('.hero__glow');
-    const heroGrid = document.querySelector('.hero__bg-grid');
-
-    window.addEventListener('mousemove', (e) => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 2;
-        const y = (e.clientY / window.innerHeight - 0.5) * 2;
-
-        if (heroGlow) {
-            heroGlow.style.transform = `translate(${x * 30}px, ${y * 30}px)`;
-        }
-
-        if (heroGrid) {
-            heroGrid.style.transform = `translate(${x * 5}px, ${y * 5}px)`;
-        }
     });
 
     // ── ACTIVE SECTION TRACKING ──
@@ -365,54 +324,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     sections.forEach(section => sectionObserver.observe(section));
-
-    // ── CURSOR GLOW EFFECT ──
-    const cursorGlow = document.createElement('div');
-    cursorGlow.style.cssText = `
-        position: fixed;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(212, 168, 67, 0.04) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: 9999;
-        transform: translate(-50%, -50%);
-        transition: opacity 0.3s;
-        opacity: 0;
-    `;
-    document.body.appendChild(cursorGlow);
-
-    let cursorTimeout;
-    document.addEventListener('mousemove', (e) => {
-        cursorGlow.style.left = e.clientX + 'px';
-        cursorGlow.style.top = e.clientY + 'px';
-        cursorGlow.style.opacity = '1';
-
-        clearTimeout(cursorTimeout);
-        cursorTimeout = setTimeout(() => {
-            cursorGlow.style.opacity = '0';
-        }, 3000);
-    });
-
-    // ── TILT EFFECT ON CARDS ──
-    document.querySelectorAll('.diferencial__value, .servicio__card, .problema__point').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = (e.clientX - rect.left) / rect.width - 0.5;
-            const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-            card.style.transform = `
-                perspective(1000px)
-                rotateY(${x * 5}deg)
-                rotateX(${-y * 5}deg)
-                translateY(-4px)
-            `;
-        });
-
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-        });
-    });
 
     // ── SCROLL PROGRESS ──
     const scrollProgress = document.createElement('div');
@@ -457,48 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const autoplayTime = document.getElementById('carrilAutoplayTime');
         const carrilContainer = document.querySelector('.carril__container') || carrilViewport;
 
-        const AUTOPLAY_DURATION = 30000; // 30 segundos
-        let autoplayStartTime = performance.now();
-        let pausedDuration = 0;
-        let isCarrilHovered = false;
-        let pauseStartTime = null;
-        let autoplayRafId = null;
-
-        function resetAutoplay() {
-            autoplayStartTime = performance.now();
-            pausedDuration = 0;
-            if (isCarrilHovered) {
-                pauseStartTime = performance.now();
-            } else {
-                pauseStartTime = null;
-            }
-            if (autoplayBar) autoplayBar.style.width = '0%';
-            if (autoplayTime) autoplayTime.textContent = '30s';
-        }
-
-        function runAutoplay(now) {
-            if (!isCarrilHovered && !isPointerDown) {
-                const totalElapsed = (now - autoplayStartTime) - pausedDuration;
-                const progress = Math.min(1, Math.max(0, totalElapsed / AUTOPLAY_DURATION));
-
-                if (autoplayBar) {
-                    autoplayBar.style.width = `${progress * 100}%`;
-                }
-                if (autoplayTime) {
-                    const remainingSeconds = Math.max(0, Math.ceil((AUTOPLAY_DURATION - totalElapsed) / 1000));
-                    autoplayTime.textContent = `${remainingSeconds}s`;
-                }
-
-                if (totalElapsed >= AUTOPLAY_DURATION) {
-                    // Advance to next slide in cycle (0 -> 1 -> 2 -> 0)
-                    const nextIdx = (currentIndex + 1) % totalSlides;
-                    updateCarril(nextIdx);
-                    return;
-                }
-            }
-            autoplayRafId = requestAnimationFrame(runAutoplay);
-        }
-
         function updateCarril(index) {
             if (index < 0) index = 0;
             if (index >= totalSlides) index = totalSlides - 1;
@@ -530,48 +399,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (nextBtn) {
                 nextBtn.disabled = (currentIndex === totalSlides - 1);
-                // When we can move forward, keep the highlight on nextBtn (like in reference video)
+                // When we can move forward, keep the highlight on nextBtn
                 if (currentIndex < totalSlides - 1) {
                     nextBtn.classList.add('carril__arrow--forward-highlight');
                 } else {
                     nextBtn.classList.remove('carril__arrow--forward-highlight');
                 }
             }
-
-            // Reset autoplay progress for the newly active slide
-            resetAutoplay();
-            if (autoplayRafId) cancelAnimationFrame(autoplayRafId);
-            autoplayRafId = requestAnimationFrame(runAutoplay);
-        }
-
-        // Pause autoplay on mouse hover over carril or controls so reading is never interrupted
-        if (carrilContainer) {
-            carrilContainer.addEventListener('mouseenter', () => {
-                if (!isCarrilHovered) {
-                    isCarrilHovered = true;
-                    pauseStartTime = performance.now();
-                }
-            });
-            carrilContainer.addEventListener('mouseleave', () => {
-                if (isCarrilHovered) {
-                    if (pauseStartTime) {
-                        pausedDuration += (performance.now() - pauseStartTime);
-                        pauseStartTime = null;
-                    }
-                    isCarrilHovered = false;
-                }
-            });
-            carrilContainer.addEventListener('touchstart', () => {
-                isCarrilHovered = true;
-                pauseStartTime = performance.now();
-            }, { passive: true });
-            carrilContainer.addEventListener('touchend', () => {
-                if (pauseStartTime) {
-                    pausedDuration += (performance.now() - pauseStartTime);
-                    pauseStartTime = null;
-                }
-                isCarrilHovered = false;
-            }, { passive: true });
         }
 
         // Button clicks
@@ -748,72 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // ── AUTO-DESPLAZAMIENTO SUAVE BIDIRECCIONAL (REGRESA SUAVEMENTE AL LLEGAR AL FINAL) ──
-        let isGaleriaHovered = false;
-        let isGaleriaTurning = false;
-        let galeriaTurnTimeout = null;
-        let isModalOpen = false;
-        const GALERIA_SPEED = 0.85; // px por frame (~50px/segundo a 60fps)
-
-        function autoScrollGaleria() {
-            if (!isGaleriaHovered && !isPointerDown && !isGaleriaTurning && !isModalOpen) {
-                const maxScroll = galeriaViewport.scrollWidth - galeriaViewport.clientWidth;
-                if (maxScroll > 0) {
-                    if (galeriaDirection === 1) {
-                        if (galeriaViewport.scrollLeft >= maxScroll - 2) {
-                            // Llegó al final: breve pausa suave (500ms) y empieza a regresar solo para no verse trabado
-                            isGaleriaTurning = true;
-                            galeriaTurnTimeout = setTimeout(() => {
-                                galeriaDirection = -1;
-                                isGaleriaTurning = false;
-                            }, 500);
-                        } else {
-                            galeriaViewport.scrollLeft += GALERIA_SPEED;
-                        }
-                    } else {
-                        if (galeriaViewport.scrollLeft <= 2) {
-                            // Llegó al inicio: breve pausa suave (500ms) y vuelve a avanzar
-                            isGaleriaTurning = true;
-                            galeriaTurnTimeout = setTimeout(() => {
-                                galeriaDirection = 1;
-                                isGaleriaTurning = false;
-                            }, 500);
-                        } else {
-                            galeriaViewport.scrollLeft -= GALERIA_SPEED;
-                        }
-                    }
-                }
-            }
-            requestAnimationFrame(autoScrollGaleria);
-        }
-
-        requestAnimationFrame(autoScrollGaleria);
-
-        // Al pasar el mouse por encima de la galería, se detiene el auto-desplazamiento
-        // y el usuario puede interactuar de manera 100% normal
-        const galeriaCarruselWrap = document.querySelector('.galeria-carrusel') || galeriaViewport;
-
-        galeriaCarruselWrap.addEventListener('mouseenter', () => {
-            isGaleriaHovered = true;
-            if (isGaleriaTurning && galeriaTurnTimeout) {
-                clearTimeout(galeriaTurnTimeout);
-                isGaleriaTurning = false;
-            }
-        });
-
-        galeriaCarruselWrap.addEventListener('mouseleave', () => {
-            isGaleriaHovered = false;
-        });
-
-        galeriaCarruselWrap.addEventListener('touchstart', () => {
-            isGaleriaHovered = true;
-        }, { passive: true });
-
-        galeriaCarruselWrap.addEventListener('touchend', () => {
-            setTimeout(() => {
-                isGaleriaHovered = false;
-            }, 3000);
-        }, { passive: true });
 
         // Pointer Drag-to-Scroll (arrastre con ratón o táctil)
         let isPointerDown = false;
