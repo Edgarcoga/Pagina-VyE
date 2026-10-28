@@ -417,11 +417,11 @@
 
 /* ── MISSING BASE RULES (Cursors & Containers) ── */
 html, body {
-    cursor: url('assets/abeja_cursor.png') 0 31, auto;
+    cursor: url('assets/abeja_cursor.png') 2 2, auto;
 }
 
 a, button, .btn, .navbar__toggle, [role="button"], input[type="submit"], input[type="button"], label, select, .clickable {
-    cursor: url('assets/abeja_pointer.png') 0 0, pointer !important;
+    cursor: url('assets/abeja_pointer.png') 2 2, pointer !important;
 }
 
 .section__container {

@@ -1,0 +1,9 @@
+# Grabaciones y videos temporales
+*.mp4
+*.mov
+*.avi
+
+# Archivos de sistema / temporales
+Thumbs.db
+.DS_Store
+*.log

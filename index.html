@@ -20,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=hero-deposited-ink-v5">
+    <link rel="stylesheet" href="style.css?v=rescale-v13">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -54,9 +54,9 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="navbar__menu" id="navMenu">
-                <li><a href="#servicios" class="navbar__link">Servicios</a></li>
                 <li><a href="#problema" class="navbar__link">El Reto</a></li>
                 <li><a href="#diferencial" class="navbar__link">Diferencial</a></li>
+                <li><a href="#servicios" class="navbar__link">Servicios</a></li>
                 <li><a href="nosotros.html" class="navbar__link">Nosotros</a></li>
                 <li><a href="#contacto" class="navbar__cta-btn">Diagnóstico Gratis</a></li>
             </ul>
@@ -134,6 +134,425 @@
         </div>
     </div>
 
+    <!-- ===================== PROBLEMA ===================== -->
+    <section id="problema" class="section section--problema">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="section__label">EL RETO</span>
+                <h2 class="section__title">¿Tu negocio depende <span class="text-gold">demasiado de ti?</span></h2>
+                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve cada vez más compleja.</p>
+            </div>
+            <div class="problema__grid">
+                <!-- 1. Procesos desordenados -->
+                <div class="problema__card" data-reveal>
+                    <div class="problema__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/>
+                            <line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Procesos desordenados</h3>
+                    <p>Tu equipo no sigue un flujo claro y cada quien trabaja con sus propios métodos.</p>
+                </div>
+                <!-- 2. Falta de control en ventas o inventario -->
+                <div class="problema__card" data-reveal>
+                    <div class="problema__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"/>
+                            <line x1="2" x2="22" y1="10" y2="10"/>
+                        </svg>
+                    </div>
+                    <h3>Falta de control en ventas o inventario</h3>
+                    <p>No tienes visibilidad real de qué se vende, qué se pierde o qué necesitas.</p>
+                </div>
+                <!-- 3. Tareas repetitivas que consumen tiempo -->
+                <div class="problema__card" data-reveal>
+                    <div class="problema__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Tareas repetitivas que consumen tiempo</h3>
+                    <p>Horas perdidas en actividades que podrían automatizarse en segundos.</p>
+                </div>
+                <!-- 4. Decisiones sin información clara -->
+                <div class="problema__card" data-reveal>
+                    <div class="problema__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="6" y1="20" x2="6" y2="16"/>
+                            <line x1="12" y1="20" x2="12" y2="11"/>
+                            <line x1="18" y1="20" x2="18" y2="6"/>
+                        </svg>
+                    </div>
+                    <h3>Decisiones sin información clara</h3>
+                    <p>Tomas decisiones basándote en intuición porque no tienes datos confiables.</p>
+                </div>
+                <!-- 5. Dependencia excesiva del dueño -->
+                <div class="problema__card problema__card--featured" data-reveal>
+                    <div class="problema__icon">
+                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="7" r="4"/>
+                            <path d="M6 21v-2a6 6 0 0 1 12 0v2"/>
+                        </svg>
+                    </div>
+                    <h3>Dependencia excesiva del dueño</h3>
+                    <p>Si tú no estás, el negocio no funciona. Todo pasa por ti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== DIFERENCIAL ===================== -->
+    <section id="diferencial" class="section section--diferencial">
+        <div class="section__container">
+            <div class="section__header">
+                <span class="section__label">NUESTRO ENFOQUE</span>
+                <h2 class="section__title">No somos un proveedor más.<br><span class="text-gold">Somos tu ventaja competitiva.</span></h2>
+                <p class="section__subtitle">Potenciamos tu operación para llevar tu negocio más lejos</p>
+            </div>
+            <div class="diferencial__simple">
+                <div class="diferencial__value" data-reveal>
+                    <div class="diferencial__value-number">01</div>
+                    <h3>Soluciones a medida, no plantillas</h3>
+                    <p>Tu negocio no es genérico. Tu sistema tampoco debería serlo. No te vendemos un software de caja. Construimos exactamente lo que tu operación necesita.</p>
+                </div>
+                <div class="diferencial__value" data-reveal>
+                    <div class="diferencial__value-number">02</div>
+                    <h3>Implementación rápida y sin fricción</h3>
+                    <p>Sabemos que el tiempo es crítico. Del primer contacto al sistema funcionando: semanas, no meses.</p>
+                </div>
+                <div class="diferencial__value" data-reveal>
+                    <div class="diferencial__value-number">03</div>
+                    <h3>Acompañamiento real</h3>
+                    <p>No desaparecemos al entregar. Nos convertimos en tu equipo de tecnología a largo plazo.</p>
+                </div>
+                <div class="diferencial__value diferencial__value--wide" data-reveal>
+                    <div class="diferencial__value-number">04</div>
+                    <h3>Resultados medibles (ROI)</h3>
+                    <p>Nuestros proyectos están diseñados para impactar directamente en tu negocio:</p>
+                    <ul class="diferencial__list">
+                        <li>Reducción de tiempos operativos</li>
+                        <li>Disminución de errores</li>
+                        <li>Mejor control de recursos</li>
+                        <li>Incremento en eficiencia</li>
+                    </ul>
+                    <p class="diferencial__note">Nuestros clientes recuperan su inversión en los primeros meses de operación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ===================== NUESTRO TRABAJO / SHOWCASE (CARRUSEL DE FOTOS REALES) ===================== -->
+    <section id="showcase" class="section section--showcase">
+        <div class="section__container">
+            <div class="section__header" data-reveal>
+                <span class="section__label">NUESTRO TRABAJO</span>
+                <h2 class="section__title">Así se ven <span class="text-gold">nuestras soluciones</span></h2>
+                <p class="section__subtitle">Proyectos reales, sistemas y automatizaciones diseñadas para optimizar la operación de cada empresa.</p>
+            </div>
+
+            <!-- Carrusel de Galería -->
+            <div class="galeria-carrusel" data-reveal>
+                <div class="galeria-carrusel__viewport" id="galeriaViewport">
+                    <div class="galeria-carrusel__track" id="galeriaTrack">
+
+                        <!-- Item 1: Card Alta/Ancha (2 filas) -->
+                        <div class="galeria-card galeria-card--tall" data-title="Software de Control y Gestión Operativa" data-tag="Software Empresarial" data-desc="Sistema integral a medida para control de inventarios, órdenes de trabajo y seguimiento de operaciones en tiempo real.">
+                            <div class="galeria-card__inner">
+                                <img src="" alt="Software de Control y Gestión Operativa" class="galeria-card__img" onerror="this.style.display='none'">
+                                <div class="galeria-card__tech-bg">
+                                    <div class="galeria-card__badge-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                            <line x1="8" y1="21" x2="16" y2="21"/>
+                                            <line x1="12" y1="17" x2="12" y2="21"/>
+                                        </svg>
+                                    </div>
+                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                </div>
+                                <div class="galeria-card__overlay">
+                                    <span class="galeria-card__tag">Software Empresarial</span>
+                                    <h3 class="galeria-card__title">Software de Control y Gestión Operativa</h3>
+                                </div>
+                                <div class="galeria-card__zoom-hint">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Apilada 1: 2 Cards (Top & Bottom) -->
+                        <div class="galeria-column">
+                            <!-- Card 2 (Top) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Automatización de Procesos Repetitivos" data-tag="Automatización" data-desc="Eliminación de tareas manuales repetitivas y reducción sistemática de errores humanos en la operación.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Automatización de Procesos Repetitivos" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <polyline points="16 18 22 12 16 6"/>
+                                                <polyline points="8 6 2 12 8 18"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Automatización</span>
+                                        <h3 class="galeria-card__title">Automatización de Procesos Repetitivos</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3 (Bottom) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Control de Inventarios y Almacenes" data-tag="Gestión y Control" data-desc="Registro ágil de entradas, salidas y alertas de stock mínimo con sincronización multi-sucursal en la nube.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Control de Inventarios y Almacenes" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Gestión y Control</span>
+                                        <h3 class="galeria-card__title">Control de Inventarios y Almacenes</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Card Alta (2 filas) -->
+                        <div class="galeria-card galeria-card--tall" data-title="Plataformas Web y Portales Corporativos" data-tag="Desarrollo Web" data-desc="Sitios web de alto impacto visual, optimizados para captar clientes, posicionamiento y presentar servicios institucionales.">
+                            <div class="galeria-card__inner">
+                                <img src="" alt="Plataformas Web y Portales Corporativos" class="galeria-card__img" onerror="this.style.display='none'">
+                                <div class="galeria-card__tech-bg">
+                                    <div class="galeria-card__badge-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <line x1="2" y1="12" x2="22" y2="12"/>
+                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                </div>
+                                <div class="galeria-card__overlay">
+                                    <span class="galeria-card__tag">Desarrollo Web</span>
+                                    <h3 class="galeria-card__title">Plataformas Web y Portales Corporativos</h3>
+                                </div>
+                                <div class="galeria-card__zoom-hint">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Apilada 2: 2 Cards (Top & Bottom) -->
+                        <div class="galeria-column">
+                            <!-- Card 5 (Top) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Sistema de Gestión Escolar (SGE)" data-tag="Educación & Software" data-desc="Generación inteligente de horarios escolares, control de materias, docentes y grupos sin traslapes ni conflictos.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Sistema de Gestión Escolar (SGE)" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Educación & Software</span>
+                                        <h3 class="galeria-card__title">Sistema de Gestión Escolar (SGE)</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 6 (Bottom) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Monitoreo y Sensores IoT" data-tag="Mecatrónica Aplicada" data-desc="Adquisición de datos desde sensores industriales y equipos para análisis predictivo y control preventivo.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Monitoreo y Sensores IoT" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <circle cx="12" cy="12" r="2"/>
+                                                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Mecatrónica Aplicada</span>
+                                        <h3 class="galeria-card__title">Monitoreo y Sensores IoT</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 7: Card Ancha (2 filas) -->
+                        <div class="galeria-card galeria-card--wide" data-title="Tableros de Analytics y KPIs en Vivo" data-tag="Business Intelligence" data-desc="Visualización gráfica de rendimiento, métricas de producción y toma de decisiones basada en datos confiables.">
+                            <div class="galeria-card__inner">
+                                <img src="" alt="Tableros de Analytics y KPIs en Vivo" class="galeria-card__img" onerror="this.style.display='none'">
+                                <div class="galeria-card__tech-bg">
+                                    <div class="galeria-card__badge-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <line x1="18" y1="20" x2="18" y2="10"/>
+                                            <line x1="12" y1="20" x2="12" y2="4"/>
+                                            <line x1="6" y1="20" x2="6" y2="14"/>
+                                        </svg>
+                                    </div>
+                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                </div>
+                                <div class="galeria-card__overlay">
+                                    <span class="galeria-card__tag">Business Intelligence</span>
+                                    <h3 class="galeria-card__title">Tableros de Analytics y KPIs en Vivo</h3>
+                                </div>
+                                <div class="galeria-card__zoom-hint">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Apilada 3: 2 Cards (Top & Bottom) -->
+                        <div class="galeria-column">
+                            <!-- Card 8 (Top) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Digitalización de Procesos Manuales" data-tag="Optimización Operativa" data-desc="Migración de cuadernos y archivos dispersos a flujos digitales estructurados, seguros y accesibles en cualquier dispositivo.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Digitalización de Procesos Manuales" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                                <polyline points="14 2 14 8 20 8"/>
+                                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Optimización Operativa</span>
+                                        <h3 class="galeria-card__title">Digitalización de Procesos Manuales</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 9 (Bottom) -->
+                            <div class="galeria-card galeria-card--standard" data-title="Integración y Notificaciones Automáticas" data-tag="Conectividad" data-desc="Conexión de sistemas con mensajería instantánea, WhatsApp y alertas por correo para respuestas inmediatas.">
+                                <div class="galeria-card__inner">
+                                    <img src="" alt="Integración y Notificaciones Automáticas" class="galeria-card__img" onerror="this.style.display='none'">
+                                    <div class="galeria-card__tech-bg">
+                                        <div class="galeria-card__badge-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                                            </svg>
+                                        </div>
+                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                    </div>
+                                    <div class="galeria-card__overlay">
+                                        <span class="galeria-card__tag">Conectividad</span>
+                                        <h3 class="galeria-card__title">Integración y Notificaciones</h3>
+                                    </div>
+                                    <div class="galeria-card__zoom-hint">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 10: Card Alta (2 filas) -->
+                        <div class="galeria-card galeria-card--tall" data-title="Ingeniería y Automatización Industrial" data-tag="Mecatrónica IPN" data-desc="Integración de hardware, controladores lógicos, electrónica y software para automatizar maquinaria y líneas productivas.">
+                            <div class="galeria-card__inner">
+                                <img src="" alt="Ingeniería y Automatización Industrial" class="galeria-card__img" onerror="this.style.display='none'">
+                                <div class="galeria-card__tech-bg">
+                                    <div class="galeria-card__badge-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                            <circle cx="12" cy="12" r="3"/>
+                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
+                                </div>
+                                <div class="galeria-card__overlay">
+                                    <span class="galeria-card__tag">Mecatrónica IPN</span>
+                                    <h3 class="galeria-card__title">Ingeniería y Automatización Industrial</h3>
+                                </div>
+                                <div class="galeria-card__zoom-hint">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Barra de Progreso y Flechas de Navegación (Estilo Video de Referencia) -->
+                <div class="galeria-carrusel__footer">
+                    <div class="galeria-carrusel__progress-track" id="galeriaProgressTrack" aria-hidden="true">
+                        <div class="galeria-carrusel__progress-bar" id="galeriaProgressBar"></div>
+                    </div>
+                    <div class="galeria-carrusel__controls">
+                        <div class="galeria-carrusel__hint">
+                            <span class="galeria-carrusel__hint-icon">◀ ✋ ▶</span>
+                            <span>Desliza a mano o con las flechas · Clic en cualquier foto para ampliar</span>
+                        </div>
+                        <div class="galeria-carrusel__arrows">
+                            <button type="button" class="galeria-carrusel__arrow" id="galeriaPrevBtn" aria-label="Desplazar a la izquierda" disabled>
+                                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button type="button" class="galeria-carrusel__arrow galeria-carrusel__arrow--active" id="galeriaNextBtn" aria-label="Desplazar a la derecha">
+                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal Lightbox (Ampliación de fotografía al hacer clic, idéntico a referencia) -->
+    <div id="galeriaModal" class="galeria-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="galeria-modal__backdrop" id="galeriaModalBackdrop"></div>
+        <div class="galeria-modal__dialog">
+            <button type="button" class="galeria-modal__close" id="galeriaModalClose" aria-label="Cerrar vista previa">✕</button>
+            <div class="galeria-modal__media">
+                <img id="galeriaModalImg" src="" alt="Vista previa del proyecto">
+                <div id="galeriaModalPlaceholder" class="galeria-modal__placeholder">
+                    <div class="galeria-modal__placeholder-icon" id="galeriaModalIcon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <span class="galeria-modal__placeholder-badge">VyE Ingeniería · Solución Real</span>
+                </div>
+            </div>
+            <div class="galeria-modal__caption">
+                <span class="galeria-modal__tag" id="galeriaModalTag"></span>
+                <h3 class="galeria-modal__title" id="galeriaModalTitle"></h3>
+                <p class="galeria-modal__desc" id="galeriaModalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+
     <!-- ===================== SERVICIOS ===================== -->
     <section id="servicios" class="section section--servicios">
         <div class="section__container">
@@ -210,274 +629,122 @@
         </div>
     </section>
 
-    <!-- ===================== PROBLEMA ===================== -->
-    <section id="problema" class="section section--problema">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">EL RETO</span>
-                <h2 class="section__title">¿Tu negocio depende <span class="text-gold">demasiado de ti?</span></h2>
-                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve un caos. Si te
-                    identificas con esto, necesitas un sistema.</p>
-            </div>
-            <div class="problema__minimal">
-                <div class="problema__point" data-reveal>
-                    <div class="problema__point-icon">✖</div>
-                    <div class="problema__point-content">
-                        <h3>Procesos desordenados</h3>
-                        <p>Tu equipo no sigue un flujo claro y cada quien trabaja con sus propios métodos.</p>
-                    </div>
-                </div>
-                <div class="problema__point" data-reveal>
-                    <div class="problema__point-icon">✖</div>
-                    <div class="problema__point-content">
-                        <h3>Falta de control en ventas o inventario</h3>
-                        <p>No tienes visibilidad real de qué se vende, qué se pierde o qué necesitas.</p>
-                    </div>
-                </div>
-                <div class="problema__point" data-reveal>
-                    <div class="problema__point-icon">✖</div>
-                    <div class="problema__point-content">
-                        <h3>Tareas repetitivas que consumen tiempo</h3>
-                        <p>Horas perdidas en actividades que podrían automatizarse en segundos.</p>
-                    </div>
-                </div>
-                <div class="problema__point" data-reveal>
-                    <div class="problema__point-icon">✖</div>
-                    <div class="problema__point-content">
-                        <h3>Decisiones sin información clara</h3>
-                        <p>Tomas decisiones basándote en intuición porque no tienes datos confiables.</p>
-                    </div>
-                </div>
-                <div class="problema__point" data-reveal>
-                    <div class="problema__point-icon">✖</div>
-                    <div class="problema__point-content">
-                        <h3>Dependencia excesiva del dueño</h3>
-                        <p>Si tú no estás, el negocio no funciona. Todo pasa por ti.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== DIFERENCIAL ===================== -->
-    <section id="diferencial" class="section section--diferencial">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">NUESTRO ENFOQUE</span>
-                <h2 class="section__title">No te vendemos software genérico.<br><span class="text-gold">Construimos
-                        soluciones para tu operación.</span></h2>
-            </div>
-            <div class="diferencial__simple">
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">01</div>
-                    <h3>Soluciones a medida, no plantillas</h3>
-                    <p>Tu negocio no es genérico. Tu sistema tampoco debería serlo. No te vendemos un software de caja. Construimos exactamente lo que tu operación necesita.</p>
-                </div>
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">02</div>
-                    <h3>Implementación rápida y sin fricción</h3>
-                    <p>Sabemos que el tiempo es crítico. Del primer contacto al sistema funcionando: semanas, no meses.</p>
-                </div>
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">03</div>
-                    <h3>Acompañamiento real</h3>
-                    <p>No desaparecemos al entregar. Nos convertimos en tu equipo de tecnología a largo plazo.</p>
-                </div>
-                <div class="diferencial__value diferencial__value--wide" data-reveal>
-                    <div class="diferencial__value-number">04</div>
-                    <h3>Resultados medibles (ROI)</h3>
-                    <p>Nuestros proyectos están diseñados para impactar directamente en tu negocio:</p>
-                    <ul class="diferencial__list">
-                        <li>Reducción de tiempos operativos</li>
-                        <li>Disminución de errores</li>
-                        <li>Mejor control de recursos</li>
-                        <li>Incremento en eficiencia</li>
-                    </ul>
-                    <p class="diferencial__note">Nuestros clientes recuperan su inversión en los primeros meses de operación.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===================== SHOWCASE VISUAL ===================== -->
-    <section id="showcase" class="section section--showcase">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">NUESTRO TRABAJO</span>
-                <h2 class="section__title">Así se ven <span class="text-gold">nuestras soluciones</span></h2>
-            </div>
-            <div class="showcase__grid">
-                <!-- Dashboard mock -->
-                <div class="showcase__item showcase__item--wide" data-reveal>
-                    <div class="showcase__item-label">Panel de control — Software empresarial</div>
-                    <div class="dashboard-mock">
-                        <div class="dashboard-mock__header">
-                            <div class="dashboard-mock__dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="dashboard-mock__title">VyE Dashboard — Analytics</span>
-                        </div>
-                        <div class="dashboard-mock__body">
-                            <div class="dashboard-mock__sidebar">
-                                <div class="dash-nav-item dash-nav-item--active"></div>
-                                <div class="dash-nav-item"></div>
-                                <div class="dash-nav-item"></div>
-                                <div class="dash-nav-item"></div>
-                                <div class="dash-nav-item"></div>
-                            </div>
-                            <div class="dashboard-mock__content">
-                                <div class="dash-card dash-card--stat">
-                                    <div class="dash-stat-label">Eficiencia</div>
-                                    <div class="dash-stat-value">94.7%</div>
-                                    <div class="dash-stat-bar">
-                                        <div class="dash-stat-fill" style="width: 94.7%"></div>
-                                    </div>
-                                </div>
-                                <div class="dash-card dash-card--stat">
-                                    <div class="dash-stat-label">Errores</div>
-                                    <div class="dash-stat-value dash-stat-value--green">-67%</div>
-                                    <div class="dash-stat-bar">
-                                        <div class="dash-stat-fill dash-stat-fill--green" style="width: 33%"></div>
-                                    </div>
-                                </div>
-                                <div class="dash-card dash-card--chart">
-                                    <div class="dash-chart-label">Rendimiento Operativo</div>
-                                    <div class="dash-chart">
-                                        <div class="dash-bar" style="--h: 40%"></div>
-                                        <div class="dash-bar" style="--h: 55%"></div>
-                                        <div class="dash-bar" style="--h: 45%"></div>
-                                        <div class="dash-bar" style="--h: 70%"></div>
-                                        <div class="dash-bar" style="--h: 65%"></div>
-                                        <div class="dash-bar" style="--h: 80%"></div>
-                                        <div class="dash-bar dash-bar--active" style="--h: 92%"></div>
-                                    </div>
-                                </div>
-                                <div class="dash-card dash-card--list">
-                                    <div class="dash-list-item"><span class="dash-check">✓</span> Inventario
-                                        sincronizado</div>
-                                    <div class="dash-list-item"><span class="dash-check">✓</span> Alertas inteligentes
-                                    </div>
-                                    <div class="dash-list-item"><span class="dash-check">✓</span> Reportes en tiempo
-                                        real</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Scheduler mock -->
-                <div class="showcase__item" data-reveal>
-                    <div class="showcase__item-label">Generador de horarios — Sistema escolar</div>
-                    <div class="showcase__mock-schedule">
-                        <div class="showcase__mock-header">
-                            <div class="dashboard-mock__dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="dashboard-mock__title">Horarios Académicos</span>
-                        </div>
-                        <div class="showcase__schedule-grid">
-                            <div class="schedule-cell schedule-cell--header">Lun</div>
-                            <div class="schedule-cell schedule-cell--header">Mar</div>
-                            <div class="schedule-cell schedule-cell--header">Mié</div>
-                            <div class="schedule-cell schedule-cell--header">Jue</div>
-                            <div class="schedule-cell schedule-cell--header">Vie</div>
-                            <div class="schedule-cell schedule-cell--gold">Mat</div>
-                            <div class="schedule-cell schedule-cell--dim">Esp</div>
-                            <div class="schedule-cell schedule-cell--gold">Fís</div>
-                            <div class="schedule-cell schedule-cell--dim">His</div>
-                            <div class="schedule-cell schedule-cell--gold">Quí</div>
-                            <div class="schedule-cell schedule-cell--dim">Ing</div>
-                            <div class="schedule-cell schedule-cell--gold">Mat</div>
-                            <div class="schedule-cell schedule-cell--dim">Bio</div>
-                            <div class="schedule-cell schedule-cell--gold">Esp</div>
-                            <div class="schedule-cell schedule-cell--dim">Art</div>
-                            <div class="schedule-cell schedule-cell--gold">Fís</div>
-                            <div class="schedule-cell schedule-cell--dim">Quí</div>
-                            <div class="schedule-cell schedule-cell--gold">Ing</div>
-                            <div class="schedule-cell schedule-cell--dim">Mat</div>
-                            <div class="schedule-cell schedule-cell--gold">His</div>
-                        </div>
-                        <div class="showcase__schedule-badge">
-                            <span class="dash-check">✓</span> 0 conflictos de recursos
-                        </div>
-                    </div>
-                </div>
-                <!-- Web mockup -->
-                <div class="showcase__item" data-reveal>
-                    <div class="showcase__item-label">Página web — Diseño profesional</div>
-                    <div class="showcase__mock-web">
-                        <div class="showcase__mock-header">
-                            <div class="dashboard-mock__dots">
-                                <span></span><span></span><span></span>
-                            </div>
-                            <span class="dashboard-mock__title">www.cliente.com</span>
-                        </div>
-                        <div class="showcase__web-content">
-                            <div class="showcase__web-nav">
-                                <div class="showcase__web-nav-logo"></div>
-                                <div class="showcase__web-nav-links">
-                                    <div class="showcase__web-nav-link"></div>
-                                    <div class="showcase__web-nav-link"></div>
-                                    <div class="showcase__web-nav-link"></div>
-                                </div>
-                            </div>
-                            <div class="showcase__web-hero">
-                                <div class="showcase__web-hero-title"></div>
-                                <div class="showcase__web-hero-subtitle"></div>
-                                <div class="showcase__web-hero-btn"></div>
-                            </div>
-                            <div class="showcase__web-cards">
-                                <div class="showcase__web-card"></div>
-                                <div class="showcase__web-card"></div>
-                                <div class="showcase__web-card"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
-    <!-- ===================== ACERCA DE NOSOTROS ===================== -->
+    <!-- ===================== SOBRE VYE ===================== -->
     <section id="nosotros" class="section section--about">
         <div class="section__container">
-            <div class="about__layout">
-                <div class="about__text" data-reveal>
+            
+            <div class="about__header" data-reveal>
+                <div class="about__header-top">
                     <span class="section__label">SOBRE VYE</span>
-                    <h2 class="section__title">Tecnología pensada para <span class="text-gold">resolver problemas
-                            reales</span></h2>
-                    <p class="about__description">En VyE Ingeniería desarrollamos soluciones digitales enfocadas en
-                        mejorar la operación de empresas e instituciones mediante software, automatización y
-                        herramientas tecnológicas hechas a medida.</p>
-                    <div class="about__accent">
-                        <p>No solo construimos sistemas.</p>
-                        <p class="text-gold about__bold">Diseñamos eficiencia.</p>
+                </div>
+
+                <h2 class="section__title">
+                    Convertimos datos complejos en <span class="text-gold">decisiones rentables</span>
+                </h2>
+            </div>
+
+            <!-- Resultados que puedes esperar (Grid estilo captura 2) -->
+            <div class="about__results-section" data-reveal>
+                <div class="about__cards-grid">
+                    <!-- Card 1 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m14.5 9.5-5 5"/>
+                                <polygon points="14.5 9.5 10.5 10 11.5 11"/>
+                                <polygon points="9.5 14.5 13.5 14 12.5 13"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Más control sobre tu negocio</h4>
+                        <p class="about-card__desc">Visibilidad centralizada y monitoreo de tus operaciones, inventarios y rendimiento en tiempo real.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Menos errores operativos</h4>
+                        <p class="about-card__desc">Estandarización y validaciones automáticas que eliminan fallas humanas y descuidos repetitivos.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Ahorro de tiempo</h4>
+                        <p class="about-card__desc">Automatización de tareas manuales repetitivas para recuperar horas clave de tu equipo cada día.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Procesos claros y estructurados</h4>
+                        <p class="about-card__desc">Flujos de trabajo ordenados y organizados que cualquier colaborador puede ejecutar sin fricción.</p>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <line x1="18" y1="20" x2="18" y2="10"/>
+                                <line x1="12" y1="20" x2="12" y2="4"/>
+                                <line x1="6" y1="20" x2="6" y2="14"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Mejor toma de decisiones</h4>
+                        <p class="about-card__desc">Indicadores y reportes confiables al instante para decidir con datos exactos en lugar de suposiciones.</p>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="about-card">
+                        <div class="about-card__icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <h4 class="about-card__title">Crecimiento con bases sólidas</h4>
+                        <p class="about-card__desc">Sistemas diseñados con arquitectura escalable, listos para soportar el crecimiento de tu empresa.</p>
                     </div>
                 </div>
-                <div class="about__visual" data-reveal>
-                    <div class="about__visual-card">
-                        <div class="about__visual-inner">
-                            <img src="assets/Isotipo Vye.png" alt="VyE Ingeniería" class="about__visual-logo"
-                                width="80" height="80">
-                            <div class="about__visual-tagline">
-                                <span class="about__visual-name">VyE Ingeniería</span>
-                                <span class="about__visual-motto">Diseñamos eficiencia</span>
-                            </div>
-                            <div class="about__visual-stats">
-                                <div class="about__visual-stat">
-                                    <span class="about__visual-stat-value">100%</span>
-                                    <span class="about__visual-stat-label">A medida</span>
-                                </div>
-                                <div class="about__visual-stat">
-                                    <span class="about__visual-stat-value">∞</span>
-                                    <span class="about__visual-stat-label">Soporte</span>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- Footer callout / Enlace natural a Nosotros -->
+                <div class="about__footer-cta">
+                    <div class="about__footer-info">
+                        <h4 class="about__footer-tagline">
+                            Detrás de estos resultados hay un equipo que <strong class="text-gold">diseña eficiencia a tu medida.</strong>
+                        </h4>
+                        <p class="about__footer-sub">
+                            Conoce nuestra historia, cómo trabajamos y a los ingenieros fundadores de VyE.
+                        </p>
                     </div>
+                    <a href="nosotros.html" class="btn btn--primary about__btn-cta" id="btnAcercaDeNosotros">
+                        <span>Acerca de nosotros</span>
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -579,7 +846,7 @@
         </svg>
     </a>
 
-    <script src="script.js?v=hero-deposited-ink-v5"></script>
+    <script src="script.js?v=rescale-v13"></script>
 </body>
 
 </html>
