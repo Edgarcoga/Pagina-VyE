@@ -15,9 +15,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=rescale-v13">
+    <link rel="stylesheet" href="style.css?v=vye-master-v32">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -50,11 +50,12 @@
             </button>
             <ul class="navbar__menu" id="navMenu">
                 <li><a href="index.html#hero" class="navbar__link">Inicio</a></li>
-                <li><a href="index.html#problema" class="navbar__link">El Reto</a></li>
-                <li><a href="index.html#diferencial" class="navbar__link">Diferencial</a></li>
+                <li><a href="index.html#reto" class="navbar__link">El Reto</a></li>
                 <li><a href="index.html#servicios" class="navbar__link">Servicios</a></li>
+                <li><a href="index.html#portafolio" class="navbar__link">Portafolio</a></li>
+                <li><a href="index.html#proceso" class="navbar__link">Proceso</a></li>
                 <li><a href="nosotros.html" class="navbar__link active">Nosotros</a></li>
-                <li><a href="https://wa.me/527718429946" class="navbar__cta-btn" target="_blank" rel="noopener">Diagnóstico Gratis</a></li>
+                <li><a href="index.html#contacto" class="navbar__cta-btn">Diagnóstico Gratis</a></li>
             </ul>
         </div>
     </nav>
@@ -135,8 +136,7 @@
                                         <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 6px;">Tecnología y Mecatrónica</h4>
                                         <p style="color: var(--gray-400); font-size: 0.84rem; max-width: 300px; margin: 0;">Soluciones inteligentes creadas por ingenieros del IPN</p>
                                     </div>
-                                    <!-- Si se cuenta con la fotografía real de los fundadores, se inserta en src -->
-                                    <img src="" alt="Fotografía real de los fundadores trabajando" onerror="this.style.display='none'">
+                                    <img src="assets/fundadores_vye.jpg" alt="Víctor y Edgar - Ingenieros Mecatrónicos Fundadores de VyE" class="carril__slide-img">
                                     <div class="carril__slide-img-overlay">
                                         <span style="font-size: 0.84rem; color: var(--gold); font-weight: 600; letter-spacing: 0.4px;">VYE Ingeniería</span>
                                         <span style="font-size: 0.76rem; color: var(--gray-400);">Mecatrónica · Software · Automatización</span>
@@ -162,8 +162,7 @@
                                         <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 6px;">Del Taller a la Operación Real</h4>
                                         <p style="color: var(--gray-400); font-size: 0.84rem; max-width: 300px; margin: 0;">Digitalizando procesos manuales para transformar empresas</p>
                                     </div>
-                                    <!-- Si se cuenta con fotografía de entorno industrial, se inserta en src -->
-                                    <img src="" alt="Entorno industrial y registros de planta" onerror="this.style.display='none'">
+                                    <img src="assets/showcase_automatizacion.jpg" alt="Entorno industrial y automatización de procesos" class="carril__slide-img">
                                     <div class="carril__slide-img-overlay">
                                         <span style="font-size: 0.84rem; color: var(--gold); font-weight: 600; letter-spacing: 0.4px;">El origen</span>
                                         <span style="font-size: 0.76rem; color: var(--gray-400);">De la fábrica a la solución</span>
@@ -216,53 +215,28 @@
                             <!-- Víctor -->
                             <div class="carril__team-card">
                                 <div class="team-portrait team-portrait--victor">
-                                    <div class="team-portrait__glow"></div>
                                     <div class="team-portrait__frame">
-                                        <div class="team-portrait__placeholder">
-                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                <circle cx="12" cy="7" r="4"></circle>
-                                            </svg>
-                                        </div>
-                                        <img src="" alt="Fotografía de Víctor" class="team-portrait__img" onerror="this.style.display='none'">
+                                        <img src="assets/fundadores_vye.jpg" alt="Fotografía de Víctor - Cofundador VyE" class="team-portrait__img" style="object-position: 25% 20%; transform: scale(1.35);">
                                     </div>
-                                    <svg class="team-portrait__ring" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path class="team-portrait__stroke team-portrait__stroke--main"
-                                            d="M 95 19 C 137 18, 172 53, 171 95 C 170 138, 137 172, 94 171 C 51 170, 18 136, 19 93 C 20 50, 53 19, 96 17.5 C 112 17, 128 21, 140 27" />
-                                        <path class="team-portrait__stroke team-portrait__stroke--accent"
-                                            d="M 91 22 C 133 24, 167 56, 166 98 C 165 136, 132 168, 91 167 C 53 166, 23 132, 24 91 C 25 54, 56 22, 98 20.5" />
-                                    </svg>
                                 </div>
-                                <h3 style="font-size: 1.12rem; margin-bottom: 2px; color: var(--white);">Víctor</h3>
-                                <p style="color: var(--gold); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; margin-bottom: 0;">Ingeniería Mecatrónica · IPN</p>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 3px; color: var(--white); font-family: var(--font-heading); font-weight: 700;">Víctor Villafaña</h3>
+                                <p style="color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin: 0 0 8px;">Ingeniería Mecatrónica · IPN</p>
+                                <p style="color: var(--gray-400); font-size: 0.84rem; line-height: 1.45; margin: 0;">Arquitectura de software empresarial, bases de datos y sistemas ERP.</p>
                             </div>
 
                             <!-- Edgar -->
                             <div class="carril__team-card">
                                 <div class="team-portrait team-portrait--edgar">
-                                    <div class="team-portrait__glow"></div>
                                     <div class="team-portrait__frame">
-                                        <div class="team-portrait__placeholder">
-                                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                <circle cx="12" cy="7" r="4"></circle>
-                                            </svg>
-                                        </div>
-                                        <img src="" alt="Fotografía de Edgar" class="team-portrait__img" onerror="this.style.display='none'">
+                                        <img src="assets/fundadores_vye.jpg" alt="Fotografía de Edgar - Cofundador VyE" class="team-portrait__img" style="object-position: 75% 20%; transform: scale(1.35);">
                                     </div>
-                                    <svg class="team-portrait__ring" viewBox="0 0 190 190" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path class="team-portrait__stroke team-portrait__stroke--main"
-                                            d="M 93 171 C 49 170, 17 137, 18 94 C 19 50, 52 18, 96 17 C 139 16, 173 51, 172 95 C 171 138, 138 172, 91 170.5 C 76 170, 60 166, 48 160" />
-                                        <path class="team-portrait__stroke team-portrait__stroke--accent"
-                                            d="M 98 168 C 55 166, 22 133, 23 91 C 24 54, 57 23, 99 21 C 136 20, 168 53, 167 96 C 166 134, 134 167, 93 168" />
-                                    </svg>
                                 </div>
-                                <h3 style="font-size: 1.12rem; margin-bottom: 2px; color: var(--white);">Edgar</h3>
-                                <p style="color: var(--gold); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 2px; margin-bottom: 0;">Ingeniería Mecatrónica · IPN</p>
+                                <h3 style="font-size: 1.15rem; margin-bottom: 3px; color: var(--white); font-family: var(--font-heading); font-weight: 700;">Edgar Pérez</h3>
+                                <p style="color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin: 0 0 8px;">Ingeniería Mecatrónica · IPN</p>
+                                <p style="color: var(--gray-400); font-size: 0.84rem; line-height: 1.45; margin: 0;">Automatización de procesos operativos, control industrial e interfaces web.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
 
@@ -428,7 +402,7 @@
         </svg>
     </a>
 
-    <script src="script.js?v=rescale-v13"></script>
+    <script src="script.js?v=vye-master-v31"></script>
 </body>
 
 </html>

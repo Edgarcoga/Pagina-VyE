@@ -18,14 +18,39 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=rescale-v13">
+    <link rel="stylesheet" href="style.css?v=vye-master-v45">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <style>
+        .strip-in span::after {
+            box-shadow: none !important;
+        }
+        .strip-in {
+            display: flex !important;
+            gap: 3.2rem;
+            padding: 1.05rem 0;
+            white-space: nowrap;
+            width: max-content;
+            will-change: transform;
+            animation: stripSlide 28s linear infinite !important;
+            -webkit-animation: stripSlide 28s linear infinite !important;
+            animation-duration: 28s !important;
+            animation-iteration-count: infinite !important;
+        }
+        @keyframes stripSlide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @-webkit-keyframes stripSlide {
+            0% { -webkit-transform: translateX(0); }
+            100% { -webkit-transform: translateX(-50%); }
+        }
+    </style>
 
 </head>
 
@@ -39,6 +64,16 @@
             </div>
         </div>
     </div>
+    <script>
+        document.body.style.overflow = 'hidden';
+        setTimeout(function() {
+            var p = document.getElementById('preloader');
+            if (p && !p.classList.contains('hidden')) {
+                p.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        }, 2000);
+    </script>
 
     <!-- ===================== NAVBAR ===================== -->
     <nav id="navbar" class="navbar">
@@ -54,10 +89,11 @@
                 <span></span><span></span><span></span>
             </button>
             <ul class="navbar__menu" id="navMenu">
-                <li><a href="#problema" class="navbar__link">El Reto</a></li>
-                <li><a href="#diferencial" class="navbar__link">Diferencial</a></li>
+                <li><a href="#reto" class="navbar__link">El Reto</a></li>
                 <li><a href="#servicios" class="navbar__link">Servicios</a></li>
-                <li><a href="nosotros.html" class="navbar__link">Nosotros</a></li>
+                <li><a href="#portafolio" class="navbar__link">Portafolio</a></li>
+                <li><a href="#proceso" class="navbar__link">Proceso</a></li>
+                <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
                 <li><a href="#contacto" class="navbar__cta-btn">Diagnóstico Gratis</a></li>
             </ul>
         </div>
@@ -69,711 +105,720 @@
         <div class="hero__particles" id="heroParticles"></div>
         <div class="hero__glow"></div>
         <div class="hero__content">
-            <div class="hero__badge">
-                <span class="hero__badge-dot"></span>
-                Software &amp; Automatización para Empresas
-            </div>
-            <h1 class="hero__title">
-                <span class="hero__title-line hero__title-line--accent"><span
-                        class="hero__marker-word">DISEÑAMOS</span> <span
-                        class="hero__marker-word">EFICIENCIA</span></span>
-            </h1>
-            <div class="hero__brand-phrase" data-reveal>
-                <p class="hero__brand-phrase-text">
-                    Porque un negocio no crece con más trabajo.<br>
-                    Crece con <span class="text-pen-underline">mejores decisiones.</span>
-                </p>
-            </div>
-            <p class="hero__description">
-                Software, plataformas web y automatización diseñados para adaptarse a tu operación.
-            </p>
-            <div class="hero__actions">
-                <a href="#contacto" class="btn btn--primary" id="heroCta1">
-                    <span class="btn__icon">⚡</span>
-                    Solicitar diagnóstico
-                </a>
-                <a href="#servicios" class="btn btn--outline" id="heroCta2">
-                    Ver servicios
-                    <span class="btn__arrow">→</span>
-                </a>
+            <div class="hero__grid">
+                <!-- Columna Izquierda: Propuesta de valor para Dueños y Directivos -->
+                <div class="hero__text-col">
+                    
+                    <h1 class="hero__title">
+                        <span class="hero__title-line hero__title-line--accent"><span
+                                class="hero__marker-word">DISEÑAMOS</span> <span
+                                class="hero__marker-word">EFICIENCIA</span></span>
+                    </h1>
+                    <div class="hero__brand-phrase" data-reveal>
+                        <p class="hero__brand-phrase-text">
+                            Porque un negocio no crece con más trabajo.<br>
+                            Crece con <span class="text-pen-underline">mejores decisiones.<svg class="text-pen-underline__svg" viewBox="0 0 500 22" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C42 6, 88 16, 134 9 C182 4, 230 15, 282 8 C338 2, 392 14, 444 8 C472 5, 488 11, 496 7" class="text-pen-underline__path" stroke="#D4AF37" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        </p>
+                    </div>
+
+                    <div class="hero__actions">
+                        <a href="https://wa.me/527718429946?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20diagn%C3%B3stico%20de%20eficiencia%20para%20mi%20empresa." class="btn btn--primary" id="heroCta1" target="_blank" rel="noopener">
+                            Solicitar diagnóstico gratis
+                        </a>
+                        <a href="#portafolio" class="btn btn--outline" id="heroCta2">
+                            Ver proyectos reales
+                            <span class="btn__arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta Visual Estilo Aceternity Cover Story -->
+                <div class="hero__visual-col" data-reveal>
+                    <div class="hero-card">
+                        <div class="hero-card__image-wrap">
+                            <img src="assets/showcase_software_erp.jpg" alt="Panel de control operativo VyE ERP y automatización de procesos" class="hero-card__image">
+                            <div class="hero-card__gradient"></div>
+                        </div>
+                        <div class="hero-card__content">
+                            <div class="hero-card__eyebrow">
+                                <span class="hero-card__eyebrow-dot"></span>
+                                Automatización &amp; Software para Empresas
+                            </div>
+                            <h3 class="hero-card__title">Sistemas que ordenan tu operación</h3>
+                            <p class="hero-card__desc">
+                                Desarrollamos software a la medida y automatización mecatrónica para empresas que buscan terminar con el caos operativo, las hojas de Excel desincronizadas y la dependencia total del dueño.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ===================== TRUST BAR ===================== -->
-    <div class="trust-bar">
-        <div class="trust-bar__container">
-            <div class="trust-bar__item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                <span>Soluciones a medida</span>
-            </div>
-            <div class="trust-bar__item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-                <span>Atención personalizada</span>
-            </div>
-            <div class="trust-bar__item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-                <span>Implementación clara</span>
-            </div>
-            <div class="trust-bar__item">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-                <span>Soporte y seguimiento</span>
-            </div>
+    <!-- ===================== CINTA CONTINUA (STRIP TICKER) ===================== -->
+    <div class="strip" aria-label="Especialidades y servicios de VyE Ingeniería">
+        <div class="strip-in" id="stripIn">
+            <span>Software a medida</span>
+            <span>Automatización de negocios</span>
+            <span>Mecatrónica &amp; PLC</span>
+            <span>Ingeniería IPN</span>
+            <span>ERP &amp; Plataformas</span>
+            <span>Puntos de venta</span>
+            <span>Desarrollo web</span>
+            <span>Sistemas a la medida</span>
+            <span>Software a medida</span>
+            <span>Automatización de negocios</span>
+            <span>Mecatrónica &amp; PLC</span>
+            <span>Ingeniería IPN</span>
+            <span>ERP &amp; Plataformas</span>
+            <span>Puntos de venta</span>
+            <span>Desarrollo web</span>
+            <span>Sistemas a la medida</span>
         </div>
     </div>
 
-    <!-- ===================== PROBLEMA ===================== -->
-    <section id="problema" class="section section--problema">
+    <!-- ===================== EL RETO / LA REALIDAD ===================== -->
+    <section id="reto" class="section section--reto">
         <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">EL RETO</span>
-                <h2 class="section__title">¿Tu negocio depende <span class="text-gold">demasiado de ti?</span></h2>
-                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve cada vez más compleja.</p>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">EL RETO</span>
+                    <h2 class="section__title">¿Tu negocio depende <span class="text-gold">demasiado de ti?</span></h2>
+                </div>
+                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve cada vez más desordenada y compleja. Seguir operando a mano también cuesta: tiempo, dinero y control.</p>
             </div>
-            <div class="problema__grid">
-                <!-- 1. Procesos desordenados -->
-                <div class="problema__card" data-reveal>
-                    <div class="problema__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
-                            <line x1="12" y1="9" x2="12" y2="13"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                    </div>
-                    <h3>Procesos desordenados</h3>
-                    <p>Tu equipo no sigue un flujo claro y cada quien trabaja con sus propios métodos.</p>
-                </div>
-                <!-- 2. Falta de control en ventas o inventario -->
-                <div class="problema__card" data-reveal>
-                    <div class="problema__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="14" x="2" y="5" rx="2"/>
-                            <line x1="2" x2="22" y1="10" y2="10"/>
-                        </svg>
-                    </div>
-                    <h3>Falta de control en ventas o inventario</h3>
-                    <p>No tienes visibilidad real de qué se vende, qué se pierde o qué necesitas.</p>
-                </div>
-                <!-- 3. Tareas repetitivas que consumen tiempo -->
-                <div class="problema__card" data-reveal>
-                    <div class="problema__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
-                    <h3>Tareas repetitivas que consumen tiempo</h3>
-                    <p>Horas perdidas en actividades que podrían automatizarse en segundos.</p>
-                </div>
-                <!-- 4. Decisiones sin información clara -->
-                <div class="problema__card" data-reveal>
-                    <div class="problema__icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="6" y1="20" x2="6" y2="16"/>
-                            <line x1="12" y1="20" x2="12" y2="11"/>
-                            <line x1="18" y1="20" x2="18" y2="6"/>
-                        </svg>
-                    </div>
-                    <h3>Decisiones sin información clara</h3>
-                    <p>Tomas decisiones basándote en intuición porque no tienes datos confiables.</p>
-                </div>
-                <!-- 5. Dependencia excesiva del dueño -->
-                <div class="problema__card problema__card--featured" data-reveal>
-                    <div class="problema__icon">
-                        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="7" r="4"/>
-                            <path d="M6 21v-2a6 6 0 0 1 12 0v2"/>
-                        </svg>
-                    </div>
-                    <h3>Dependencia excesiva del dueño</h3>
-                    <p>Si tú no estás, el negocio no funciona. Todo pasa por ti.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ===================== DIFERENCIAL ===================== -->
-    <section id="diferencial" class="section section--diferencial">
-        <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">NUESTRO ENFOQUE</span>
-                <h2 class="section__title">No somos un proveedor más.<br><span class="text-gold">Somos tu ventaja competitiva.</span></h2>
-                <p class="section__subtitle">Potenciamos tu operación para llevar tu negocio más lejos</p>
-            </div>
-            <div class="diferencial__simple">
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">01</div>
-                    <h3>Soluciones a medida, no plantillas</h3>
-                    <p>Tu negocio no es genérico. Tu sistema tampoco debería serlo. No te vendemos un software de caja. Construimos exactamente lo que tu operación necesita.</p>
-                </div>
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">02</div>
-                    <h3>Implementación rápida y sin fricción</h3>
-                    <p>Sabemos que el tiempo es crítico. Del primer contacto al sistema funcionando: semanas, no meses.</p>
-                </div>
-                <div class="diferencial__value" data-reveal>
-                    <div class="diferencial__value-number">03</div>
-                    <h3>Acompañamiento real</h3>
-                    <p>No desaparecemos al entregar. Nos convertimos en tu equipo de tecnología a largo plazo.</p>
-                </div>
-                <div class="diferencial__value diferencial__value--wide" data-reveal>
-                    <div class="diferencial__value-number">04</div>
-                    <h3>Resultados medibles (ROI)</h3>
-                    <p>Nuestros proyectos están diseñados para impactar directamente en tu negocio:</p>
-                    <ul class="diferencial__list">
-                        <li>Reducción de tiempos operativos</li>
-                        <li>Disminución de errores</li>
-                        <li>Mejor control de recursos</li>
-                        <li>Incremento en eficiencia</li>
+            <div class="reto-grid" data-reveal>
+                <!-- Columna 1: Operar como antes (Hoy) -->
+                <div class="reto-col reto-col--bad">
+                    <div class="reto-col__header">
+                        <h3>Operar como antes</h3>
+                        <span class="reto-col__badge reto-col__badge--bad">Hoy</span>
+                    </div>
+                    <ul class="reto-list">
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--bad">✕</span>
+                            <div><strong>Registros en libretas y Excel desincronizados:</strong> Datos duplicados entre áreas que nadie encuentra cuando se necesitan.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--bad">✕</span>
+                            <div><strong>Horas perdidas del equipo armando reportes:</strong> Copiando información a mano cada semana en vez de atender clientes o vender.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--bad">✕</span>
+                            <div><strong>Errores de captura que cuestan dinero:</strong> Se descubren tarde, cuando el descuadre de inventario o la queja ya ocurrieron.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--bad">✕</span>
+                            <div><strong>Cuellos de botella invisibles:</strong> Nadie sabe con certeza en qué etapa está atorado un pedido, contrato o entrega de vehículo.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--bad">✕</span>
+                            <div><strong>Dependencia total de personas clave:</strong> Si el dueño o el encargado no están presentes, la operación se frena o comete fallas.</div>
+                        </li>
                     </ul>
-                    <p class="diferencial__note">Nuestros clientes recuperan su inversión en los primeros meses de operación.</p>
+                </div>
+
+                <!-- Columna 2: Operar con VyE -->
+                <div class="reto-col reto-col--good">
+                    <div class="reto-col__header">
+                        <h3>Operar con un sistema VyE</h3>
+                        <span class="reto-col__badge reto-col__badge--good">Con VyE</span>
+                    </div>
+                    <ul class="reto-list">
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--good">✓</span>
+                            <div><strong>Toda tu operación en una sola fuente de verdad:</strong> Inventario, ventas, contratos y clientes en un solo sistema en la nube.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--good">✓</span>
+                            <div><strong>Reportes, métricas y alertas automáticas:</strong> Se generan solos y llegan a tu WhatsApp o correo en tiempo real.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--good">✓</span>
+                            <div><strong>Validaciones y permisos por rol:</strong> El sistema previene el error humano antes de que ocurra y blinda la información sensible.</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--good">✓</span>
+                            <div><strong>Trazabilidad total de inicio a fin:</strong> Tableros visuales que señalan cuellos de botella y tiempos de respuesta (SLA).</div>
+                        </li>
+                        <li>
+                            <span class="reto-list__icon reto-list__icon--good">✓</span>
+                            <div><strong>Control y tranquilidad para el dueño:</strong> Tu negocio opera ordenado, rinde cuentas y crece sin depender de que estés ahí todo el día.</div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-
-        <!-- ===================== NUESTRO TRABAJO / SHOWCASE (CARRUSEL DE FOTOS REALES) ===================== -->
-    <section id="showcase" class="section section--showcase">
-        <div class="section__container">
-            <div class="section__header" data-reveal>
-                <span class="section__label">NUESTRO TRABAJO</span>
-                <h2 class="section__title">Así se ven <span class="text-gold">nuestras soluciones</span></h2>
-                <p class="section__subtitle">Proyectos reales, sistemas y automatizaciones diseñadas para optimizar la operación de cada empresa.</p>
-            </div>
-
-            <!-- Carrusel de Galería -->
-            <div class="galeria-carrusel" data-reveal>
-                <div class="galeria-carrusel__viewport" id="galeriaViewport">
-                    <div class="galeria-carrusel__track" id="galeriaTrack">
-
-                        <!-- Item 1: Card Alta/Ancha (2 filas) -->
-                        <div class="galeria-card galeria-card--tall" data-title="Software de Control y Gestión Operativa" data-tag="Software Empresarial" data-desc="Sistema integral a medida para control de inventarios, órdenes de trabajo y seguimiento de operaciones en tiempo real.">
-                            <div class="galeria-card__inner">
-                                <img src="" alt="Software de Control y Gestión Operativa" class="galeria-card__img" onerror="this.style.display='none'">
-                                <div class="galeria-card__tech-bg">
-                                    <div class="galeria-card__badge-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                                            <line x1="8" y1="21" x2="16" y2="21"/>
-                                            <line x1="12" y1="17" x2="12" y2="21"/>
-                                        </svg>
-                                    </div>
-                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                </div>
-                                <div class="galeria-card__overlay">
-                                    <span class="galeria-card__tag">Software Empresarial</span>
-                                    <h3 class="galeria-card__title">Software de Control y Gestión Operativa</h3>
-                                </div>
-                                <div class="galeria-card__zoom-hint">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Columna Apilada 1: 2 Cards (Top & Bottom) -->
-                        <div class="galeria-column">
-                            <!-- Card 2 (Top) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Automatización de Procesos Repetitivos" data-tag="Automatización" data-desc="Eliminación de tareas manuales repetitivas y reducción sistemática de errores humanos en la operación.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Automatización de Procesos Repetitivos" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <polyline points="16 18 22 12 16 6"/>
-                                                <polyline points="8 6 2 12 8 18"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Automatización</span>
-                                        <h3 class="galeria-card__title">Automatización de Procesos Repetitivos</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 3 (Bottom) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Control de Inventarios y Almacenes" data-tag="Gestión y Control" data-desc="Registro ágil de entradas, salidas y alertas de stock mínimo con sincronización multi-sucursal en la nube.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Control de Inventarios y Almacenes" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Gestión y Control</span>
-                                        <h3 class="galeria-card__title">Control de Inventarios y Almacenes</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 4: Card Alta (2 filas) -->
-                        <div class="galeria-card galeria-card--tall" data-title="Plataformas Web y Portales Corporativos" data-tag="Desarrollo Web" data-desc="Sitios web de alto impacto visual, optimizados para captar clientes, posicionamiento y presentar servicios institucionales.">
-                            <div class="galeria-card__inner">
-                                <img src="" alt="Plataformas Web y Portales Corporativos" class="galeria-card__img" onerror="this.style.display='none'">
-                                <div class="galeria-card__tech-bg">
-                                    <div class="galeria-card__badge-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                            <circle cx="12" cy="12" r="10"/>
-                                            <line x1="2" y1="12" x2="22" y2="12"/>
-                                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                </div>
-                                <div class="galeria-card__overlay">
-                                    <span class="galeria-card__tag">Desarrollo Web</span>
-                                    <h3 class="galeria-card__title">Plataformas Web y Portales Corporativos</h3>
-                                </div>
-                                <div class="galeria-card__zoom-hint">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Columna Apilada 2: 2 Cards (Top & Bottom) -->
-                        <div class="galeria-column">
-                            <!-- Card 5 (Top) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Sistema de Gestión Escolar (SGE)" data-tag="Educación & Software" data-desc="Generación inteligente de horarios escolares, control de materias, docentes y grupos sin traslapes ni conflictos.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Sistema de Gestión Escolar (SGE)" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Educación & Software</span>
-                                        <h3 class="galeria-card__title">Sistema de Gestión Escolar (SGE)</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 6 (Bottom) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Monitoreo y Sensores IoT" data-tag="Mecatrónica Aplicada" data-desc="Adquisición de datos desde sensores industriales y equipos para análisis predictivo y control preventivo.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Monitoreo y Sensores IoT" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <circle cx="12" cy="12" r="2"/>
-                                                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Mecatrónica Aplicada</span>
-                                        <h3 class="galeria-card__title">Monitoreo y Sensores IoT</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 7: Card Ancha (2 filas) -->
-                        <div class="galeria-card galeria-card--wide" data-title="Tableros de Analytics y KPIs en Vivo" data-tag="Business Intelligence" data-desc="Visualización gráfica de rendimiento, métricas de producción y toma de decisiones basada en datos confiables.">
-                            <div class="galeria-card__inner">
-                                <img src="" alt="Tableros de Analytics y KPIs en Vivo" class="galeria-card__img" onerror="this.style.display='none'">
-                                <div class="galeria-card__tech-bg">
-                                    <div class="galeria-card__badge-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                            <line x1="18" y1="20" x2="18" y2="10"/>
-                                            <line x1="12" y1="20" x2="12" y2="4"/>
-                                            <line x1="6" y1="20" x2="6" y2="14"/>
-                                        </svg>
-                                    </div>
-                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                </div>
-                                <div class="galeria-card__overlay">
-                                    <span class="galeria-card__tag">Business Intelligence</span>
-                                    <h3 class="galeria-card__title">Tableros de Analytics y KPIs en Vivo</h3>
-                                </div>
-                                <div class="galeria-card__zoom-hint">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Columna Apilada 3: 2 Cards (Top & Bottom) -->
-                        <div class="galeria-column">
-                            <!-- Card 8 (Top) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Digitalización de Procesos Manuales" data-tag="Optimización Operativa" data-desc="Migración de cuadernos y archivos dispersos a flujos digitales estructurados, seguros y accesibles en cualquier dispositivo.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Digitalización de Procesos Manuales" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                                <polyline points="14 2 14 8 20 8"/>
-                                                <line x1="16" y1="13" x2="8" y2="13"/>
-                                                <line x1="16" y1="17" x2="8" y2="17"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Optimización Operativa</span>
-                                        <h3 class="galeria-card__title">Digitalización de Procesos Manuales</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 9 (Bottom) -->
-                            <div class="galeria-card galeria-card--standard" data-title="Integración y Notificaciones Automáticas" data-tag="Conectividad" data-desc="Conexión de sistemas con mensajería instantánea, WhatsApp y alertas por correo para respuestas inmediatas.">
-                                <div class="galeria-card__inner">
-                                    <img src="" alt="Integración y Notificaciones Automáticas" class="galeria-card__img" onerror="this.style.display='none'">
-                                    <div class="galeria-card__tech-bg">
-                                        <div class="galeria-card__badge-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-                                                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-                                            </svg>
-                                        </div>
-                                        <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                    </div>
-                                    <div class="galeria-card__overlay">
-                                        <span class="galeria-card__tag">Conectividad</span>
-                                        <h3 class="galeria-card__title">Integración y Notificaciones</h3>
-                                    </div>
-                                    <div class="galeria-card__zoom-hint">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Item 10: Card Alta (2 filas) -->
-                        <div class="galeria-card galeria-card--tall" data-title="Ingeniería y Automatización Industrial" data-tag="Mecatrónica IPN" data-desc="Integración de hardware, controladores lógicos, electrónica y software para automatizar maquinaria y líneas productivas.">
-                            <div class="galeria-card__inner">
-                                <img src="" alt="Ingeniería y Automatización Industrial" class="galeria-card__img" onerror="this.style.display='none'">
-                                <div class="galeria-card__tech-bg">
-                                    <div class="galeria-card__badge-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                                            <circle cx="12" cy="12" r="3"/>
-                                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-                                        </svg>
-                                    </div>
-                                    <span class="galeria-card__placeholder-text">Foto del proyecto</span>
-                                </div>
-                                <div class="galeria-card__overlay">
-                                    <span class="galeria-card__tag">Mecatrónica IPN</span>
-                                    <h3 class="galeria-card__title">Ingeniería y Automatización Industrial</h3>
-                                </div>
-                                <div class="galeria-card__zoom-hint">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Barra de Progreso y Flechas de Navegación (Estilo Video de Referencia) -->
-                <div class="galeria-carrusel__footer">
-                    <div class="galeria-carrusel__progress-track" id="galeriaProgressTrack" aria-hidden="true">
-                        <div class="galeria-carrusel__progress-bar" id="galeriaProgressBar"></div>
-                    </div>
-                    <div class="galeria-carrusel__controls">
-                        <div class="galeria-carrusel__hint">
-                            <span class="galeria-carrusel__hint-icon">◀ ✋ ▶</span>
-                            <span>Desliza a mano o con las flechas · Clic en cualquier foto para ampliar</span>
-                        </div>
-                        <div class="galeria-carrusel__arrows">
-                            <button type="button" class="galeria-carrusel__arrow" id="galeriaPrevBtn" aria-label="Desplazar a la izquierda" disabled>
-                                <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                            </button>
-                            <button type="button" class="galeria-carrusel__arrow galeria-carrusel__arrow--active" id="galeriaNextBtn" aria-label="Desplazar a la derecha">
-                                <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Modal Lightbox (Ampliación de fotografía al hacer clic, idéntico a referencia) -->
-    <div id="galeriaModal" class="galeria-modal" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="galeria-modal__backdrop" id="galeriaModalBackdrop"></div>
-        <div class="galeria-modal__dialog">
-            <button type="button" class="galeria-modal__close" id="galeriaModalClose" aria-label="Cerrar vista previa">✕</button>
-            <div class="galeria-modal__media">
-                <img id="galeriaModalImg" src="" alt="Vista previa del proyecto">
-                <div id="galeriaModalPlaceholder" class="galeria-modal__placeholder">
-                    <div class="galeria-modal__placeholder-icon" id="galeriaModalIcon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-                            <line x1="8" y1="21" x2="16" y2="21"/>
-                            <line x1="12" y1="17" x2="12" y2="21"/>
-                        </svg>
-                    </div>
-                    <span class="galeria-modal__placeholder-badge">VyE Ingeniería · Solución Real</span>
-                </div>
-            </div>
-            <div class="galeria-modal__caption">
-                <span class="galeria-modal__tag" id="galeriaModalTag"></span>
-                <h3 class="galeria-modal__title" id="galeriaModalTitle"></h3>
-                <p class="galeria-modal__desc" id="galeriaModalDesc"></p>
-            </div>
-        </div>
-    </div>
-
 
     <!-- ===================== SERVICIOS ===================== -->
     <section id="servicios" class="section section--servicios">
         <div class="section__container">
-            <div class="section__header">
-                <span class="section__label">LO QUE HACEMOS</span>
-                <h2 class="section__title">Soluciones diseñadas para <span class="text-gold">mejorar tu
-                        operación</span></h2>
-                <p class="section__subtitle">Desarrollamos herramientas digitales adaptadas a las necesidades reales de
-                    cada negocio o institución.</p>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">LO QUE HACEMOS</span>
+                    <h2 class="section__title">Cuatro servicios. <span class="text-gold">Cero relleno.</span></h2>
+                </div>
+                <p class="section__subtitle">Cada servicio nace de un problema concreto: tiempo perdido, errores manuales o información que nadie encuentra cuando la necesita.</p>
             </div>
-            <div class="servicios__grid">
-                <!-- 1. Software para negocios -->
-                <div class="servicio__card" data-reveal>
-                    <div class="servicio__icon-wrap">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
+
+            <div class="svc">
+                <!-- 01 Software a medida -->
+                <article class="svc-row" data-reveal>
+                    <span class="svc-num">/ 01</span>
+                    <div class="svc-title-wrap">
+                        <h3><small>ERP &amp; Operación</small>Software a medida</h3>
                     </div>
-                    <h3>Software para negocios</h3>
-                    <p>Controla ventas, inventario, clientes y procesos desde un solo sistema.</p>
-                    <a href="#contacto" class="servicio__cta">Solicitar cotización →</a>
-                    <div class="servicio__line"></div>
-                </div>
-                <!-- 2. Sistemas de gestión escolar -->
-                <a href="indexSGE.html" class="servicio__card-link">
-                    <div class="servicio__card" data-reveal>
-                        <div class="servicio__icon-wrap">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                            </svg>
+                    <div class="svc-body">
+                        <p>Un sistema hecho para cómo trabaja tu empresa: ventas, clientes, inventario y operación en un solo lugar, en vez de cinco herramientas desconectadas.</p>
+                        <ul>
+                            <li>Control de ventas, clientes e inventario centralizado</li>
+                            <li>Reportes y métricas de rendimiento en tiempo real</li>
+                            <li>Usuarios y permisos por rol para todo tu equipo</li>
+                        </ul>
+                        <p class="svc-ex">Un negocio que llevaba proyectos y contratos en hojas sueltas hoy lo controla todo en un solo sistema.</p>
+                        <div class="svc-sublink">
+                            <span>¿Buscas gestión escolar? Conoce nuestra plataforma <a href="indexSGE.html">EduCore (SGE) →</a></span>
                         </div>
-                        <h3>Sistemas de gestión escolar</h3>
-                        <p>Organiza procesos académicos y administrativos de forma más clara y eficiente.</p>
-                        <span class="servicio__cta">Ver plataforma EduCore →</span>
-                        <div class="servicio__line"></div>
                     </div>
-                </a>
-                <!-- 3. Automatización para empresas -->
-                <div class="servicio__card" data-reveal>
-                    <div class="servicio__icon-wrap">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
+                    <a class="svc-go" href="https://wa.me/527718429946?text=Hola%20VyE%2C%20me%20interesa%20un%20software%20a%20medida%20para%20mi%20negocio." target="_blank" rel="noopener" aria-label="Pedir software a medida por WhatsApp">→</a>
+                </article>
+
+                <!-- 02 Automatización para negocios -->
+                <article class="svc-row" data-reveal>
+                    <span class="svc-num">/ 02</span>
+                    <div class="svc-title-wrap">
+                        <h3><small>Optimización de Procesos</small>Automatización para negocios</h3>
                     </div>
-                    <h3>Automatización para empresas</h3>
-                    <p>Automatizamos tareas y procesos para que tu operación sea más rápida, organizada y eficiente.</p>
-                    <a href="#contacto" class="servicio__cta">Diagnosticar procesos →</a>
-                    <div class="servicio__line"></div>
+                    <div class="svc-body">
+                        <p>Quitamos las tareas repetitivas que le roban horas a tu equipo: el sistema las hace solo, rápido y sin errores de captura humana.</p>
+                        <ul>
+                            <li>Automatización de tareas repetitivas y flujos de trabajo</li>
+                            <li>Digitalización y estructuración de procesos manuales</li>
+                            <li>Notificaciones y alertas automáticas por WhatsApp o correo</li>
+                        </ul>
+                        <p class="svc-ex">Un negocio que tardaba horas en reportes y avisos hoy los genera y los envía solo.</p>
+                    </div>
+                    <a class="svc-go" href="https://wa.me/527718429946?text=Hola%20VyE%2C%20quiero%20automatizar%20procesos%20de%20mi%20negocio." target="_blank" rel="noopener" aria-label="Pedir automatización para negocios por WhatsApp">→</a>
+                </article>
+
+                <!-- 03 Automatización industrial (Mecatrónica IPN) -->
+                <article class="svc-row" data-reveal>
+                    <span class="svc-num">/ 03</span>
+                    <div class="svc-title-wrap">
+                        <h3><small>Mecatrónica IPN</small>Automatización industrial</h3>
+                    </div>
+                    <div class="svc-body">
+                        <p>Sensores, monitoreo y control de procesos, desarrollados por ingenieros mecatrónicos que entienden a fondo tanto el hardware como el software.</p>
+                        <ul>
+                            <li>Sensores y monitoreo IoT de variables en tiempo real</li>
+                            <li>Tableros de control y KPIs operativos de producción</li>
+                            <li>Integración de hardware, PLC y software a medida</li>
+                        </ul>
+                        <p class="svc-ex">Un proceso que solo se revisaba cuando fallaba hoy se monitorea en un tablero antes de que se detenga.</p>
+                    </div>
+                    <a class="svc-go" href="https://wa.me/527718429946?text=Hola%20VyE%2C%20me%20interesa%20automatizaci%C3%B3n%20industrial%20y%20sensores." target="_blank" rel="noopener" aria-label="Pedir automatización industrial por WhatsApp">→</a>
+                </article>
+
+                <!-- 04 Desarrollo web -->
+                <article class="svc-row" data-reveal>
+                    <span class="svc-num">/ 04</span>
+                    <div class="svc-title-wrap">
+                        <h3><small>Web Corporativa</small>Desarrollo web</h3>
+                    </div>
+                    <div class="svc-body">
+                        <p>Páginas y plataformas rápidas, claras y modernas, optimizadas para verse impecables en celular y convertir visitas en clientes reales.</p>
+                        <ul>
+                            <li>Páginas web corporativas, portales y catálogos interactivos</li>
+                            <li>Plataformas y herramientas web especializadas</li>
+                            <li>Formularios inteligentes y contacto directo en un clic a WhatsApp</li>
+                        </ul>
+                        <p class="svc-ex">Una empresa con una página que nadie entendía hoy recibe solicitudes y cotizaciones en un clic.</p>
+                    </div>
+                    <a class="svc-go" href="https://wa.me/527718429946?text=Hola%20VyE%2C%20quiero%20una%20p%C3%A1gina%20web%20para%20mi%20empresa." target="_blank" rel="noopener" aria-label="Pedir desarrollo web por WhatsApp">→</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== PORTAFOLIO ===================== -->
+    <section id="portafolio" class="section section--portafolio">
+        <div class="section__container">
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">PORTAFOLIO</span>
+                    <h2 class="section__title">Sistemas que ya <span class="text-gold">trabajan todos los días.</span></h2>
                 </div>
-                <!-- 4. Diseño de páginas web -->
-                <div class="servicio__card" data-reveal>
-                    <div class="servicio__icon-wrap">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                <p class="section__subtitle">Casos reales con pantallas del software en producción. Toca cualquier proyecto o pantalla para ampliarla en alta resolución.</p>
+            </div>
+
+            <!-- PROYECTO DESTACADO (NISSAN UNIVERSIDAD) -->
+            <div class="feat-box" data-reveal>
+                <div class="feat-box__header">
+                    <div class="feat-box__tag-wrap">
+                        <span class="feat-box__badge">PROYECTO DESTACADO · EN DESARROLLO ACTIVO</span>
+                        <span class="feat-box__subtag">ERP · CONCESIONARIA AUTOMOTRIZ</span>
+                    </div>
+                    <span class="feat-box__note">Capturas tomadas de la plataforma real en operación</span>
+                </div>
+
+                <div class="feat-grid">
+                    <!-- Visor de pantalla interactivo -->
+                    <div class="feat-visual">
+                        <figure class="feat-main">
+                            <div class="feat-main__browser-bar">
+                                <div class="feat-main__browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="feat-main__browser-title">Nissan Universidad ERP · Operación &amp; Telemetría</span>
+                                <span class="feat-main__browser-zoom">Clic para ampliar ⤢</span>
+                            </div>
+                            <img id="featImg" src="assets/portfolio/nissan_1.png" alt="Dashboard de ventas y SLA del ERP Nissan Universidad" loading="lazy">
+                            <figcaption class="feat-cap">
+                                <b id="featTitle">Dashboard de ventas y SLA</b>
+                                <span id="featDesc">Regla de los 5 días: 8.8% en meta, promedio de 3.2 días. Total facturado $73.78M.</span>
+                            </figcaption>
+                        </figure>
+                        <!-- 7 Miniaturas -->
+                        <div class="thumbs" id="featThumbs" role="tablist" aria-label="Pantallas del ERP Nissan Universidad"></div>
+                    </div>
+
+                    <!-- Ficha técnica del proyecto -->
+                    <div class="feat-side">
+                        <h3 class="feat-side__title">ERP Integral Nissan Universidad</h3>
+                        <p class="feat-side__desc">
+                            Control centralizado de inventario automotriz y pipeline de acondicionamiento de vehículos: desde el ingreso al almacén de la agencia hasta la entrega final al cliente. Muestra dónde está cada unidad, quién la está trabajando y en qué etapa se presentan demoras.
+                        </p>
+
+                        <ul class="feat-list">
+                            <li><strong>Control de ventas y SLA:</strong> Seguimiento estricto de la regla de los 5 días con tableros en vivo.</li>
+                            <li><strong>Inspección física y daños:</strong> Registro fotográfico y mapeo visual de afectaciones por cada vista del vehículo.</li>
+                            <li><strong>Pipeline de 5 etapas:</strong> Monitoreo de almacén, mantenimiento, PDI y entrega con detección de cuellos de botella.</li>
+                            <li><strong>Gestión de usuarios y accesos:</strong> Portal seguro con roles operativos ADPC y verificación de cuentas.</li>
+                        </ul>
+
+                        <div class="feat-nums">
+                            <div class="feat-num-item">
+                                <b>$73.78 M</b>
+                                <span>Total facturado en tablero</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>381</b>
+                                <span>Unidades en proceso</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>202</b>
+                                <span>Unidades en agencia</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>5 Etapas</b>
+                                <span>Pipeline almacén a entrega</span>
+                            </div>
+                        </div>
+
+                        <div class="feat-actions">
+                            <button type="button" class="btn btn--outline btn--square" id="btnFeatViewAll" onclick="openLb('nissan', 1)">
+                                Ver las 7 pantallas completas →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRID DE 3 SISTEMAS REALES ENTREGADOS -->
+            <div class="proj-section-subhead" data-reveal>
+                <span class="proj-section-tag">NUESTRO TRABAJO</span>
+                <h3 class="proj-section-title">Así se ven <br class="proj-title-br"><span class="proj-title-accent">nuestras soluciones</span></h3>
+                <p class="proj-section-desc">Proyectos reales, sistemas y automatizaciones diseñadas para optimizar la operación de cada empresa.</p>
+            </div>
+
+            <div class="proj-grid" data-reveal>
+                <!-- Card 1: Control Operativo y Contable -->
+                <article class="proj-card" data-proj="contable">
+                    <div class="proj-card__main">
+                        <div class="proj-card__cover">
+                            <img src="assets/portfolio/contable_0.jpg" alt="Pantalla de gestión de proyectos de la plataforma Control Operativo y Contable" loading="lazy">
+                        </div>
+                        <div class="proj-card__body">
+                            <span class="proj-card__pill">Finanzas &amp; Operación</span>
+                            <h4 class="proj-card__title">Control Operativo y Contable</h4>
+                            <p class="proj-card__desc">
+                                Gestión integral de proyectos, contratos con control de vigencia y montos, módulo REPSE y reportes para dirección.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="proj-card__footer">
+                        <div class="proj-card__author">
+                            <img class="proj-card__avatar" src="assets/Isotipo Vye.png" alt="VyE">
+                            <span class="proj-card__author-name">Plataforma Web</span>
+                        </div>
+                        <span class="proj-card__date">Ver 5 pantallas ↗</span>
+                    </div>
+                </article>
+
+                <!-- Card 2: POS Billar & Bar -->
+                <article class="proj-card" data-proj="billar">
+                    <div class="proj-card__main">
+                        <div class="proj-card__cover">
+                            <img src="assets/portfolio/billar_0.jpg" alt="Pantalla principal del punto de venta POS Billar & Bar" loading="lazy">
+                        </div>
+                        <div class="proj-card__body">
+                            <span class="proj-card__pill">Punto de Venta</span>
+                            <h4 class="proj-card__title">POS Billar &amp; Bar</h4>
+                            <p class="proj-card__desc">
+                                Mesas cobradas por tiempo en tiempo real, venta en barra rápida, cortes de caja por turno e inventario con alertas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="proj-card__footer">
+                        <div class="proj-card__author">
+                            <img class="proj-card__avatar" src="assets/Isotipo Vye.png" alt="VyE">
+                            <span class="proj-card__author-name">Entretenimiento</span>
+                        </div>
+                        <span class="proj-card__date">Ver 6 pantallas ↗</span>
+                    </div>
+                </article>
+
+                <!-- Card 3: POS General Premium -->
+                <article class="proj-card" data-proj="pos">
+                    <div class="proj-card__main">
+                        <div class="proj-card__cover">
+                            <img src="assets/portfolio/pos_0.jpg" alt="Pantalla principal del punto de venta POS General Premium" loading="lazy">
+                        </div>
+                        <div class="proj-card__body">
+                            <span class="proj-card__pill">Comercio &amp; SAT</span>
+                            <h4 class="proj-card__title">POS General Premium</h4>
+                            <p class="proj-card__desc">
+                                Punto de venta comercial con facturación electrónica CFDI 4.0 ante el SAT, control de stock y turnos por usuario.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="proj-card__footer">
+                        <div class="proj-card__author">
+                            <img class="proj-card__avatar" src="assets/Isotipo Vye.png" alt="VyE">
+                            <span class="proj-card__author-name">Comercio &amp; Retail</span>
+                        </div>
+                        <span class="proj-card__date">Ver 6 pantallas ↗</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== CÓMO TRABAJAMOS (3 PASOS COMPACTO Y AL GRANO) ===================== -->
+    <section id="proceso" class="section section--proceso">
+        <div class="section__container">
+            <!-- Etiqueta amarilla con raya clásica de VyE -->
+            <div class="process-tag-wrap" data-reveal>
+                <span class="sec-head-mono">CÓMO TRABAJAMOS</span>
+            </div>
+
+            <!-- Header con títulos apilados concisos y directos -->
+            <div class="process-header" data-reveal>
+                <div class="process-stacked-titles" id="processStackedTitles">
+                    <h2 class="process-stacked-title active" data-step="1">
+                        Detectamos fugas en tu operación
+                        <span class="process-title-num">01</span>
+                    </h2>
+                    <h2 class="process-stacked-title" data-step="2">
+                        Propuesta técnica con precio fijo
+                        <span class="process-title-num">02</span>
+                    </h2>
+                    <h2 class="process-stacked-title" data-step="3">
+                        Implementación y control total
+                        <span class="process-title-num">03</span>
+                    </h2>
+                </div>
+                <p class="process-header-sub">
+                    Sabes exactamente qué ocurre en cada etapa antes de empezar. Sin sorpresas, retrasos ni costos ocultos.
+                </p>
+            </div>
+
+            <!-- Fila de Tarjetas Visuales Compactas de Producto -->
+            <div class="process-showcase-grid" id="processShowcaseGrid" data-reveal>
+                <!-- Visual 1: Conexión de fuentes y diagnóstico -->
+                <div class="process-card active" data-step="1">
+                    <div class="process-card__hub">
+                        <div class="process-hub-center">
+                            <img src="assets/Isotipo_Vye_blanco.png" alt="VyE Hub" class="process-hub-logo">
+                        </div>
+                        <div class="process-hub-node node-1"><span>📊</span> Excel</div>
+                        <div class="process-hub-node node-2"><span>📦</span> Stock</div>
+                        <div class="process-hub-node node-3"><span>💳</span> POS</div>
+                        <div class="process-hub-node node-4"><span>⚙️</span> SAT / ERP</div>
+                        <svg class="process-hub-lines" viewBox="0 0 320 140" fill="none">
+                            <path d="M 65 30 L 160 70 M 255 30 L 160 70 M 65 110 L 160 70 M 255 110 L 160 70" stroke="#2c2c34" stroke-width="1.2" stroke-dasharray="3 3"/>
                         </svg>
                     </div>
-                    <h3>Diseño de páginas web</h3>
-                    <p>Diseñamos páginas profesionales enfocadas en transmitir confianza y atraer clientes.</p>
-                    <a href="#contacto" class="servicio__cta">Cotizar proyecto web →</a>
-                    <div class="servicio__line"></div>
+                </div>
+
+                <!-- Visual 2: Consulta interactiva y alcance cerrado -->
+                <div class="process-card" data-step="2">
+                    <div class="process-query-mockup">
+                        <div class="process-query-input-wrap">
+                            <span class="process-query-prompt-icon">🔍</span>
+                            <span class="process-query-typing">¿Alcance técnico y costo fijo?</span>
+                            <span class="process-query-enter">↵</span>
+                        </div>
+                        <div class="process-query-card">
+                            <div class="process-query-badge">
+                                <span class="process-query-dot"></span>
+                                Alcance técnico cerrado
+                            </div>
+                            <div class="process-query-row">
+                                <span class="query-k">Entregables:</span>
+                                <span class="query-v">Plataforma Web + Base de Datos</span>
+                            </div>
+                            <div class="process-query-row">
+                                <span class="query-k">Garantía:</span>
+                                <span class="query-v">Cotización fija por contrato</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual 3: Automatización en vivo y tareas completadas -->
+                <div class="process-card" data-step="3">
+                    <div class="process-live-mockup">
+                        <div class="process-live-head">
+                            <span class="process-live-indicator"></span>
+                            <span>Sistema operando en producción</span>
+                        </div>
+                        <ul class="process-live-list">
+                            <li class="process-live-item is-done">
+                                <span class="live-check">✓</span>
+                                <span>Inventario cuadrado en tiempo real</span>
+                            </li>
+                            <li class="process-live-item is-done">
+                                <span class="live-check">✓</span>
+                                <span>Alertas de stock enviadas a WhatsApp</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila de Pasos Explicativos Numerados Abajo -->
+            <div class="process-steps-grid" id="processStepsGrid" data-reveal>
+                <!-- Paso 1 -->
+                <div class="process-step-item active" data-step="1">
+                    <span class="process-step-num">01</span>
+                    <h3 class="process-step-title">Diagnóstico sin costo</h3>
+                    <p class="process-step-desc">
+                        Revisamos tu operación, detectamos fugas de tiempo o dinero y te decimos con honestidad qué conviene automatizar.
+                    </p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="process-step-item" data-step="2">
+                    <span class="process-step-num">02</span>
+                    <h3 class="process-step-title">Propuesta y precio cerrado</h3>
+                    <p class="process-step-desc">
+                        Definimos entregables específicos, fechas de entrega y cotización fija. Todo por escrito antes de iniciar, sin sorpresas.
+                    </p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="process-step-item" data-step="3">
+                    <span class="process-step-num">03</span>
+                    <h3 class="process-step-title">Construcción y control total</h3>
+                    <p class="process-step-desc">
+                        Desarrollamos el sistema en iteraciones funcionales, capacitamos a tu equipo y te acompañamos con soporte técnico directo.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- ===================== SOBRE VYE ===================== -->
-    <section id="nosotros" class="section section--about">
+    <!-- ===================== SOBRE VYE / NOSOTROS ===================== -->
+    <section id="nosotros" class="section section--nosotros">
         <div class="section__container">
-            
-            <div class="about__header" data-reveal>
-                <div class="about__header-top">
-                    <span class="section__label">SOBRE VYE</span>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">SOBRE VYE</span>
+                    <h2 class="section__title">Nació en una fábrica. <span class="text-gold">Hoy digitaliza empresas.</span></h2>
                 </div>
-
-                <h2 class="section__title">
-                    Convertimos datos complejos en <span class="text-gold">decisiones rentables</span>
-                </h2>
+                <p class="section__subtitle">Ingeniería mecatrónica del IPN aplicada a software y automatización con impacto operativo directo.</p>
             </div>
 
-            <!-- Resultados que puedes esperar (Grid estilo captura 2) -->
-            <div class="about__results-section" data-reveal>
-                <div class="about__cards-grid">
-                    <!-- Card 1 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="m14.5 9.5-5 5"/>
-                                <polygon points="14.5 9.5 10.5 10 11.5 11"/>
-                                <polygon points="9.5 14.5 13.5 14 12.5 13"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Más control sobre tu negocio</h4>
-                        <p class="about-card__desc">Visibilidad centralizada y monitoreo de tus operaciones, inventarios y rendimiento en tiempo real.</p>
+            <div class="about-grid" data-reveal>
+                <!-- Historia y Enfoque -->
+                <div class="about-story">
+                    <div class="about-story__badge">
+                        <span class="about-story__badge-dot"></span>
+                        Ingeniería Mecatrónica · IPN México
                     </div>
+                    <h3 class="about-story__heading">
+                        Convertimos datos complejos y tareas manuales en <span class="text-gold">decisiones rentables.</span>
+                    </h3>
+                    <p class="about-story__text">
+                        VyE Ingeniería nació al observar de cerca cómo funcionaban los procesos dentro de las plantas de producción: registros en libretas, controles manuales y tareas repetitivas donde cualquier retraso o error costaba miles de pesos.
+                    </p>
+                    <p class="about-story__text">
+                        Pronto entendimos que no era un problema exclusivo de la industria pesada: negocios comerciales, agencias y empresas de servicios operan con las mismas pérdidas por falta de herramientas diseñadas exactamente para su flujo de trabajo.
+                    </p>
+                    <p class="about-story__text">
+                        Somos ingenieros mecatrónicos egresados del Instituto Politécnico Nacional. Desarrollamos software empresarial y plataformas web robustas, pero también dominamos sensores, telemetría y piso de operaciones. Esa disciplina técnica es la que garantiza que nuestras soluciones funcionen en el mundo real.
+                    </p>
 
-                    <!-- Card 2 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                <path d="m9 12 2 2 4-4"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Menos errores operativos</h4>
-                        <p class="about-card__desc">Estandarización y validaciones automáticas que eliminan fallas humanas y descuidos repetitivos.</p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Ahorro de tiempo</h4>
-                        <p class="about-card__desc">Automatización de tareas manuales repetitivas para recuperar horas clave de tu equipo cada día.</p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <rect x="3" y="3" width="7" height="7" rx="1.5"/>
-                                <rect x="14" y="3" width="7" height="7" rx="1.5"/>
-                                <rect x="14" y="14" width="7" height="7" rx="1.5"/>
-                                <rect x="3" y="14" width="7" height="7" rx="1.5"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Procesos claros y estructurados</h4>
-                        <p class="about-card__desc">Flujos de trabajo ordenados y organizados que cualquier colaborador puede ejecutar sin fricción.</p>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <line x1="18" y1="20" x2="18" y2="10"/>
-                                <line x1="12" y1="20" x2="12" y2="4"/>
-                                <line x1="6" y1="20" x2="6" y2="14"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Mejor toma de decisiones</h4>
-                        <p class="about-card__desc">Indicadores y reportes confiables al instante para decidir con datos exactos en lugar de suposiciones.</p>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="about-card">
-                        <div class="about-card__icon">
-                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
-                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                            </svg>
-                        </div>
-                        <h4 class="about-card__title">Crecimiento con bases sólidas</h4>
-                        <p class="about-card__desc">Sistemas diseñados con arquitectura escalable, listos para soportar el crecimiento de tu empresa.</p>
-                    </div>
-                </div>
-
-                <!-- Footer callout / Enlace natural a Nosotros -->
-                <div class="about__footer-cta">
-                    <div class="about__footer-info">
-                        <h4 class="about__footer-tagline">
-                            Detrás de estos resultados hay un equipo que <strong class="text-gold">diseña eficiencia a tu medida.</strong>
-                        </h4>
-                        <p class="about__footer-sub">
-                            Conoce nuestra historia, cómo trabajamos y a los ingenieros fundadores de VyE.
+                    <div class="about-quote">
+                        <p class="about-quote__text">
+                            “No creamos tecnología por moda: diseñamos sistemas para resolver cuellos de botella reales con impacto directo en costos y tiempo.”
                         </p>
                     </div>
-                    <a href="nosotros.html" class="btn btn--primary about__btn-cta" id="btnAcercaDeNosotros">
-                        <span>Acerca de nosotros</span>
-                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
+
+                    <div class="about-story__cta">
+                        <a href="nosotros.html" class="btn btn--outline btn--square" id="btnAcercaDeNosotros">
+                            Conoce más sobre nuestra historia y equipo →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fundadores y Principio -->
+                <div class="founders-col">
+                    <!-- Víctor -->
+                    <div class="founder-card">
+                        <div class="founder-card__header">
+                            <span class="founder-card__cred">[ IPN · MECATRÓNICA ]</span>
+                            <span class="founder-card__id">VYE-ENG-01</span>
+                        </div>
+                        <div class="founder-card__body">
+                            <div class="founder-card__avatar">V</div>
+                            <div class="founder-card__info">
+                                <h4 class="founder-card__name">Víctor Villafaña</h4>
+                                <span class="founder-card__role">Co-fundador · Ing. Mecatrónico IPN</span>
+                                <p class="founder-card__focus">Arquitectura de sistemas empresariales, diseño de bases de datos relacionales y plataformas ERP.</p>
+                                <div class="founder-card__tags">
+                                    <span>Software a Medida</span>
+                                    <span>Bases de Datos</span>
+                                    <span>Sistemas ERP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Edgar -->
+                    <div class="founder-card">
+                        <div class="founder-card__header">
+                            <span class="founder-card__cred">[ IPN · MECATRÓNICA ]</span>
+                            <span class="founder-card__id">VYE-ENG-02</span>
+                        </div>
+                        <div class="founder-card__body">
+                            <div class="founder-card__avatar">E</div>
+                            <div class="founder-card__info">
+                                <h4 class="founder-card__name">Edgar Pérez</h4>
+                                <span class="founder-card__role">Co-fundador · Ing. Mecatrónico IPN</span>
+                                <p class="founder-card__focus">Automatización de flujos de trabajo, control y telemetría de procesos, y desarrollo de plataformas web.</p>
+                                <div class="founder-card__tags">
+                                    <span>Automatización</span>
+                                    <span>Control Operativo</span>
+                                    <span>Desarrollo Web</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Principio VyE -->
+                    <div class="founder-card founder-card--highlight">
+                        <div class="founder-card__header">
+                            <span class="founder-card__cred">[ PRINCIPIO RECTOR ]</span>
+                            <span class="founder-card__id">VYE-CORE</span>
+                        </div>
+                        <div class="founder-card__body">
+                            <div class="founder-card__avatar founder-card__avatar--gold">VyE</div>
+                            <div class="founder-card__info">
+                                <h4 class="founder-card__name">Diseñamos Eficiencia</h4>
+                                <span class="founder-card__role">Ingeniería que rinde resultados</span>
+                                <p class="founder-card__focus">Que la tecnología le quite trabajo y horas de estrés a tu equipo, no que le agregue complicaciones ni pasos innecesarios.</p>
+                                <div class="founder-card__tags">
+                                    <span>Impacto Medible</span>
+                                    <span>Cero Relleno</span>
+                                    <span>Soporte Directo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <!-- ===================== CTA FINAL ===================== -->
-    <section id="contacto" class="section section--cta">
+    <!-- ===================== CONTACTO (DIAGNÓSTICO GRATIS) ===================== -->
+    <section id="contacto" class="section section--contacto">
         <div class="section__container">
-            <div class="cta__layout">
-                <div class="cta__glow"></div>
-                <div class="cta__content" data-reveal>
-                    <span class="section__label">COMIENZA HOY</span>
-                    <h2 class="section__title">Es momento de optimizar <span class="text-gold">tu operación.</span>
-                    </h2>
-                    <p>Cada día operando manualmente es tiempo y dinero perdido.<br>Hablemos de tu proyecto y
-                        encontremos <strong>una mejor forma de trabajar.</strong></p>
-                    <div class="cta__actions">
-                        <a href="https://wa.me/527718429946?text=Hola%2C%20me%20interesa%20un%20diagn%C3%B3stico%20de%20eficiencia%20para%20mi%20negocio."
-                            class="btn btn--primary btn--large" id="ctaDiagnostico" target="_blank" rel="noopener">
-                            <span class="btn__icon">⚡</span>
-                            Solicitar diagnóstico
-                        </a>
-                        <a href="https://wa.me/527718429946" class="btn btn--whatsapp btn--large" id="ctaWhatsapp"
-                            target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            Contactar por WhatsApp
-                        </a>
+            <div class="contact-grid">
+                <!-- Columna Izquierda: Mensaje y Canales Directos -->
+                <div class="contact-info" data-reveal>
+                    <span class="sec-head-mono">CONTACTO</span>
+                    <h2 class="contact-title">Cuéntanos qué te está <span class="text-gold">quitando tiempo</span></h2>
+                    <p class="contact-desc">
+                        ¿Dónde estás perdiendo dinero o perdiendo el control en tu operación? Analizamos tu caso a fondo y te decimos con honestidad técnica la ruta exacta para resolverlo.
+                    </p>
+
+                    <ul class="contact-highlights">
+                        <li>
+                            <span class="contact-check">✓</span>
+                            <span><strong>Trato directo con ingenieros</strong></span>
+                        </li>
+                        <li>
+                            <span class="contact-check">✓</span>
+                            <span><strong>Diagnóstico y cotización sin costo</strong></span>
+                        </li>
+                        <li>
+                            <span class="contact-check">✓</span>
+                            <span><strong>Respuesta el mismo día</strong></span>
+                        </li>
+                    </ul>
+
+                    <div class="contact-direct">
+                        <span class="contact-direct__label">O contáctanos directamente:</span>
+                        <div class="contact-direct__links">
+                            <a href="https://wa.me/527718429946?text=Hola%20VyE%2C%20quiero%20un%20diagn%C3%B3stico%20gratis%20para%20mi%20negocio." target="_blank" rel="noopener" class="contact-direct-btn">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                <span>WhatsApp directo: 771 842 9946</span>
+                            </a>
+                            <a href="mailto:contacto@vyeingenieria.com" class="contact-direct-btn">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+                                <span>contacto@vyeingenieria.com</span>
+                            </a>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Columna Derecha: Formulario Estilo Aceternity -->
+                <div class="contact-card-wrap" data-reveal>
+                    <div class="contact-form__header">
+                        <img src="assets/Isotipo_Vye_blanco.png" alt="VyE" class="contact-form__logo" width="34" height="39">
+                        <h3 class="contact-form__title">Diagnóstico directo</h3>
+                        <p class="contact-form__sub">
+                            Estamos listos para analizar tu operación. También puedes escribirnos a <a href="mailto:contacto@vyeingenieria.com">contacto@vyeingenieria.com</a>.
+                        </p>
+                    </div>
+
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="c-nombre">Nombre</label>
+                            <input type="text" id="c-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre o cargo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-empresa">Empresa o WhatsApp</label>
+                            <input type="text" id="c-empresa" name="empresa" autocomplete="organization" placeholder="Nombre de tu negocio o teléfono">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c-mensaje">¿Qué necesitas resolver?</label>
+                            <textarea id="c-mensaje" name="mensaje" placeholder="Describe brevemente el proceso o problema que te quita tiempo..." rows="4"></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit-btn" id="contactSubmitBtn">
+                            Enviar por WhatsApp →
+                        </button>
+                        <p class="contact-form-note">
+                            Al enviar se abrirá WhatsApp con tu mensaje listo para que lo revises antes de enviarlo.
+                        </p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -837,6 +882,29 @@
         </div>
     </footer>
 
+    <!-- ===================== LIGHTBOX MODAL (PROYECTOS) ===================== -->
+    <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería interactiva de proyectos VyE">
+        <div class="lb-top">
+            <div class="lb-meta">
+                <span class="lb-cat mono" id="lbCat"></span>
+                <b class="lb-title" id="lbTitle"></b>
+            </div>
+            <button class="lb-x" id="lbClose" aria-label="Cerrar galería">✕</button>
+        </div>
+        <div class="lb-stage">
+            <button class="lb-nav lb-prev" id="lbPrev" aria-label="Pantalla anterior">‹</button>
+            <figure class="lb-figure">
+                <img id="lbImg" src="assets/portfolio/nissan_1.png" alt="Pantalla de sistema VyE" />
+                <figcaption class="lb-caption">
+                    <b id="lbCapT"></b>
+                    <p id="lbCapD"></p>
+                </figcaption>
+            </figure>
+            <button class="lb-nav lb-next" id="lbNext" aria-label="Siguiente pantalla">›</button>
+        </div>
+        <div class="lb-count" id="lbCount"></div>
+    </div>
+
     <!-- WhatsApp floating button -->
     <a href="https://wa.me/527718429946" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener"
         aria-label="Contactar por WhatsApp">
@@ -846,7 +914,7 @@
         </svg>
     </a>
 
-    <script src="script.js?v=rescale-v13"></script>
+    <script src="script.js?v=vye-master-v45"></script>
 </body>
 
 </html>

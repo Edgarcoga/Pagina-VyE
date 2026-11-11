@@ -1,0 +1,146 @@
+{
+  "nissan": {
+    "title": "ERP Nissan Universidad",
+    "cat": "ERP · Concesionaria · En desarrollo",
+    "shots": [
+      {
+        "src": "assets/portfolio/nissan_0.png",
+        "t": "Acceso al portal",
+        "d": "Inicio de sesión del equipo operativo de la concesionaria Nissan Universidad."
+      },
+      {
+        "src": "assets/portfolio/nissan_1.png",
+        "t": "Dashboard de ventas y SLA",
+        "d": "Regla de los 5 días: 8.8% en meta, promedio de 3.2 días. Total facturado $73.78M con 99 unidades, según el tablero del sistema."
+      },
+      {
+        "src": "assets/portfolio/nissan_2.png",
+        "t": "Daños y evidencia fotográfica",
+        "d": "Registro de afectaciones por vista del vehículo, con fotos del estado físico de recepción."
+      },
+      {
+        "src": "assets/portfolio/nissan_3.png",
+        "t": "Almacén y estatus del vehículo",
+        "d": "381 unidades en proceso, según el tablero. Cada vehículo con VIN, cliente, SLA y etapa: almacén, mantenimiento, PDI y entrega."
+      },
+      {
+        "src": "assets/portfolio/nissan_4.png",
+        "t": "Pipeline de 5 etapas",
+        "d": "202 unidades en agencia, según el tablero. El pipeline muestra en qué etapa se atora el proceso."
+      },
+      {
+        "src": "assets/portfolio/nissan_5.png",
+        "t": "Correo de restablecimiento de contraseña",
+        "d": "Generación de correos para restablecer la contraseña del usuario operativo (rol ADPC)."
+      },
+      {
+        "src": "assets/portfolio/nissan_6.png",
+        "t": "Correo de verificación de usuario",
+        "d": "Generación de correos para crear y verificar el usuario operativo (rol ADPC)."
+      }
+    ]
+  },
+  "contable": {
+    "title": "Control Operativo y Contable",
+    "cat": "Plataforma web · Finanzas",
+    "shots": [
+      {
+        "src": "assets/portfolio/contable_0.jpg",
+        "t": "Gestión de proyectos",
+        "d": "Proyectos con hitos operativos y seguimiento en un solo panel."
+      },
+      {
+        "src": "assets/portfolio/contable_1.jpg",
+        "t": "Contratos",
+        "d": "Control de vigencia y montos de cada contrato."
+      },
+      {
+        "src": "assets/portfolio/contable_2.jpg",
+        "t": "Proyectos",
+        "d": "Vista general de proyectos activos de la empresa."
+      },
+      {
+        "src": "assets/portfolio/contable_3.jpg",
+        "t": "Reportes automáticos",
+        "d": "Reportes financieros generados por el sistema, sin armarlos a mano."
+      },
+      {
+        "src": "assets/portfolio/contable_4.jpg",
+        "t": "Módulo REPSE",
+        "d": "Documentación legal REPSE integrada a la operación."
+      }
+    ]
+  },
+  "billar": {
+    "title": "POS Billar & Bar",
+    "cat": "Punto de venta · Entretenimiento",
+    "shots": [
+      {
+        "src": "assets/portfolio/billar_0.jpg",
+        "t": "Pantalla principal",
+        "d": "Acceso rápido a mesas, barra e inventario."
+      },
+      {
+        "src": "assets/portfolio/billar_1.jpg",
+        "t": "Control de tarifas",
+        "d": "Mesas de billar cobradas automáticamente por tiempo."
+      },
+      {
+        "src": "assets/portfolio/billar_2.jpg",
+        "t": "Venta en barra",
+        "d": "Comandas rápidas para barra sin filas."
+      },
+      {
+        "src": "assets/portfolio/billar_3.jpg",
+        "t": "Inventario",
+        "d": "Existencias con alertas de reabastecimiento."
+      },
+      {
+        "src": "assets/portfolio/billar_4.jpg",
+        "t": "Historial de cortes",
+        "d": "Cortes de caja por turno y por cajero."
+      },
+      {
+        "src": "assets/portfolio/billar_5.jpg",
+        "t": "Dashboard",
+        "d": "Resumen de ventas y operación del negocio."
+      }
+    ]
+  },
+  "pos": {
+    "title": "POS General Premium",
+    "cat": "Punto de venta · Comercio",
+    "shots": [
+      {
+        "src": "assets/portfolio/pos_0.jpg",
+        "t": "Pantalla principal",
+        "d": "Venta rápida pensada para el mostrador."
+      },
+      {
+        "src": "assets/portfolio/pos_1.jpg",
+        "t": "Facturación CFDI 4.0",
+        "d": "Facturación electrónica integrada con el SAT."
+      },
+      {
+        "src": "assets/portfolio/pos_2.jpg",
+        "t": "Inventario inteligente",
+        "d": "Alertas de stock para no quedarte sin producto."
+      },
+      {
+        "src": "assets/portfolio/pos_3.jpg",
+        "t": "Historial de cortes",
+        "d": "Cortes de caja, devoluciones y arqueos."
+      },
+      {
+        "src": "assets/portfolio/pos_4.jpg",
+        "t": "Configuración y licencias",
+        "d": "Ajustes del sistema y control de licencias."
+      },
+      {
+        "src": "assets/portfolio/pos_5.jpg",
+        "t": "Usuarios y roles",
+        "d": "Usuarios con permisos según su rol en el negocio."
+      }
+    ]
+  }
+}
