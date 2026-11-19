@@ -44,7 +44,7 @@
     --gold: var(--gold-classic);
     --gold-light: var(--gold-bright);
     --gold-dim: rgba(212, 175, 55, 0.15);
-    --gold-glow: rgba(212, 175, 55, 0.3);
+    --gold-glow: transparent;
 
     /* Accent */
     --green: #2ECC71;
@@ -173,9 +173,7 @@
 }
 
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #0A0A0B;
     padding: 10px 0;
     border-bottom: var(--border);
 }
@@ -267,19 +265,36 @@
 }
 
 .navbar__cta-btn {
-    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
     font-weight: 600;
-    color: var(--black);
-    background: linear-gradient(135deg, var(--gold-light), var(--gold));
-    padding: 10px 22px;
+    color: #0A0A0A;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 9px 20px;
+    min-height: 40px;
     border-radius: 8px;
-    transition: all 0.3s var(--ease-out);
-    letter-spacing: 0.3px;
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    box-shadow: none !important;
 }
 
 .navbar__cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(212, 168, 67, 0.3);
+    background: var(--gold-classic, #D4AF37) !important;
+    border-color: var(--gold-classic, #D4AF37) !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.navbar__cta-btn:active {
+    transform: translateY(0);
+    background: #c59f2e !important;
+    border-color: #c59f2e !important;
 }
 
 /* Hamburger */
@@ -437,13 +452,13 @@
     }
 }
 
-/* ── MISSING BASE RULES (Cursors & Containers) ── */
+/* ── BASE CURSORS & CONTAINERS ── */
 html, body {
-    cursor: url('assets/abeja_cursor.png') 2 2, auto;
+    cursor: default;
 }
 
 a, button, .btn, .navbar__toggle, [role="button"], input[type="submit"], input[type="button"], label, select, .clickable {
-    cursor: url('assets/abeja_pointer.png') 2 2, pointer !important;
+    cursor: pointer;
 }
 
 .section__container {
