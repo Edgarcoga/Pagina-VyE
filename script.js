@@ -179,6 +179,147 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(startHeroInkAnimation, 100);
     }
 
+    // ── HERO INTERACTIVE SHOWCASE & PROGRESS BAR (4.5s) ──
+    function initHeroShowcase() {
+        const showcase = document.getElementById('heroShowcase');
+        if (!showcase) return;
+
+        const slides = showcase.querySelectorAll('.hero-showcase__slide');
+        const tag = document.getElementById('heroShowcaseTag');
+        const progressFill = document.getElementById('heroProgressFill');
+        const tabsContainer = document.getElementById('capabilitiesTabs');
+        const tabs = tabsContainer ? tabsContainer.querySelectorAll('.capabilities-tab') : [];
+
+        if (!slides.length) return;
+
+        let currentIndex = 0;
+        const total = slides.length;
+        const intervalDuration = 4500; // 4.5 segundos
+        let progressStart = null;
+        let animFrame = null;
+        let isPaused = false;
+        let currentProgress = 0;
+
+        function setSlide(index) {
+            currentIndex = (index + total) % total;
+
+            // Actualizar diapositivas con crossfade
+            slides.forEach((slide, i) => {
+                const isActive = i === currentIndex;
+                slide.classList.toggle('active', isActive);
+            });
+
+            // Actualizar tabs de la barra inferior
+            tabs.forEach((tab, i) => {
+                const isActive = i === currentIndex;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            // Actualizar etiqueta del header técnico
+            if (tag) {
+                const activeSlide = slides[currentIndex];
+                const label = activeSlide ? activeSlide.getAttribute('data-label') : '';
+                if (label) tag.textContent = label;
+            }
+
+            // Reiniciar barrita de progreso suave
+            resetProgress();
+        }
+
+        function stepProgress(timestamp) {
+            if (!progressStart) progressStart = timestamp;
+
+            if (!isPaused) {
+                const elapsed = timestamp - progressStart;
+                currentProgress = Math.min(elapsed / intervalDuration, 1);
+
+                if (progressFill) {
+                    progressFill.style.width = (currentProgress * 100).toFixed(2) + '%';
+                }
+
+                if (elapsed >= intervalDuration) {
+                    setSlide(currentIndex + 1);
+                    return;
+                }
+            } else {
+                // Mantener progreso actual sin saltos mientras el cursor esté encima
+                progressStart = timestamp - (currentProgress * intervalDuration);
+            }
+
+            animFrame = requestAnimationFrame(stepProgress);
+        }
+
+        function resetProgress() {
+            if (animFrame) cancelAnimationFrame(animFrame);
+            currentProgress = 0;
+            if (progressFill) progressFill.style.width = '0%';
+            progressStart = null;
+            animFrame = requestAnimationFrame(stepProgress);
+        }
+
+        // Clic en los tabs interactivos
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                const target = parseInt(tab.getAttribute('data-slide'), 10);
+                if (!isNaN(target)) {
+                    setSlide(target);
+                }
+            });
+        });
+
+        // Pausa inteligente al pasar el cursor para inspeccionar el software
+        showcase.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+
+        showcase.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+
+        // Iniciar ciclo de animación
+        resetProgress();
+    }
+
+    initHeroShowcase();
+
+    // ── PROCESO: CAMBIO DE TEXTO EN HOVER (LIMPIO Y SIN AMONTONAMIENTO) ──
+    function initProcessDynamicHover() {
+        const dynamicWord = document.getElementById('processDynamicWord');
+        const cardsGrid = document.getElementById('processCardsGrid');
+        if (!dynamicWord || !cardsGrid) return;
+
+        const cards = cardsGrid.querySelectorAll('.process-minimal-card');
+        const defaultText = 'Sin sorpresas.';
+        let fadeTimeout = null;
+
+        function setPhrase(newText) {
+            clearTimeout(fadeTimeout);
+            if (dynamicWord.textContent.trim() === newText.trim()) return;
+
+            dynamicWord.classList.add('is-fading');
+            fadeTimeout = setTimeout(() => {
+                dynamicWord.textContent = newText;
+                dynamicWord.classList.remove('is-fading');
+            }, 100);
+        }
+
+        cards.forEach((card) => {
+            const phrase = card.getAttribute('data-phrase');
+            if (!phrase) return;
+
+            card.addEventListener('mouseenter', () => {
+                setPhrase(phrase);
+            });
+        });
+
+        cardsGrid.addEventListener('mouseleave', () => {
+            setPhrase(defaultText);
+        });
+    }
+
+    initProcessDynamicHover();
+
     // ── NAVBAR SCROLL ──
     const navbar = document.getElementById('navbar');
     const brandTransition = document.getElementById('brandTransition');
@@ -187,14 +328,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateBrandTransition() {
         if (!isHomepage || !brandTransition || window.innerWidth < 769) return;
-        // Transición progresiva, continua y suave a lo largo de 280px de scroll
         const progress = Math.min(window.scrollY / 280, 1);
         const remaining = 1 - progress;
         document.documentElement.style.setProperty('--brand-scroll-progress', progress.toFixed(3));
-        document.documentElement.style.setProperty('--brand-offset-y', `${(remaining * 52).toFixed(1)}px`);
-        document.documentElement.style.setProperty('--brand-scale', (1 + (remaining * 2.15)).toFixed(3));
+        document.documentElement.style.setProperty('--brand-offset-y', `${(remaining * 80).toFixed(1)}px`);
+        document.documentElement.style.setProperty('--brand-scale', (1 + (remaining * 1.35)).toFixed(3));
 
-        // Desvanecer suavemente el badge IPN al iniciar el scroll para que nunca colisione con el logo
+        // Desvanecer suavemente el badge IPN al iniciar el scroll
         const badge = hero?.querySelector('.hero__badge');
         if (badge) {
             const badgeFade = Math.min(window.scrollY / 100, 1);

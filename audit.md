@@ -1,265 +1,153 @@
-# Auditoría Impecable de UX/UI & Ergonomía Cognitiva
+# Manual de Diseño VyE: Minimalismo Técnico & Guía Anti-Efecto IA
 **Proyecto:** VyE Ingeniería (`Pagina-VyE`)  
-**Metodología:** *Impeccable Design Auditor (Hard Dials & Anti-Fatigue Framework)*  
-**Fecha:** Octubre 2026  
-**Objetivo Crítico:** Erradicar la fatiga cognitiva y visual del usuario, depurar inconsistencias atómicas de diseño ("valores duros") y consolidar una experiencia técnica de alta gama, serena y de alta conversión.
+**Documento:** Guía Maestra de Diseño, Ergonomía Cognitiva & Estándar Visual  
+**Propósito:** Servir como marco de referencia permanente para esta web y futuros desarrollos digitales de la empresa, garantizando una estética de ingeniería de precisión, sobria, minimalista y libre de clichés generados por inteligencia artificial.
 
 ---
 
-## 1. Resumen Ejecutivo & Diagnóstico de Sobrecarga
+## 1. Filosofía Central: Diseñar como Ingenieros para Dueños de Negocio
 
-El sitio actual de **VyE Ingeniería** posee una base conceptual fuerte y un lenguaje visual con potencial premium (estética de ingeniería mecatrónica en modo oscuro). Sin embargo, tras la auditoría exhaustiva de código (`index.html`, `nosotros.html`, `indexSGE.html`, `style.css`, `vye-globals.css` y `script.js`), se diagnostica un fenómeno severo de **"UI Inquieta" (Visual & Cognitive Fatigue)**:
-
-> [!WARNING]
-> **Diagnóstico Principal: Sobrecarga Sensorial Activa**  
-> El usuario está expuesto a **7 capas de movimiento simultáneo** y a más de **16 tonos de gris/negro no normalizados**. La interfaz nunca descansa: compiten partículas en bucle, seguimiento de ratón (paralaje y resplandor de 300px), un cursor personalizado animado, auto-scroll a 60fps en galería y un preloader artificial de hasta 3 segundos. Esto genera **tensión visual, calentamiento innecesario del dispositivo y pérdida de enfoque en la conversión**.
-
-### Matriz de Impacto en Fatiga del Usuario
-
-| Dimensión Auditada | Estado Actual | Diagnóstico Impeccable | Impacto en el Usuario | Prioridad |
-| :--- | :--- | :--- | :--- | :---: |
-| **Micro-movimiento y Loops** | 7 fuentes activas (`rAF`, `setInterval`, listeners continuos de `mousemove`) | Ruido motor extremo. La web compite por atención en vez de permitir lectura serena. | **Crítico (Fatiga y mareo visual)** | 🔴 Alta |
-| **Paleta de Neutros / Oscuros** | 16 tonos entre `#000000`, `#050505`, `#0D0D0D`, `#1A1A1A`, etc. | "4 grises que deberían ser 1". Proliferación de superficies sin sistema de elevación. | **Medio (Falta de cohesión tonal)** | 🔴 Alta |
-| **Tipografía y Micro-textos** | Tamaños desde `0.66rem` (10.5px) y múltiples ratios de interlineado | Esfuerzo de acomodación ocular excesivo en pantallas estándar y móviles. | **Alto (Cansancio ocular rápido)** | 🔴 Alta |
-| **Cursor Personalizado** | Abeja personalizada (`abeja_cursor.png` y `pointer`) forzada con `!important` | Pérdida del affordance nativo del SO, imprecisión de clic y distracción periférica. | **Alto (Fricción ergonómica)** | 🔴 Alta |
-| **Coherencia de Espaciado (Dials)** | `--section-pad` en conflicto entre 2 archivos CSS (140px vs 38-60px) | Espaciados erráticos, saltos visuales al navegar entre secciones. | **Medio (Desorden espacial)** | 🟡 Media |
-| **Consistencia de CTAs** | 5 variantes de mensaje hacia WhatsApp y botones con comportamientos dispares | Parálisis de decisión ("Decision Fatigue"). "Saber más" salta a contacto en unos y a otra página en otros. | **Alto (Fricción de conversión)** | 🔴 Alta |
-
----
-
-## 2. Auditoría de Valores Duros (The Impeccable Hard Dials)
-
-La filosofía *Impeccable* rechaza las opiniones abstractas y audita **valores numéricos duros**. A continuación se detallan las desviaciones exactas encontradas en el código:
-
-### 2.1. Proliferación de Grises y Fondos ("16 grises que deben ser 5")
-
-En el código conviven simultáneamente:
-1. `vye-globals.css`: Declara `--black`, `--black-soft` (`#0A0A0A`), `--black-card` (`#0D0D0D`), `--gray-950` (`#111111`), `--gray-900` (`#1A1A1A`), `--gray-800` (`#2A2A2A`), `--gray-700` (`#3A3A3A`), `--gray-600` (`#555555`), `--gray-500` (`#777777`), `--gray-400` (`#999999`), `--gray-300` (`#BBBBBB`), `--gray-200` (`#DDDDDD`).
-2. `style.css`: Redefine las mismas variables pero luego inserta valores *hardcoded*: `#080808`, `#060606`, `#121212`, `rgba(255, 255, 255, 0.03)`, `rgba(255, 255, 255, 0.08)`.
-3. `indexSGE.html`: Introduce su propia escala: `--cream: #050505`, `--cream-dark: #0a0a0a`, `--ink: #f4f4f5`, `--ink-soft: #a1a1aa`, `--ink-mute: #71717a`.
+El cliente de VyE Ingeniería es un dueño, director o gerente de operaciones. No busca fuegos artificiales ni adornos futuristas: busca **orden, control, reducción de costos y certidumbre técnica**.
 
 > [!IMPORTANT]
-> **Regla Impeccable:** Un sistema oscuro premium profesional solo necesita **5 elevaciones de superficie** y **3 niveles de texto**. Cualquier tono intermedio adicional es ruido visual.
+> **La Regla de Oro del Minimalismo VyE:**  
+> *Si un elemento visual solo sirve para "decorar" o "llenar espacio" y no comunica una función, un dato o una ventaja real de negocio, **se elimina**.*  
+> El diseño premium no se logra agregando cosas; se logra quitando todo lo innecesario hasta que solo quede lo esencial ejecutado con precisión milimétrica.
 
-#### Tabla de Normalización de Tonalidad (Valores Duros)
+---
+
+## 2. La Lista Negra: Catálogo de Vicios del "Efecto IA" (Terminantemente Prohibidos)
+
+Cuando una web es generada por herramientas de IA o plantillas genéricas, suele caer en una serie de patrones reconocibles que transmiten falsedad, baratura y sobrecarga. Esta lista negra define lo que **NUNCA** debe implementarse en un proyecto de VyE:
+
+### 2.1. Vicios Visuales y de Interfaz
+
+| Vicio "Estilo IA" | Por qué daña la percepción | Estándar VyE (Qué hacer en su lugar) |
+| :--- | :--- | :--- |
+| **Recuadros o cápsulas neón amarillo/dorado** encerrando palabras o números. | Parece una plantilla barata de Web3 o "cyberpunk" barato; sobrecarga la lectura. | **Cero recuadros.** El énfasis se da únicamente mediante la jerarquía del texto: negritas nítidas (`font-weight: 700`) y números monospaced sutiles. |
+| **Textos y etiquetas encimados sobre capturas o fotos** (cajas flotando sobre monitores). | Tapa la pantalla del software real, luce artificial y genera ruido visual. | **Pantallas limpias.** Los datos y el software deben apreciarse al 100%. Las explicaciones van al pie o en columnas dedicadas, nunca tapando la imagen. |
+| **Tinte azulado frío ("Slate / Navy")** en el modo oscuro (`#0e0e12`, `#121218`). | Es el color por defecto de librerías automáticas (Tailwind/v0/ChatGPT). Rompe la estética industrial de hardware y mecatrónica. | **Negro carbón neutro puro.** Usar únicamente tonos neutros sin tinte azul ni violeta (`#000000`, `#0A0A0A`, `#111111`, `#141414`). |
+| **Incoherencia geométrica en esquinas:** mezclar tarjetas cuadradas (`2px`) con otras muy redondeadas (`24px`). | Produce sensación de desorden, de estar armado con pedazos de distintas fuentes. | **Escala geométrica unificada:** Tarjetas a `12px`, botones a `10px`, badges a `6px`. Sin excepciones. |
+| **Efecto "caja dentro de caja":** enmarcar cada párrafo en una tarjeta individual con bordes. | Convierte la página en un mosaico asfixiante de bordes y líneas que cansan la vista. | **Espacio negativo (aire).** Separar conceptos con espaciado vertical armónico, no con cajas divisorias. |
+| **Separadores diagonales tipo slash (`/`)** entre palabras o listas. | Adorno innecesario que compite con la separación numérica natural. | Separación por espaciado generoso o numeración monoespaciada (`01`, `02`). |
+| **Micro-movimiento infinito no solicitado:** partículas flotando, rejillas en bucle, glow gigante en el mouse. | Mareo visual, fatiga cognitiva periférica y alto consumo innecesario de GPU/batería. | **Fondo sereno.** El fondo es un lienzo arquitectónico estático. Las animaciones solo existen en respuesta a la interacción del usuario. |
+| **Elementos que se desbordan de su columna:** logotipos o cajas que invaden el espacio vecino. | Rompe la simetría y genera sensación de interfaz rota o descuidada. | **Regla de la línea vertical imaginaria:** Los elementos superiores respetan estrictamente la frontera derecha definida por los botones y títulos. |
+
+### 2.2. Vicios de Copywriting (Redacción IA)
+
+* ❌ **Prohibido el lenguaje inflado y vacío:** Frases como *"Revolucionamos el ecosistema digital"*, *"Soluciones sinérgicas e innovadoras de vanguardia"*, *"Impulsamos tu visión al siguiente nivel"*.  
+  * ✔️ **Enfoque VyE:** Directo, concreto y de ingeniería: *"Software a la medida y automatización mecatrónica para erradicar el caos operativo, las hojas de Excel desincronizadas y la dependencia del dueño."*
+* ❌ **Prohibido repetir sinónimos en la misma sección:** Decir "diagnóstico sin costo", "análisis gratuito" y "propuesta sin costo inicial" en tres lugares seguidos. Si ya se dijo una vez, **no se repite**.
+* ❌ **Prohibido el uso de clichés genéricos:** Expresiones como *"Sin intermediarios"* o *"Trato directo con ingenieros"* no aportan valor real diferenciador. Es infinitamente más poderoso: *"Precios cerrados por contrato"*, *"Capacitamos a tu equipo y te damos soporte técnico en producción"*.
+* ❌ **Prohibidas las listas de 3 palomitas típicas:** No usar los clásicos checks verdes/dorados debajo de los formularios con frases genéricas. Usar párrafos contundentes de dos renglones que ataquen el dolor real del negocio.
+
+---
+
+## 3. La Regla Cromática: 60% Negro, 30% Blanco y 10% Dorado
+
+La paleta se rige por el estándar del **diseño suizo de alta precisión** (estilo *Braun, Leica, Teenage Engineering, Apple y Linear*):
 
 ```
-NIVEL SUPERFICIE (SURFACES)
-[L0 - Base Canvas]      #0A0A0B   (Elimina el #000000 puro para evitar halación y deslumbramiento OLED)
-[L1 - Card Default]     #121215   (Contenedores de servicios, cards estándar)
-[L2 - Card Highlight]   #18181D   (Cards interactivas al hover o activas)
-[L3 - Popups / Modals]  #202026   (Diálogos flotantes, navbar scroll)
-[Borde Estándar]        rgba(255, 255, 255, 0.08)
-
-NIVEL TEXTO (CONTRASTE WCAG AAA)
-[Texto Primario]        #F4F4F6   (100% contraste legible, sin quemar la retina)
-[Texto Secundario]      #A0A0AB   (Descripciones y subtítulos, ratio 7.2:1)
-[Texto Muted / Meta]    #70707C   (Etiquetas, metadatos, ratio 4.6:1)
+┌────────────────────────────────────────────────────────────────────────┐
+│  60% NEGRO CARBÓN (Lienzo Arquitectónico y Estructura)                  │
+│  Fondo base profundo (#000000 / #0A0A0A) + Módulos (#111111)           │
+├────────────────────────────────────────┬───────────────────────────────┤
+│  30% BLANCO & NEUTROS (Contenido)      │  10% DORADO (Acento Quirúrgico)│
+│  Títulos (#FFFFFF), textos (#A0A0A0)   │  Énfasis (#D4AF37)             │
+└────────────────────────────────────────┴───────────────────────────────┘
 ```
 
----
+### 3.1. 60% Negro Carbón Neutro (Superficies)
+* **Base global del sitio:** `#000000` o `#0A0A0A` mate profundo. Sin mallas ni mallas wireframe brillantes.
+* **Superficie de tarjetas y módulos (`.feat-box`, `.proj-card`, `.process-card`):** `#111111` sólido.
+* **Superficie interactiva / Hover:** `#141414` o `#161616`.
+* **Bordes estructurales:** `1px solid rgba(255, 255, 255, 0.08)` o `#222222`. Líneas ultra-finas que definen el límite sin gritar.
+* **Prohibición estricta:** Cero tonos con tinte azul (`#0e0e12`, `#121218`, `#161622`).
 
-### 2.2. Inconsistencia de Dorados y Gradientes
+### 3.2. 30% Blanco y Neutros de Alta Densidad (Información)
+* **Texto Primario / Titulares:** `#FFFFFF` puro para dar impacto, contraste y máxima legibilidad.
+* **Botón Primario de Conversión:** Fondo blanco sólido `#FFFFFF` con texto negro `#0A0A0A` (alta visibilidad inmediata).
+* **Texto Secundario / Párrafos descriptivos:** `#A0A0A0` a `#B4B4B4` (contraste equilibrado que no quema la retina en sesiones de lectura).
+* **Metadatos y Etiquetas secundarias:** `#666666` a `#777777` (mínimo `12px` de tamaño).
 
-Se detectaron al menos **6 variantes del color dorado/dorado-ámbar** en CSS y JS:
-- `--gold: #D4A843` (Token principal)
-- `--gold-light: #F0D060` (Brillo)
-- `--gold-dark: #B8922E` (Sombra)
-- `script.js` (Canvas highlighter): `#e5b84a` (hardcoded en JS línea 54)
-- `style.css` (Galería hover): `#b8860b` (DarkGoldenrod genérico del navegador en línea 3993)
-- `indexSGE.html`: `--gold: #E6B64A` y `--gold-light: #F5D37A`
-
-**Corrección Impeccable:** Fijar un único par espectral:
-- **Primary Gold:** `hsl(43, 62%, 55%)` (`#D4A843`)
-- **Hover/Light Gold:** `hsl(43, 85%, 66%)` (`#F0D060`)
-- Eliminar cualquier uso de nombres de color CSS nativos como `darkgoldenrod`.
-
----
-
-### 2.3. Espaciado y Desalineaciones (Spacing Dials)
-
-Se encontró una colisión severa en la regla de padding vertical de secciones:
-- `vye-globals.css:38`: `--section-pad: clamp(80px, 10vw, 140px);`
-- `style.css:45`: `--section-pad: clamp(38px, 5.5vh, 60px);`
-
-Como `style.css` importa `vye-globals.css` en la línea 1 y luego reescribe la variable, muchas clases que se compilaron con la primera referencia quedan asimétricas. Además, en `style.css` hay secciones con `padding: 24px 0`, otras con `40px 0` y otras con `5.5vh`.
-
-#### Escala Impeccable Unificada (Módulo 8px)
-```css
---space-1: 4px;
---space-2: 8px;
---space-3: 16px;
---space-4: 24px;
---space-5: 32px;
---space-6: 48px;
---space-7: 72px;
---space-8: 96px;
-
-/* Secciones: */
---section-pad-desktop: 80px;
---section-pad-mobile: 48px;
-```
+### 3.3. 10% Dorado Satinado (El Acento Quirúrgico)
+* **Tonalidad insignia:** `--gold: #D4AF37` (oro satinado clásico / champagne cálido).
+* **Regla de uso:** Se reserva **exclusivamente** para:
+  1. La palabra o frase de impacto clave dentro de un titular (`<span class="text-gold">`).
+  2. Los números de paso o telemetría (`01`, `02`, `03`).
+  3. La barra de progreso de tiempo real en el visor interactivo.
+  4. Flechas y micro-interacciones sutiles al pasar el cursor.
+* **Prohibición estricta:** Nunca usar dorado en fondos de bloques completos, nunca usar dorado fluorescente/neón y nunca aplicarlo en párrafos largos de lectura.
 
 ---
 
-### 2.4. Micro-textos Inaudibles / Ilegibles
+## 4. Geometría y Proporciones Matemáticas Unificadas
 
-En `style.css`:
-- Línea 3813: `.galeria-card__placeholder-text { font-size: 0.66rem; }` → **10.56px**.
-- Línea 3835: `.galeria-card__tag { font-size: 0.68rem; }` → **10.88px**.
-- Línea 3928: `.galeria-carrusel__hint { font-size: 0.74rem; }` → **11.84px**.
+La armonía visual proviene de una cuadrícula rigurosa donde cada elemento comparte la misma proporción:
 
-> [!CAUTION]
-> Cualquier texto inferior a **12px (0.75rem)** fuerza la vista del usuario, degrada la accesibilidad en monitores de alta densidad y produce fatiga involuntaria en sesiones de lectura de más de 45 segundos. **Piso mínimo establecido: 12px con tracking moderado (+0.5px)**.
+### 4.1. Escala Universal de Redondeos (`border-radius`)
+* **Contenedores y Tarjetas Principales:** `12px` en toda la web (tarjetas de portafolio, módulos de servicio, bloque Nissan, modales de zoom, tarjeta de contacto).
+* **Botones Principales y Secundarios:** `10px` a `12px`.
+* **Badges internos, avatares y controles pequeños:** `6px` a `8px`.
+* **Prohibido:** No usar radios casi rectos de `2px` (estilo tosco de software antiguo) ni píldoras redondeadas exageradas de `100px` (estilo juguetón no profesional).
 
----
+### 4.2. La Regla de la Línea Vertical Imaginaria (Alineación en Bounding Box)
+En composiciones asimétricas (como la columna izquierda del Hero):
+* Los botones inferiores de acción (*"Solicitar diagnóstico gratis"* y *"Ver proyectos reales →"*) y el titular principal definen el ancho límite de la columna (~430px - 450px).
+* El logotipo o marca superior **jamás debe rebasar la línea vertical imaginaria** que sube desde el extremo derecho del segundo botón.
+* Si el logo rebasa esa línea e invade el espacio de la imagen o del visor de la derecha, debe reducirse de escala hasta que coincida con la frontera vertical del contenido inferior.
 
-## 3. Plan de Eliminación de Ruido y Fatiga Sensorial ("No Cansar al Usuario")
-
-A continuación se analizan los 7 componentes que causan fatiga visual y cómo desarmar la fricción técnica:
-
-### 1. El Preloader Forzado (1.8s - 3.0s de bloqueo)
-* **Problema:** En `script.js` líneas 156-176, el preloader retiene al usuario durante 1.8 a 3.0 segundos obligatoriamente con una animación de 360 grados, independientemente de que la web ya esté cargada. 
-* **Impacto:** Provoca frustración inicial y sensación de lentitud antes de ver cualquier contenido.
-* **Solución Impeccable:** Retirar el preloader para usuarios recurrentes (o reducirlo a un fade inmediato `< 250ms` sólo cuando los assets críticos aún no están en caché). El contenido debe aparecer de forma casi instantánea.
-
-### 2. El Cursor Personalizado de Abeja
-* **Problema:** En `style.css` líneas 70, 79 y 83-85, se aplica `assets/abeja_cursor.png` y `assets/abeja_pointer.png` con `!important` en todos los elementos interactivos.
-* **Impacto:** El puntero pierde la precisión milimétrica del cursor del sistema operativo, el cerebro del usuario debe calcular constantemente el punto de contacto exacto (hotspot) y el gráfico en movimiento distrae continuamente la atención del texto que se está leyendo.
-* **Solución Impeccable:** Volver al cursor estándar del sistema (`cursor: default` y `cursor: pointer`). Mantener la abeja como isotipo en el branding y logotipo, no en el dispositivo de navegación del usuario.
-
-### 3. Las Partículas en Bucle Infinito (`heroParticles`)
-* **Problema:** `script.js` líneas 274-311 ejecuta un `setInterval` cada 800ms inyectando nodos en el DOM que flotan y se eliminan continuamente.
-* **Impacto:** Genera constante movimiento en el campo visual periférico (el área más sensible del ojo a las alertas de movimiento). Esto impide la lectura concentrada del titular y la propuesta de valor.
-* **Solución Impeccable:** Reemplazar el generador de partículas por una sutil trama de ingeniería estática (`hero__bg-grid`) con un degradado radial fijo de iluminación técnica.
-
-### 4. Doble Parallax y Cursor Glow de 300px
-* **Problema:** Listeners globales de `mousemove` calculando traslaciones en `heroGlow`, `heroGrid`, cards con efecto tilt 3D y un círculo dorado difuso de 300px (`cursorGlow`) que persigue el ratón por toda la pantalla.
-* **Impacto:** Sobrecarga el procesador gráfico y hace que cada movimiento de mano produzca un temblor o desplazamiento de planos en la pantalla, generando mareo visual ("motion sickness" leve).
-* **Solución Impeccable:** Eliminar el `cursorGlow` y desactivar el tilt 3D en las cards. Un hover simple y refinado (`translateY(-2px)` con transición suave de borde) comunica interactividad con máxima elegancia y cero fatiga.
-
-### 5. Galería con Auto-Scroll Permanente a 60fps
-* **Problema:** En `script.js` líneas 756-789, `autoScrollGaleria` mueve la galería horizontal continuamente a 60fps, rebotando de izquierda a derecha.
-* **Impacto:** Si el usuario está leyendo los servicios o la sección de arriba/abajo, una franja de la pantalla se mueve sola en su visión periférica. Cuando el usuario intenta hacer clic, el objetivo se está moviendo.
-* **Solución Impeccable:** La galería debe ser **100% controlada por el usuario** (scroll manual con touch/drag suave o botones de flecha previa/siguiente con barra de progreso). El movimiento no solicitado debe detenerse.
-
-### 6. Autoplay Inquieto en el Carril de Nosotros (30s con cronómetro de cuenta regresiva)
-* **Problema:** En `script.js` líneas 456-500, se incluye una barra que se llena y un texto "30s", "29s", cambiando el slide automáticamente.
-* **Impacto:** Convierte la sección institucional en una carrera contra el tiempo. El usuario siente prisa o interrupción en mitad de la lectura.
-* **Solución Impeccable:** Cambiar a carrusel o pestañas interactivas sin temporizador forzado. Que el usuario cambie de pestaña a su propio ritmo ("01 Acerca de", "02 Historia", "03 Equipo").
-
-### 7. Animación Compleja del Marcador de Tinta Canvas
-* **Problema:** `script.js` líneas 12-148 calcula matemáticamente el trazo de un plumón de felpa con armónicos sinusoidales dobles y 2 pasadas.
-* **Impacto:** Requiere recrear contextos de canvas 2D, múltiples capas temporales y retrasa la lectura del titular más de 1.5 segundos.
-* **Solución Impeccable:** Un subrayado SVG limpio o una animación CSS con `clip-path` / `background-size` de 400ms logra el mismo efecto humano sin peso de CPU ni demoras.
+### 4.3. Regla del Centrado Matemático en Elementos Fijos (Navbar)
+* En barras fijas con `position: fixed`, los elementos hijos desvinculados del flujo flexbox deben calcular su posición vertical de forma exacta:
+  $$\text{top} = \frac{\text{alto total de la barra} - \text{alto del elemento}}{2}$$
+* Evitar valores arbitrarios empíricos (como `top: 12px` en una barra de 75px) que pegan los logos al techo y los dejan desfasados respecto a los enlaces de navegación y botones CTA.
 
 ---
 
-## 4. Auditoría de Arquitectura de Contenidos & Conversión
+## 5. Copywriting Humano: "Menos Texto, Palabras Boom"
 
-### 4.1. El Hero: Claridad vs Competencia de Botones
-* **Situación:** En el Hero hay dos botones:
-  1. `Ver servicios` (outline)
-  2. `Solicitar diagnóstico` (primary con rayo ⚡)
-* **Problema:** Ambos tienen un peso visual similar y están invertidos en jerarquía psicológica (el botón de ver servicios está a la izquierda pero el primario está a la derecha).
-* **Solución Impeccable:**
-  - Botón Principal (Izquierda o dominante): **Solicitar Diagnóstico Sin Costo** (CTA de alta conversión).
-  - Botón Secundario (Derecha o texto con flecha): **Explorar Soluciones**.
+La redacción de VyE se enfoca en resolver dudas operativas concretas de dueños de empresas con honestidad técnica:
 
-### 4.2. Inconsistencia de los Botones "Saber Más" en Servicios
-* En la sección de Servicios:
-  - Card 1 (Software): `<a href="#contacto" class="servicio__cta">Saber más →</a>`
-  - Card 2 (SGE): Envuelve la tarjeta completa en `<a href="indexSGE.html">`
-  - Card 3 (Automatización): `<a href="#contacto" class="servicio__cta">Saber más →</a>`
-  - Card 4 (Páginas Web): `<a href="#contacto" class="servicio__cta">Saber más →</a>`
-* **Fricción:** El usuario que hace clic en "Saber más" en la Card 1 espera información sobre el software, pero la página lo arrastra bruscamente al formulario de contacto final. Sin embargo, en la Card 2 sí lo lleva a una página dedicada. Esto rompe el modelo mental de navegación.
-* **Solución Impeccable:**
-  - Si no existe página individual para cada servicio aún, el texto no debe ser "Saber más", sino: **"Cotizar este servicio →"** o **"Solicitar información →"**. Así la expectativa es transparente y coherente con llevarlo al contacto.
+### 5.1. Ejemplos de Fórmulas Validadas en Producción
 
-### 4.3. Claridad de Pruebas Sociales y Galería
-* Actualmente las tarjetas de la galería muestran el mensaje *"Foto del proyecto"* y un icono SVG porque faltan las imágenes reales en `src=""`.
-* **Solución Impeccable:**
-  - Mientras se incorporan capturas reales, las tarjetas deben funcionar como **tarjetas de estudio de caso o maquetas vectoriales limpias de interfaz (UI Mockup Cards)** con esquemas técnicos claros, en lugar de cajas vacías con mensaje de "foto faltante".
+| Sección | Mensaje Clave | Por qué funciona |
+| :--- | :--- | :--- |
+| **El Reto (Punchline)** | *"Seguir operando como antes también cuesta."* | Convierte la decisión de contratar software de un "gasto opcional" a una "necesidad urgente para dejar de perder dinero". |
+| **Servicios (Subtítulo)** | *"Soluciones para problemas reales: tiempo perdido, errores manuales y datos que nadie encuentra cuando los necesitan."* | Nombra los 3 dolores diarios exactos de cualquier negocio en una sola línea clara. |
+| **Cómo Trabajamos (Proceso)** | **01 Diagnóstico sin costo:** *"Revisamos tu operación y te decimos con honestidad técnica qué conviene automatizar y qué no."*<br>**02 Propuesta y precio cerrado:** *"Entregables específicos, fechas de entrega y cotización fija por contrato antes de iniciar, sin cobros sorpresa."*<br>**03 Construcción y control total:** *"Desarrollamos en etapas funcionales, capacitamos a tu equipo y te acompañamos con soporte técnico en producción."* | Elimina el miedo número uno de contratar software: que cobren de más, que no acaben a tiempo o que dejen al equipo abandonado sin capacitación. |
+| **Contacto (Cierre)** | *¿Dónde estás perdiendo dinero? Cuéntanos qué está frenando tu negocio.*<br>*Analizamos tu caso y te decimos con honestidad técnica la ruta para recuperar el control.* | Directo al punto, humano, profesional y sin formularios laberínticos ni palomitas de relleno. |
 
 ---
 
-## 5. Plan de Acción Técnico Priorizado (Roadmap de Refactorización)
+## 6. Demostración de Producto Real sobre Renders Abstractos
 
-### Fase 1: Descompresión Inmediata de Fatiga (Quick Wins - Reducción del 80% del estrés visual)
-1. **Desactivar el cursor personalizado de abeja** en `style.css`: restaurar cursores ergonómicos nativos.
-2. **Desactivar el auto-scroll perpetuo de la galería** en `script.js`: dejar el carrusel en reposo hasta que el usuario decida explorarlo.
-3. **Eliminar el `cursorGlow` (resplandor de 300px)** y los listeners continuos de `mousemove` en el viewport global.
-4. **Desactivar el generador de partículas flotantes** `heroParticles` y el temporizador invasivo de 30s en Nosotros.
-5. **Acelerar o eliminar el preloader bloqueante**: carga directa del contenido sin retención artificial.
-
-### Fase 2: Consolidación de Tokens & Valores Duros Impeccable
-1. **Unificar la escala de superficies oscuras** a 5 niveles (eliminando los 16 tonos dispersos).
-2. **Reemplazar el negro `#000000` absoluto de fondo** por `#0A0A0B` (profundo pero suave para la vista).
-3. **Fijar el dorado corporativo único** (`#D4A843`) en todas las instancias de CSS y scripts.
-4. **Subir los micro-textos inferiores a 12px** a un estándar legible de 12px–13px.
-5. **Resolver la discrepancia de `--section-pad`** entre `vye-globals.css` y `style.css`.
-
-### Fase 3: Claridad de Interacción & Conversión
-1. **Alinear las llamadas a la acción (CTAs)** de Servicios: cambiar "Saber más" engañoso por "Cotizar software" o "Solicitar diagnóstico".
-2. **Jerarquizar el Hero CTA**: Enfoque inequívoco en el diagnóstico de eficiencia.
-3. **Incorporar soporte para `prefers-reduced-motion`** en todas las transiciones para garantizar accesibilidad absoluta.
+* **Showcase Interactivo en Vivo:**  
+  En lugar de imágenes de stock o maquetas abstractas, el Hero cuenta con un visor dinámico de 5 especialidades:
+  1. `Páginas Web & E-Commerce`
+  2. `Software a la Medida & ERP`
+  3. `Punto de Venta (POS) & Stock`
+  4. `Automatización & Mecatrónica IPN`
+  5. `Plataformas Cloud & SaaS`
+  * Cambia automáticamente cada **4.5 segundos** con una **barra de progreso lineal en tiempo real**.
+  * Permite control total al usuario: al hacer clic en cualquier opción, la barra se reinicia y muestra inmediatamente la interfaz real correspondiente.
+* **Portafolio en Producción:**  
+  * Primero se muestran las 3 soluciones modulares clave (Control Contable, POS Billar & Bar, POS General CFDI 4.0).
+  * Inmediatamente después se corona la sección con el proyecto de mayor envergadura: **ERP Integral Nissan Universidad**, demostrando volumen transaccional real ($73.78M facturados, reglas de SLA y monitoreo industrial).
+  * Toda pantalla cuenta con visor de alta resolución para inspección técnica.
 
 ---
 
-## 6. Fragmento de Referencia: Tokens Impecables Recomendados
+## 7. Checklist Anti-IA para Nuevas Páginas (Pre-Lanzamiento)
 
-A continuación se muestra el bloque de variables consolidado listo para reemplazar las inconsistencias en `style.css` y `vye-globals.css`:
+Antes de dar por terminada cualquier nueva página o sección en VyE, verificar cada punto de esta lista:
 
-```css
-/* ── TOKENS IMPECABLES VYE (ANTI-FATIGUE SPEC) ── */
-:root {
-    /* 1. Superficies (5 escalones de elevación, sin negros puros abrasivos) */
-    --surface-bg:       #0A0A0C; /* Fondo principal sereno */
-    --surface-card:     #121216; /* Tarjetas y paneles */
-    --surface-hover:    #18181F; /* Estado hover / interactivo */
-    --surface-overlay:  #1F1F27; /* Modales, dropdowns y barra fija */
-    --surface-border:   rgba(255, 255, 255, 0.08);
-    --surface-border-gold: rgba(212, 168, 67, 0.25);
-
-    /* 2. Textos (Ratios de contraste calibrados para cero cansancio) */
-    --text-primary:     #F4F4F6; /* Lectura nítida principal */
-    --text-secondary:   #A2A2AD; /* Subtítulos y párrafos explicativos */
-    --text-muted:       #71717E; /* Fechas, etiquetas secundarias (min 12px) */
-
-    /* 3. Acentos de Marca (Normalizados) */
-    --gold-primary:     #D4A843; /* Dorado insignia */
-    --gold-hover:       #E5B84A; /* Dorado interactivo */
-    --gold-subtle:      rgba(212, 168, 67, 0.12); /* Fondos suaves de badge */
-
-    /* 4. Módulo de Espaciado (8pt Grid) */
-    --space-xs: 4px;
-    --space-sm: 8px;
-    --space-md: 16px;
-    --space-lg: 24px;
-    --space-xl: 32px;
-    --space-2xl: 48px;
-    --space-section: clamp(48px, 6vw, 88px);
-
-    /* 5. Radios Coherentes */
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --radius-full: 9999px;
-}
-
-/* Respeto estricto a usuarios sensibles al movimiento */
-@media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-```
-
----
-
-## 7. Conclusión de la Auditoría
-
-La implementación de este reporte transformará la web de VyE de un estado **"técnicamente sobrecargado y visualmente fatigante"** a un sitio **"impecable, maduro y de ingeniería de precisión"**. Al eliminar el movimiento innecesario y unificar los valores duros, el visitante no se cansa, comprende el valor del servicio en menos de 10 segundos y avanza de forma natural hacia el diagnóstico de eficiencia.
+- [ ] **1. Colores limpios:** ¿El fondo es negro carbón neutro (`#000000` / `#0A0A0A`) y las tarjetas son `#111111`, sin tintes azulados (`#0e0e12`)?
+- [ ] **2. Regla 60-30-10:** ¿El dorado solo representa el 10% de los acentos y el blanco puro el 30% del contenido?
+- [ ] **3. Cero recuadros neón:** ¿Se eliminaron todos los marcos o cápsulas amarillas alrededor de palabras o números?
+- [ ] **4. Redondeos unificados:** ¿Todas las tarjetas están a `12px` y los botones a `10px`?
+- [ ] **5. Bounding box y alineación:** ¿El logo y los encabezados respetan la línea vertical imaginaria de los botones sin desbordar hacia la derecha?
+- [ ] **6. Centrado en barra superior:** ¿El logo en la barra fija está matemáticamente centrado respecto a la altura total de la navbar?
+- [ ] **7. Copywriting sin relleno:** ¿Se eliminaron las palabras vacías de IA ("revolucionario", "holístico", "innovador") y se habla de dinero, tiempo, errores y control?
+- [ ] **8. Cero redundancias:** ¿Cada beneficio o promesa se menciona **una sola vez** en toda la sección?
+- [ ] **9. Capturas reales sin estorbos:** ¿Las capturas de pantalla están al descubierto, nítidas y sin textos flotantes encimados?
+- [ ] **10. Movimiento sereno:** ¿No hay partículas flotantes, ni cursores personalizados de abeja, ni tickers mareantes en el campo visual del usuario?

@@ -17,7 +17,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=vye-master-v32">
+    <link rel="stylesheet" href="style.css?v=vye-master-v65">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -64,7 +64,7 @@
     <section class="nosotros-carril-section" id="carril-nosotros">
         <div class="carril__container">
             
-            <!-- Barra superior: Selector de Secciones y Clic/Deslizar a mano -->
+            <!-- Barra superior: Selector de Secciones y Deslizar -->
             <div class="carril__topbar">
                 <div class="carril__tabs" role="tablist" aria-label="Secciones de Nosotros">
                     <button class="carril__tab active" data-tab="0" role="tab" aria-selected="true">
@@ -77,22 +77,6 @@
                         <span class="tab-num">03</span> Nuestro equipo
                     </button>
                 </div>
-
-                <div class="carril__hand-indicator" title="Puedes deslizar con el dedo o arrastrar con el cursor">
-                    <span class="carril__hand-icon-wrap">
-                        <span class="carril__hand-arrow-left">◀</span>
-                        <span class="carril__hand-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0"/>
-                                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2"/>
-                                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8"/>
-                                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>
-                            </svg>
-                        </span>
-                        <span class="carril__hand-arrow-right">▶</span>
-                    </span>
-                    <span>Desliza a mano o usa las flechas</span>
-                </div>
             </div>
 
             <!-- Viewport & Track del Carril -->
@@ -103,44 +87,26 @@
                     <div class="carril__slide" data-slide="0">
                         <div class="carril__slide-grid">
                             <div class="carril__slide-text">
-                                <span class="section__label">01 / ACERCA DE NOSOTROS</span>
-                                <h1 class="section__title" style="margin-bottom: 12px; font-size: clamp(1.5rem, 2.4vw, 1.95rem); line-height: 1.25;">
+                                <span class="sec-head-mono">01 · ACERCA DE NOSOTROS</span>
+                                <h1 class="section__title">
                                     Ingeniería que transforma <span class="text-gold">ideas en soluciones</span>
                                 </h1>
-                                <p class="section__subtitle" style="text-align: left; margin-left: 0; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55;">
-                                    Somos <strong>VYE Ingeniería</strong>, una empresa fundada por Víctor y Edgar, con formación en Ingeniería Mecatrónica en el Instituto Politécnico Nacional.
+                                <p class="carril__paragraph">
+                                    Somos VyE Ingeniería, una empresa fundada por ingenieros mecatrónicos del Instituto Politécnico Nacional.
                                 </p>
-                                <p class="section__subtitle" style="text-align: left; margin-left: 0; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55;">
-                                    Desarrollamos software, páginas web y soluciones de automatización para ayudar a empresas e instituciones a trabajar con mayor orden, control y eficiencia.
+                                <p class="carril__paragraph">
+                                    Desarrollamos software, plataformas web y soluciones de automatización a medida para simplificar procesos y mejorar la operación de nuestros clientes.
                                 </p>
-                                <div class="solucion__accent" style="margin-top: 6px; margin-bottom: 8px; padding: 12px 18px;">
-                                    <p class="text-gold" style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; margin: 0; letter-spacing: 0.4px;">
-                                        Diseñamos eficiencia.
-                                    </p>
+                                <div class="carril__callout">
+                                    <p class="carril__callout-quote">Diseñamos eficiencia.</p>
                                 </div>
-                                <button type="button" class="carril__inline-btn" data-carril-goto="1">
-                                    Conoce nuestra historia <span>→</span>
+                                <button type="button" class="btn btn--outline" data-carril-goto="1">
+                                    Conoce nuestra historia →
                                 </button>
                             </div>
                             <div class="carril__slide-visual">
                                 <div class="carril__slide-img-card">
-                                    <div class="carril__tech-graphic">
-                                        <div class="carril__tech-badge">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                                                <circle cx="12" cy="10" r="3"></circle>
-                                            </svg>
-                                        </div>
-                                        <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 6px;">Tecnología y Mecatrónica</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.84rem; max-width: 300px; margin: 0;">Soluciones inteligentes creadas por ingenieros del IPN</p>
-                                    </div>
-                                    <img src="assets/fundadores_vye.jpg" alt="Víctor y Edgar - Ingenieros Mecatrónicos Fundadores de VyE" class="carril__slide-img">
-                                    <div class="carril__slide-img-overlay">
-                                        <span style="font-size: 0.84rem; color: var(--gold); font-weight: 600; letter-spacing: 0.4px;">VYE Ingeniería</span>
-                                        <span style="font-size: 0.76rem; color: var(--gray-400);">Mecatrónica · Software · Automatización</span>
-                                    </div>
+                                    <img src="assets/fundadores_vye.jpg" alt="Víctor y Edgar - Ingenieros Fundadores de VyE">
                                 </div>
                             </div>
                         </div>
@@ -151,46 +117,27 @@
                         <div class="carril__slide-grid carril__slide-grid--reverse">
                             <div class="carril__slide-visual">
                                 <div class="carril__slide-img-card">
-                                    <div class="carril__tech-graphic">
-                                        <div class="carril__tech-badge">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M2 20h20"></path>
-                                                <path d="M5 20V8l5 4V4l5 4v12"></path>
-                                                <line x1="19" y1="20" x2="19" y2="12"></line>
-                                            </svg>
-                                        </div>
-                                        <h4 style="color: var(--white); font-size: 1.05rem; margin-bottom: 6px;">Del Taller a la Operación Real</h4>
-                                        <p style="color: var(--gray-400); font-size: 0.84rem; max-width: 300px; margin: 0;">Digitalizando procesos manuales para transformar empresas</p>
-                                    </div>
-                                    <img src="assets/showcase_automatizacion.jpg" alt="Entorno industrial y automatización de procesos" class="carril__slide-img">
-                                    <div class="carril__slide-img-overlay">
-                                        <span style="font-size: 0.84rem; color: var(--gold); font-weight: 600; letter-spacing: 0.4px;">El origen</span>
-                                        <span style="font-size: 0.76rem; color: var(--gray-400);">De la fábrica a la solución</span>
-                                    </div>
+                                    <img src="assets/showcase_automatizacion.jpg" alt="Entorno industrial y automatización de procesos">
                                 </div>
                             </div>
                             <div class="carril__slide-text">
-                                <span class="section__label">02 / NUESTRA HISTORIA</span>
-                                <h2 class="section__title" style="margin-bottom: 12px; font-size: clamp(1.5rem, 2.4vw, 1.95rem); line-height: 1.25;">
-                                    Todo comenzó con un <span class="text-gold">problema real</span>
+                                <span class="sec-head-mono">02 · NUESTRA HISTORIA</span>
+                                <h2 class="section__title">
+                                    Todo comenzó con <span class="text-gold">un problema real</span>
                                 </h2>
-                                <p class="section__subtitle" style="text-align: left; margin-left: 0; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55;">
-                                    La idea de VYE surgió al observar de cerca cómo funcionaban los procesos dentro de una fábrica.
+                                <p class="carril__paragraph">
+                                    VyE nació al observar cómo los registros en papel, los controles manuales y las tareas repetitivas complicaban el trabajo diario en una fábrica.
                                 </p>
-                                <p class="section__subtitle" style="text-align: left; margin-left: 0; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55;">
-                                    Registros en libretas, controles manuales y tareas repetitivas formaban parte de operaciones que podían realizarse de manera mucho más sencilla con ayuda de la tecnología.
+                                <p class="carril__paragraph">
+                                    Pronto entendimos que estos problemas no eran exclusivos de la industria: también estaban presentes en comercios y empresas de servicios.
                                 </p>
-                                <p class="section__subtitle" style="text-align: left; margin-left: 0; margin-bottom: 10px; font-size: 0.92rem; line-height: 1.55;">
-                                    Pronto comprendimos que esta situación no era exclusiva de la industria: muchos negocios enfrentaban problemas similares, sin contar con herramientas adaptadas a sus necesidades.
-                                </p>
-                                <div class="solucion__accent" style="margin-top: 6px; margin-bottom: 8px; padding: 12px 18px;">
-                                    <div class="solucion__accent-line"></div>
-                                    <p style="margin: 0; line-height: 1.5; font-size: 0.88rem;">
-                                        <strong>Así nació VYE:</strong> de la convicción de que la tecnología debe estar al alcance de quienes la necesitan para trabajar mejor.
+                                <div class="carril__callout">
+                                    <p class="carril__callout-text">
+                                        <strong>Así nació VyE:</strong> con la idea de desarrollar tecnología que se adapte a cada negocio, simplifique su operación y resuelva problemas reales.
                                     </p>
                                 </div>
-                                <button type="button" class="carril__inline-btn" data-carril-goto="2">
-                                    Conoce al equipo <span>→</span>
+                                <button type="button" class="btn btn--outline" data-carril-goto="2">
+                                    Conoce al equipo →
                                 </button>
                             </div>
                         </div>
@@ -199,52 +146,45 @@
                     <!-- ── SLIDE 3: NUESTRO EQUIPO ── -->
                     <div class="carril__slide" data-slide="2">
                         <div class="carril__team-header">
-                            <span class="section__label">03 / NUESTRO EQUIPO</span>
-                            <h2 class="section__title" style="margin-bottom: 8px; font-size: clamp(1.5rem, 2.4vw, 1.95rem); line-height: 1.25;">
-                                Las personas detrás de <span class="text-gold">VYE</span>
+                            <span class="sec-head-mono">03 · NUESTRO EQUIPO</span>
+                            <h2 class="section__title">
+                                Las personas detrás de <span class="text-gold">VyE</span>
                             </h2>
-                            <p class="section__subtitle" style="max-width: 740px; margin: 0 auto 6px; font-size: 0.88rem; line-height: 1.5;">
-                                Somos un equipo con formación en ingeniería mecatrónica, una disciplina que integra programación, electrónica, mecánica y automatización.
-                            </p>
-                            <p class="section__subtitle" style="max-width: 740px; margin: 0 auto; font-size: 0.88rem; line-height: 1.5;">
-                                Esta preparación nos permite abordar los proyectos desde diferentes perspectivas y desarrollar soluciones adaptadas.
+                            <p class="section__subtitle">
+                                Somos Víctor Villafaña y Edgar Cortés, ingenieros mecatrónicos del IPN. Combinamos nuestras especialidades para desarrollar soluciones que conectan tecnología y necesidades reales.
                             </p>
                         </div>
 
                         <div class="carril__team-grid">
                             <!-- Víctor -->
                             <div class="carril__team-card">
-                                <div class="team-portrait team-portrait--victor">
-                                    <div class="team-portrait__frame">
-                                        <img src="assets/fundadores_vye.jpg" alt="Fotografía de Víctor - Cofundador VyE" class="team-portrait__img" style="object-position: 25% 20%; transform: scale(1.35);">
-                                    </div>
+                                <div class="carril__team-avatar">
+                                    <img src="assets/victor_villafana.jpg" alt="Víctor Villafaña - Cofundador VyE" class="carril__team-avatar-img team-avatar-victor">
                                 </div>
-                                <h3 style="font-size: 1.15rem; margin-bottom: 3px; color: var(--white); font-family: var(--font-heading); font-weight: 700;">Víctor Villafaña</h3>
-                                <p style="color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin: 0 0 8px;">Ingeniería Mecatrónica · IPN</p>
-                                <p style="color: var(--gray-400); font-size: 0.84rem; line-height: 1.45; margin: 0;">Arquitectura de software empresarial, bases de datos y sistemas ERP.</p>
+                                <h3 class="carril__team-name">Víctor Villafaña</h3>
+                                <span class="carril__team-role">COFUNDADOR · INGENIERÍA MECATRÓNICA</span>
+                                <p class="carril__team-desc">Arquitectura de software, bases de datos y sistemas empresariales ERP.</p>
                             </div>
 
-                            <!-- Edgar -->
+                            <!-- Edgar Cortés -->
                             <div class="carril__team-card">
-                                <div class="team-portrait team-portrait--edgar">
-                                    <div class="team-portrait__frame">
-                                        <img src="assets/fundadores_vye.jpg" alt="Fotografía de Edgar - Cofundador VyE" class="team-portrait__img" style="object-position: 75% 20%; transform: scale(1.35);">
-                                    </div>
+                                <div class="carril__team-avatar">
+                                    <img src="assets/fundadores_vye.jpg" alt="Edgar Cortés - Cofundador VyE" class="carril__team-avatar-img team-avatar-edgar">
                                 </div>
-                                <h3 style="font-size: 1.15rem; margin-bottom: 3px; color: var(--white); font-family: var(--font-heading); font-weight: 700;">Edgar Pérez</h3>
-                                <p style="color: var(--gold); font-size: 0.72rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; font-family: var(--font-mono); margin: 0 0 8px;">Ingeniería Mecatrónica · IPN</p>
-                                <p style="color: var(--gray-400); font-size: 0.84rem; line-height: 1.45; margin: 0;">Automatización de procesos operativos, control industrial e interfaces web.</p>
+                                <h3 class="carril__team-name">Edgar Cortés</h3>
+                                <span class="carril__team-role">COFUNDADOR · INGENIERÍA MECATRÓNICA</span>
+                                <p class="carril__team-desc">Automatización de procesos, control operativo y desarrollo de plataformas web.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Controles Inferiores: Indicador de progreso, barra de carga automática y flechas -->
+            <!-- Controles Inferiores: Indicador de progreso, dots y flechas -->
             <div class="carril__controls">
                 <div class="carril__status">
                     <div class="carril__counter">
-                        Sección <strong id="carrilCurrentNum">01</strong> / 03
+                        Sección <strong id="carrilCurrentNum">01</strong> de 03
                     </div>
                     <div class="carril__dots" role="tablist" aria-label="Indicadores de diapositiva">
                         <button class="carril__dot active" data-dot="0" aria-label="Ir a sección 1" role="tab"></button>
@@ -252,7 +192,6 @@
                         <button class="carril__dot" data-dot="2" aria-label="Ir a sección 3" role="tab"></button>
                     </div>
                 </div>
-
 
                 <div class="carril__nav-buttons">
                     <button class="carril__arrow" id="carrilPrevBtn" aria-label="Sección anterior" disabled>
@@ -272,36 +211,44 @@
     </section>
 
     <!-- ===================== 4. NUESTRA FILOSOFÍA ===================== -->
-    <section class="section section--problema" id="filosofia">
+    <section class="section section--filosofia" id="filosofia">
         <div class="section__container">
-            <div class="section__header" data-reveal style="margin-bottom: 20px;">
-                <span class="section__label">NUESTRA FILOSOFÍA</span>
-                <h2 class="section__title">La tecnología debe simplificar, <span class="text-gold">no complicar.</span></h2>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">NUESTRA FILOSOFÍA</span>
+                    <h2 class="section__title">La tecnología debe simplificar, <span class="text-gold">no complicar.</span></h2>
+                </div>
                 <p class="section__subtitle">
-                    Creemos que una buena solución no es la más compleja, sino la que mejor resuelve el problema.
+                    Creemos que una buena solución de ingeniería no es la más aparatosa, sino la que mejor y más rápido resuelve el problema.
                 </p>
             </div>
 
-            <div class="filosofia-grid">
+            <div class="process-minimal-grid" data-reveal>
                 <!-- Principio 1 -->
-                <div class="diferencial__card" data-reveal style="padding: 36px 30px; display: flex; flex-direction: column;">
-                    <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--gold); opacity: 0.7; margin-bottom: 14px;">01</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--white);">Entender antes de desarrollar</h3>
-                    <p style="color: var(--gray-400); font-size: 0.98rem; line-height: 1.7; margin: 0;">Escuchamos y analizamos cada necesidad antes de proponer una solución.</p>
+                <div class="process-minimal-card">
+                    <span class="process-minimal-num">01</span>
+                    <h3 class="filosofia-card-title">Entender antes de desarrollar</h3>
+                    <p class="process-minimal-desc">
+                        Escuchamos y analizamos a fondo la realidad operativa de tu negocio antes de proponer cualquier solución o escribir una sola línea de código.
+                    </p>
                 </div>
 
                 <!-- Principio 2 -->
-                <div class="diferencial__card" data-reveal style="padding: 36px 30px; display: flex; flex-direction: column;">
-                    <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--gold); opacity: 0.7; margin-bottom: 14px;">02</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--white);">Diseñar con propósito</h3>
-                    <p style="color: var(--gray-400); font-size: 0.98rem; line-height: 1.7; margin: 0;">Cada herramienta debe aportar un beneficio concreto, no añadir complejidad innecesaria.</p>
+                <div class="process-minimal-card">
+                    <span class="process-minimal-num">02</span>
+                    <h3 class="filosofia-card-title">Diseñar con propósito</h3>
+                    <p class="process-minimal-desc">
+                        Cada pantalla, botón y automatización debe aportar un beneficio medible en tiempo o dinero, sin añadir complejidad innecesaria.
+                    </p>
                 </div>
 
                 <!-- Principio 3 -->
-                <div class="diferencial__card" data-reveal style="padding: 36px 30px; display: flex; flex-direction: column;">
-                    <div style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; color: var(--gold); opacity: 0.7; margin-bottom: 14px;">03</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px; color: var(--white);">Acompañar más allá de la entrega</h3>
-                    <p style="color: var(--gray-400); font-size: 0.98rem; line-height: 1.7; margin: 0;">Buscamos construir relaciones de confianza mediante comunicación directa, seguimiento y soporte.</p>
+                <div class="process-minimal-card">
+                    <span class="process-minimal-num">03</span>
+                    <h3 class="filosofia-card-title">Acompañar más allá de la entrega</h3>
+                    <p class="process-minimal-desc">
+                        Construimos relaciones de largo plazo basadas en transparencia técnica, capacitación profunda y soporte continuo en producción.
+                    </p>
                 </div>
             </div>
         </div>
@@ -310,27 +257,28 @@
     <!-- ===================== 5. HABLEMOS DE TU PROYECTO ===================== -->
     <section id="contacto" class="section section--cta">
         <div class="section__container">
-            <div class="cta__layout">
-                
-                <div class="cta__content" data-reveal>
-                    <span class="section__label">HABLEMOS DE TU PROYECTO</span>
-                    <h2 class="section__title">Las buenas soluciones comienzan con <span class="text-gold">una conversación.</span></h2>
-                    <p>Cuéntanos qué necesitas mejorar. Podemos ayudarte a encontrar una solución tecnológica adecuada para tu empresa o institución.</p>
-                    <div class="cta__actions">
-                        <a href="index.html#servicios" class="btn btn--outline btn--large" id="ctaServicios">
-                            <span class="btn__icon">⚡</span>
-                            Conocer nuestros servicios
-                        </a>
-                        <a href="https://wa.me/527718429946?text=Hola%2C%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto%20para%20mi%20empresa." class="btn btn--whatsapp btn--large" id="ctaWhatsapp"
-                            target="_blank" rel="noopener">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                            </svg>
-                            Contactar por WhatsApp
-                        </a>
-                    </div>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">HABLEMOS DE TU PROYECTO</span>
+                    <h2 class="section__title">Las buenas ideas comienzan con <span class="text-gold">una conversación.</span></h2>
                 </div>
+                <p class="section__subtitle">
+                    Cuéntanos qué necesitas mejorar. Podemos ayudarte a encontrar una solución tecnológica adecuada para tu empresa o institución.
+                </p>
+            </div>
+
+            <div class="cta-actions-row" data-reveal>
+                <a href="index.html#contacto" class="btn btn--primary btn--large" id="ctaServicios">
+                    Solicitar diagnóstico gratis
+                </a>
+                <a href="https://wa.me/527718429946?text=Hola%2C%20me%20gustar%C3%ADa%20platicar%20sobre%20un%20proyecto%20para%20mi%20empresa." class="btn btn--outline btn--large" id="ctaWhatsapp"
+                    target="_blank" rel="noopener">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Contactar por WhatsApp
+                </a>
             </div>
         </div>
     </section>
@@ -348,8 +296,8 @@
                     </div>
                 </div>
                 <div class="footer__info">
-                    <p class="footer__desc">Automatización y software para empresas<br>Optimización inteligente ·
-                        Soluciones a medida</p>
+                    <p class="footer__desc">Software y automatización para empresas<br>Soluciones a medida ·
+                        Resultados reales</p>
                 </div>
                 <div class="footer__contact">
                     <h4>Contacto</h4>
@@ -402,7 +350,7 @@
         </svg>
     </a>
 
-    <script src="script.js?v=vye-master-v31"></script>
+    <script src="script.js?v=vye-master-v65"></script>
 </body>
 
 </html>

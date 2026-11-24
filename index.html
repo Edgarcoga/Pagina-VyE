@@ -20,7 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=vye-master-v45">
+    <link rel="stylesheet" href="style.css?v=vye-master-v65">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
@@ -78,7 +78,7 @@
     <!-- ===================== NAVBAR ===================== -->
     <nav id="navbar" class="navbar">
         <div class="navbar__container">
-            <a href="#hero" class="navbar__logo" id="brandTransition" aria-label="VyE Ingeniería - Inicio">
+            <a href="#hero" class="navbar__logo" id="brandTransition"  aria-label="VyE Ingeniería - Inicio">
                 <img src="assets/Isotipo Vye.png" alt="VyE Isotipo" class="navbar__logo-icon" width="40" height="40">
                 <div class="navbar__logo-text">
                     <img src="assets/Logotipo Vye.svg" alt="VYE" class="navbar__logotipo" height="18">
@@ -101,8 +101,6 @@
 
     <!-- ===================== HERO ===================== -->
     <section id="hero" class="hero">
-        <div class="hero__bg-grid"></div>
-        <div class="hero__particles" id="heroParticles"></div>
         <div class="hero__content">
             <div class="hero__grid">
                 <!-- Columna Izquierda: Propuesta de valor para Dueños y Directivos -->
@@ -116,7 +114,7 @@
                     <div class="hero__brand-phrase" data-reveal>
                         <p class="hero__brand-phrase-text">
                             Porque un negocio no crece con más trabajo.<br>
-                            Crece con <span class="text-pen-underline">mejores decisiones.<svg class="text-pen-underline__svg" viewBox="0 0 500 22" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12 C42 6, 88 16, 134 9 C182 4, 230 15, 282 8 C338 2, 392 14, 444 8 C472 5, 488 11, 496 7" class="text-pen-underline__path" stroke="#D4AF37" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                            Crece con <span class="text-gold">mejores decisiones.</span>
                         </p>
                     </div>
 
@@ -131,18 +129,39 @@
                     </div>
                 </div>
 
-                <!-- Columna Derecha: Tarjeta Visual de Portafolio / Ingeniería -->
+                <!-- Columna Derecha: Showcase Interactivo de Producto Real -->
                 <div class="hero__visual-col" data-reveal>
-                    <div class="hero-card">
-                        <div class="hero-card__image-wrap">
-                            <img src="assets/showcase_software_erp.jpg" alt="Panel de control operativo VyE ERP y automatización de procesos" class="hero-card__image">
-                            <div class="hero-card__gradient"></div>
+                    <div class="hero-showcase" id="heroShowcase" role="region" aria-label="Demostración interactiva de especialidades VyE">
+                        <!-- Header técnico minimalista estilo hardware/monitor -->
+                        <div class="hero-showcase__header">
+                            <div class="hero-showcase__dots" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </div>
+                            <span class="hero-showcase__tag" id="heroShowcaseTag">01 · PÁGINAS WEB &amp; E-COMMERCE</span>
                         </div>
-                        <div class="hero-card__top">
-                            <span class="hero-card__eyebrow">Automatización &amp; Software para Empresas</span>
+
+                        <!-- Visor de diapositivas con crossfade limpio -->
+                        <div class="hero-showcase__viewport">
+                            <div class="hero-showcase__slide active" data-index="0" data-label="01 · PÁGINAS WEB &amp; E-COMMERCE">
+                                <img src="assets/showcase_plataforma_web.jpg" alt="Páginas Web y Plataformas Digitales de Alta Conversión" class="hero-showcase__img" loading="eager">
+                            </div>
+                            <div class="hero-showcase__slide" data-index="1" data-label="02 · SOFTWARE A LA MEDIDA &amp; ERP">
+                                <img src="assets/showcase_software_erp.jpg" alt="Software de Gestión Empresarial y ERP a la Medida" class="hero-showcase__img" loading="lazy">
+                            </div>
+                            <div class="hero-showcase__slide" data-index="2" data-label="03 · PUNTO DE VENTA (POS) &amp; STOCK">
+                                <img src="assets/showcase_inventario_wms.jpg" alt="Control de Inventario, Puntos de Venta y Almacén" class="hero-showcase__img" loading="lazy">
+                            </div>
+                            <div class="hero-showcase__slide" data-index="3" data-label="04 · AUTOMATIZACIÓN &amp; MECATRÓNICA IPN">
+                                <img src="assets/showcase_automatizacion.jpg" alt="Automatización de Procesos y Mecatrónica IPN" class="hero-showcase__img" loading="lazy">
+                            </div>
+                            <div class="hero-showcase__slide" data-index="4" data-label="05 · PLATAFORMAS CLOUD &amp; SAAS">
+                                <img src="assets/showcase_sge_educore.jpg" alt="Plataformas Cloud y Sistemas de Gestión Especializada" class="hero-showcase__img" loading="lazy">
+                            </div>
                         </div>
-                        <div class="hero-card__bottom">
-                            <h3 class="hero-card__title">Sistemas que ordenan tu operación</h3>
+
+                        <!-- Barrita inferior de progreso en tiempo real (4.5s) -->
+                        <div class="hero-showcase__progress" aria-hidden="true">
+                            <div class="hero-showcase__progress-fill" id="heroProgressFill"></div>
                         </div>
                     </div>
                 </div>
@@ -150,27 +169,31 @@
         </div>
     </section>
 
-    <!-- ===================== CINTA CONTINUA (STRIP TICKER) ===================== -->
-    <div class="strip" aria-label="Especialidades y servicios de VyE Ingeniería">
-        <div class="strip-in" id="stripIn">
-            <span>Software a medida</span>
-            <span>Automatización de negocios</span>
-            <span>Mecatrónica &amp; PLC</span>
-            <span>Ingeniería IPN</span>
-            <span>ERP &amp; Plataformas</span>
-            <span>Puntos de venta</span>
-            <span>Desarrollo web</span>
-            <span>Sistemas a la medida</span>
-            <span>Software a medida</span>
-            <span>Automatización de negocios</span>
-            <span>Mecatrónica &amp; PLC</span>
-            <span>Ingeniería IPN</span>
-            <span>ERP &amp; Plataformas</span>
-            <span>Puntos de venta</span>
-            <span>Desarrollo web</span>
-            <span>Sistemas a la medida</span>
+    <!-- ===================== CAPACIDADES INTERACTIVAS (TABS SHOWCASE) ===================== -->
+    <nav class="capabilities-bar" aria-label="Especialidades interactivas de VyE Ingeniería">
+        <div class="capabilities-bar__container" id="capabilitiesTabs" role="tablist">
+            <button type="button" class="capabilities-tab active" data-slide="0" role="tab" aria-selected="true">
+                <span class="capabilities-tab__num">01</span>
+                <span class="capabilities-tab__label">Páginas Web</span>
+            </button>
+            <button type="button" class="capabilities-tab" data-slide="1" role="tab" aria-selected="false">
+                <span class="capabilities-tab__num">02</span>
+                <span class="capabilities-tab__label">Software &amp; ERP</span>
+            </button>
+            <button type="button" class="capabilities-tab" data-slide="2" role="tab" aria-selected="false">
+                <span class="capabilities-tab__num">03</span>
+                <span class="capabilities-tab__label">Punto de Venta &amp; Stock</span>
+            </button>
+            <button type="button" class="capabilities-tab" data-slide="3" role="tab" aria-selected="false">
+                <span class="capabilities-tab__num">04</span>
+                <span class="capabilities-tab__label">Automatización IPN</span>
+            </button>
+            <button type="button" class="capabilities-tab" data-slide="4" role="tab" aria-selected="false">
+                <span class="capabilities-tab__num">05</span>
+                <span class="capabilities-tab__label">Plataformas Cloud</span>
+            </button>
         </div>
-    </div>
+    </nav>
 
     <!-- ===================== EL RETO / LA REALIDAD ===================== -->
     <section id="reto" class="section section--reto">
@@ -180,7 +203,7 @@
                     <span class="sec-head-mono">EL RETO</span>
                     <h2 class="section__title">¿Tu negocio depende <span class="text-gold">demasiado de ti?</span></h2>
                 </div>
-                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve cada vez más desordenada y compleja. Seguir operando a mano también cuesta: tiempo, dinero y control.</p>
+                <p class="section__subtitle">Muchos negocios crecen, pero su operación se vuelve cada vez más desordenada y compleja.</p>
             </div>
 
             <div class="reto-grid" data-reveal>
@@ -268,6 +291,11 @@
                     <p class="reto-col__note">El software y la automatización se diseñan para tu flujo real, eliminando el caos desde la raíz.</p>
                 </div>
             </div>
+
+            <!-- Punchline contundente al pie del reto -->
+            <div class="reto-punchline" data-reveal>
+                <p>Seguir operando como antes también cuesta.</p>
+            </div>
         </div>
     </section>
 
@@ -279,13 +307,13 @@
                     <span class="sec-head-mono">LO QUE HACEMOS</span>
                     <h2 class="section__title">Cuatro servicios. <span class="text-gold">Cero relleno.</span></h2>
                 </div>
-                <p class="section__subtitle">Cada servicio nace de un problema concreto: tiempo perdido, errores manuales o información que nadie encuentra cuando la necesita.</p>
+                <p class="section__subtitle">Soluciones para problemas reales: tiempo perdido, errores manuales y datos que nadie encuentra cuando los necesitan.</p>
             </div>
 
             <div class="svc">
                 <!-- 01 Software a medida -->
                 <article class="svc-row" data-reveal>
-                    <span class="svc-num">/ 01</span>
+                    <span class="svc-num">01</span>
                     <div class="svc-title-wrap">
                         <h3><small>ERP &amp; Operación</small>Software a medida</h3>
                     </div>
@@ -308,7 +336,7 @@
 
                 <!-- 02 Automatización para negocios -->
                 <article class="svc-row" data-reveal>
-                    <span class="svc-num">/ 02</span>
+                    <span class="svc-num">02</span>
                     <div class="svc-title-wrap">
                         <h3><small>Optimización de Procesos</small>Automatización para negocios</h3>
                     </div>
@@ -328,7 +356,7 @@
 
                 <!-- 03 Automatización industrial (Mecatrónica IPN) -->
                 <article class="svc-row" data-reveal>
-                    <span class="svc-num">/ 03</span>
+                    <span class="svc-num">03</span>
                     <div class="svc-title-wrap">
                         <h3><small>Mecatrónica IPN</small>Automatización industrial</h3>
                     </div>
@@ -348,7 +376,7 @@
 
                 <!-- 04 Desarrollo web -->
                 <article class="svc-row" data-reveal>
-                    <span class="svc-num">/ 04</span>
+                    <span class="svc-num">04</span>
                     <div class="svc-title-wrap">
                         <h3><small>Web Corporativa</small>Desarrollo web</h3>
                     </div>
@@ -375,91 +403,12 @@
             <div class="sec-head" data-reveal>
                 <div>
                     <span class="sec-head-mono">PORTAFOLIO</span>
-                    <h2 class="section__title">Sistemas que ya <span class="text-gold">trabajan todos los días.</span></h2>
+                    <h2 class="section__title">Así se ven <span class="text-gold">nuestras soluciones.</span></h2>
                 </div>
-                <p class="section__subtitle">Casos reales con pantallas del software en producción. Toca cualquier proyecto o pantalla para ampliarla en alta resolución.</p>
-            </div>
-
-            <!-- PROYECTO DESTACADO (NISSAN UNIVERSIDAD) -->
-            <div class="feat-box" data-reveal>
-                <div class="feat-box__header">
-                    <div class="feat-box__tag-wrap">
-                        <span class="feat-box__badge">PROYECTO DESTACADO · EN DESARROLLO ACTIVO</span>
-                        <span class="feat-box__subtag">ERP · CONCESIONARIA AUTOMOTRIZ</span>
-                    </div>
-                    <span class="feat-box__note">Capturas tomadas de la plataforma real en operación</span>
-                </div>
-
-                <div class="feat-grid">
-                    <!-- Visor de pantalla interactivo -->
-                    <div class="feat-visual">
-                        <figure class="feat-main">
-                            <div class="feat-main__browser-bar">
-                                <div class="feat-main__browser-dots">
-                                    <span></span><span></span><span></span>
-                                </div>
-                                <span class="feat-main__browser-title">Nissan Universidad ERP · Operación &amp; Telemetría</span>
-                                <span class="feat-main__browser-zoom">Clic para ampliar ⤢</span>
-                            </div>
-                            <img id="featImg" src="assets/portfolio/nissan_1.png" alt="Dashboard de ventas y SLA del ERP Nissan Universidad" loading="lazy">
-                            <figcaption class="feat-cap">
-                                <b id="featTitle">Dashboard de ventas y SLA</b>
-                                <span id="featDesc">Regla de los 5 días: 8.8% en meta, promedio de 3.2 días. Total facturado $73.78M.</span>
-                            </figcaption>
-                        </figure>
-                        <!-- 7 Miniaturas -->
-                        <div class="thumbs" id="featThumbs" role="tablist" aria-label="Pantallas del ERP Nissan Universidad"></div>
-                    </div>
-
-                    <!-- Ficha técnica del proyecto -->
-                    <div class="feat-side">
-                        <h3 class="feat-side__title">ERP Integral Nissan Universidad</h3>
-                        <p class="feat-side__desc">
-                            Control centralizado de inventario automotriz y pipeline de acondicionamiento de vehículos: desde el ingreso al almacén de la agencia hasta la entrega final al cliente. Muestra dónde está cada unidad, quién la está trabajando y en qué etapa se presentan demoras.
-                        </p>
-
-                        <ul class="feat-list">
-                            <li><strong>Control de ventas y SLA:</strong> Seguimiento estricto de la regla de los 5 días con tableros en vivo.</li>
-                            <li><strong>Inspección física y daños:</strong> Registro fotográfico y mapeo visual de afectaciones por cada vista del vehículo.</li>
-                            <li><strong>Pipeline de 5 etapas:</strong> Monitoreo de almacén, mantenimiento, PDI y entrega con detección de cuellos de botella.</li>
-                            <li><strong>Gestión de usuarios y accesos:</strong> Portal seguro con roles operativos ADPC y verificación de cuentas.</li>
-                        </ul>
-
-                        <div class="feat-nums">
-                            <div class="feat-num-item">
-                                <b>$73.78 M</b>
-                                <span>Total facturado en tablero</span>
-                            </div>
-                            <div class="feat-num-item">
-                                <b>381</b>
-                                <span>Unidades en proceso</span>
-                            </div>
-                            <div class="feat-num-item">
-                                <b>202</b>
-                                <span>Unidades en agencia</span>
-                            </div>
-                            <div class="feat-num-item">
-                                <b>5 Etapas</b>
-                                <span>Pipeline almacén a entrega</span>
-                            </div>
-                        </div>
-
-                        <div class="feat-actions">
-                            <button type="button" class="btn btn--outline btn--square" id="btnFeatViewAll" onclick="openLb('nissan', 1)">
-                                Ver las 7 pantallas completas →
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <p class="section__subtitle">Proyectos reales, sistemas y automatizaciones diseñadas para optimizar la operación de cada empresa.</p>
             </div>
 
             <!-- GRID DE 3 SISTEMAS REALES ENTREGADOS -->
-            <div class="proj-section-subhead" data-reveal>
-                <span class="proj-section-tag">NUESTRO TRABAJO</span>
-                <h3 class="proj-section-title">Así se ven <br class="proj-title-br"><span class="proj-title-accent">nuestras soluciones</span></h3>
-                <p class="proj-section-desc">Proyectos reales, sistemas y automatizaciones diseñadas para optimizar la operación de cada empresa.</p>
-            </div>
-
             <div class="proj-grid" data-reveal>
                 <!-- Card 1: Control Operativo y Contable -->
                 <article class="proj-card" data-proj="contable">
@@ -530,128 +479,123 @@
                     </div>
                 </article>
             </div>
+
+            <!-- SISTEMAS EN PRODUCCIÓN -->
+            <div class="portafolio-subhead" data-reveal>
+                <h3 class="portafolio-subhead__title">Sistemas que ya <span class="text-gold">trabajan todos los días.</span></h3>
+            </div>
+
+            <!-- PROYECTO INDUSTRIAL (NISSAN UNIVERSIDAD) -->
+            <div class="feat-box" data-reveal>
+                <div class="feat-box__header">
+                    <div class="feat-box__tag-wrap">
+                        <span class="feat-box__badge">NUESTRO PROYECTO MÁS GRANDE EN CURSO</span>
+                        <span class="feat-box__subtag">CONCESIONARIA AUTOMOTRIZ</span>
+                    </div>
+                    <span class="feat-box__note">Capturas de la plataforma real en operación</span>
+                </div>
+
+                <div class="feat-grid">
+                    <!-- Visor de pantalla interactivo -->
+                    <div class="feat-visual">
+                        <figure class="feat-main">
+                            <div class="feat-main__browser-bar">
+                                <div class="feat-main__browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <span class="feat-main__browser-title">Nissan Universidad ERP · Operación &amp; Telemetría</span>
+                                <span class="feat-main__browser-zoom">Clic para ampliar ⤢</span>
+                            </div>
+                            <img id="featImg" src="assets/portfolio/nissan_1.png" alt="Dashboard de ventas y SLA del ERP Nissan Universidad" loading="lazy">
+                            <figcaption class="feat-cap">
+                                <b id="featTitle">Dashboard de ventas y SLA</b>
+                                <span id="featDesc">Regla de los 5 días: 8.8% en meta, promedio de 3.2 días. Total facturado $73.78M.</span>
+                            </figcaption>
+                        </figure>
+                        <!-- 7 Miniaturas -->
+                        <div class="thumbs" id="featThumbs" role="tablist" aria-label="Pantallas del ERP Nissan Universidad"></div>
+                    </div>
+
+                    <!-- Ficha técnica del proyecto -->
+                    <div class="feat-side">
+                        <h3 class="feat-side__title">Nissan Universidad ERP</h3>
+                        <p class="feat-side__desc">
+                            Trazabilidad y control en tiempo real.
+                        </p>
+
+                        <ul class="feat-list">
+                            <li><strong>Control de ventas y SLA:</strong> Seguimiento estricto de la regla de los 5 días con tableros en vivo.</li>
+                            <li><strong>Inspección física y daños:</strong> Registro fotográfico y mapeo visual de afectaciones por cada vista del vehículo.</li>
+                            <li><strong>Pipeline de 5 etapas:</strong> Monitoreo de almacén, mantenimiento, PDI y entrega con detección de cuellos de botella.</li>
+                            <li><strong>Gestión de usuarios y accesos:</strong> Portal seguro con roles operativos ADPC y verificación de cuentas.</li>
+                        </ul>
+
+                        <div class="feat-nums">
+                            <div class="feat-num-item">
+                                <b>$73.78 M</b>
+                                <span>Total facturado en tablero</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>381</b>
+                                <span>Unidades en proceso</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>202</b>
+                                <span>Unidades en agencia</span>
+                            </div>
+                            <div class="feat-num-item">
+                                <b>5 Etapas</b>
+                                <span>Pipeline almacén a entrega</span>
+                            </div>
+                        </div>
+
+                        <div class="feat-actions">
+                            <button type="button" class="btn btn--outline btn--square" id="btnFeatViewAll" onclick="openLb('nissan', 1)">
+                                Ver las 7 pantallas completas →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===================== CÓMO TRABAJAMOS (3 PASOS COMPACTO Y AL GRANO) ===================== -->
+    <!-- ===================== CÓMO TRABAJAMOS (3 PASOS MINIMAL) ===================== -->
     <section id="proceso" class="section section--proceso">
         <div class="section__container">
-            <!-- Etiqueta amarilla con raya clásica de VyE -->
-            <div class="process-tag-wrap" data-reveal>
-                <span class="sec-head-mono">CÓMO TRABAJAMOS</span>
-            </div>
-
-            <!-- Header con títulos apilados concisos y directos -->
-            <div class="process-header" data-reveal>
-                <div class="process-stacked-titles" id="processStackedTitles">
-                    <h2 class="process-stacked-title active" data-step="1">
-                        Detectamos fugas en tu operación
-                        <span class="process-title-num">01</span>
-                    </h2>
-                    <h2 class="process-stacked-title" data-step="2">
-                        Propuesta técnica con precio fijo
-                        <span class="process-title-num">02</span>
-                    </h2>
-                    <h2 class="process-stacked-title" data-step="3">
-                        Implementación y control total
-                        <span class="process-title-num">03</span>
+            <div class="sec-head" data-reveal>
+                <div>
+                    <span class="sec-head-mono">CÓMO TRABAJAMOS</span>
+                    <h2 class="section__title">
+                        Tres pasos claros.<br>
+                        <span class="process-dynamic-word text-gold" id="processDynamicWord">Sin sorpresas.</span>
                     </h2>
                 </div>
-                <p class="process-header-sub">
-                    Sabes exactamente qué ocurre en cada etapa antes de empezar. Sin sorpresas, retrasos ni costos ocultos.
-                </p>
+                <p class="section__subtitle">Antes de empezar, sabes qué haremos, cómo lo haremos y cuánto costará. Acuerdos claros, sin letras pequeñas ni sorpresas.</p>
             </div>
 
-            <!-- Fila de Tarjetas Visuales Compactas de Producto -->
-            <div class="process-showcase-grid" id="processShowcaseGrid" data-reveal>
-                <!-- Visual 1: Conexión de fuentes y diagnóstico -->
-                <div class="process-card active" data-step="1">
-                    <div class="process-card__hub">
-                        <div class="process-hub-center">
-                            <img src="assets/Isotipo_Vye_blanco.png" alt="VyE Hub" class="process-hub-logo">
-                        </div>
-                        <div class="process-hub-node node-1"><span>📊</span> Excel</div>
-                        <div class="process-hub-node node-2"><span>📦</span> Stock</div>
-                        <div class="process-hub-node node-3"><span>💳</span> POS</div>
-                        <div class="process-hub-node node-4"><span>⚙️</span> SAT / ERP</div>
-                        <svg class="process-hub-lines" viewBox="0 0 320 140" fill="none">
-                            <path d="M 65 30 L 160 70 M 255 30 L 160 70 M 65 110 L 160 70 M 255 110 L 160 70" stroke="#2c2c34" stroke-width="1.2" stroke-dasharray="3 3"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <!-- Visual 2: Consulta interactiva y alcance cerrado -->
-                <div class="process-card" data-step="2">
-                    <div class="process-query-mockup">
-                        <div class="process-query-input-wrap">
-                            <span class="process-query-prompt-icon">🔍</span>
-                            <span class="process-query-typing">¿Alcance técnico y costo fijo?</span>
-                            <span class="process-query-enter">↵</span>
-                        </div>
-                        <div class="process-query-card">
-                            <div class="process-query-badge">
-                                <span class="process-query-dot"></span>
-                                Alcance técnico cerrado
-                            </div>
-                            <div class="process-query-row">
-                                <span class="query-k">Entregables:</span>
-                                <span class="query-v">Plataforma Web + Base de Datos</span>
-                            </div>
-                            <div class="process-query-row">
-                                <span class="query-k">Garantía:</span>
-                                <span class="query-v">Cotización fija por contrato</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Visual 3: Automatización en vivo y tareas completadas -->
-                <div class="process-card" data-step="3">
-                    <div class="process-live-mockup">
-                        <div class="process-live-head">
-                            <span class="process-live-indicator"></span>
-                            <span>Sistema operando en producción</span>
-                        </div>
-                        <ul class="process-live-list">
-                            <li class="process-live-item is-done">
-                                <span class="live-check">✓</span>
-                                <span>Inventario cuadrado en tiempo real</span>
-                            </li>
-                            <li class="process-live-item is-done">
-                                <span class="live-check">✓</span>
-                                <span>Alertas de stock enviadas a WhatsApp</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fila de Pasos Explicativos Numerados Abajo -->
-            <div class="process-steps-grid" id="processStepsGrid" data-reveal>
-                <!-- Paso 1 -->
-                <div class="process-step-item active" data-step="1">
-                    <span class="process-step-num">01</span>
-                    <h3 class="process-step-title">Diagnóstico sin costo</h3>
-                    <p class="process-step-desc">
-                        Revisamos tu operación, detectamos fugas de tiempo o dinero y te decimos con honestidad qué conviene automatizar.
+            <div class="process-minimal-grid" id="processCardsGrid" data-reveal>
+                <!-- Paso 01 -->
+                <div class="process-minimal-card" data-phrase="Diagnóstico sin costo">
+                    <span class="process-minimal-num">01</span>
+                    <p class="process-minimal-desc">
+                        Revisamos tu operación y te decimos con honestidad técnica qué conviene automatizar y qué no.
                     </p>
                 </div>
 
-                <!-- Paso 2 -->
-                <div class="process-step-item" data-step="2">
-                    <span class="process-step-num">02</span>
-                    <h3 class="process-step-title">Propuesta y precio cerrado</h3>
-                    <p class="process-step-desc">
-                        Definimos entregables específicos, fechas de entrega y cotización fija. Todo por escrito antes de iniciar, sin sorpresas.
+                <!-- Paso 02 -->
+                <div class="process-minimal-card" data-phrase="Propuesta y precio cerrado">
+                    <span class="process-minimal-num">02</span>
+                    <p class="process-minimal-desc">
+                        Entregables específicos, fechas de entrega y cotización fija por contrato antes de iniciar, sin cobros sorpresa.
                     </p>
                 </div>
 
-                <!-- Paso 3 -->
-                <div class="process-step-item" data-step="3">
-                    <span class="process-step-num">03</span>
-                    <h3 class="process-step-title">Construcción y control total</h3>
-                    <p class="process-step-desc">
-                        Desarrollamos el sistema en iteraciones funcionales, capacitamos a tu equipo y te acompañamos con soporte técnico directo.
+                <!-- Paso 03 -->
+                <div class="process-minimal-card" data-phrase="Construcción y control total">
+                    <span class="process-minimal-num">03</span>
+                    <p class="process-minimal-desc">
+                        Desarrollamos en etapas funcionales, capacitamos a tu equipo y te acompañamos con soporte técnico en producción.
                     </p>
                 </div>
             </div>
@@ -666,103 +610,54 @@
                     <span class="sec-head-mono">SOBRE VYE</span>
                     <h2 class="section__title">Nació en una fábrica. <span class="text-gold">Hoy digitaliza empresas.</span></h2>
                 </div>
-                <p class="section__subtitle">Ingeniería mecatrónica del IPN aplicada a software y automatización con impacto operativo directo.</p>
             </div>
 
             <div class="about-grid" data-reveal>
                 <!-- Historia y Enfoque -->
                 <div class="about-story">
-                    <div class="about-story__badge">
-                        <span class="about-story__badge-dot"></span>
-                        Ingeniería Mecatrónica · IPN México
-                    </div>
                     <h3 class="about-story__heading">
-                        Convertimos datos complejos y tareas manuales en <span class="text-gold">decisiones rentables.</span>
+                        Convertimos procesos complejos en <span class="text-gold">soluciones eficientes.</span>
                     </h3>
                     <p class="about-story__text">
-                        VyE Ingeniería nació al observar de cerca cómo funcionaban los procesos dentro de las plantas de producción: registros en libretas, controles manuales y tareas repetitivas donde cualquier retraso o error costaba miles de pesos.
+                        VyE nació al detectar cómo los procesos manuales, la falta de información y las tareas repetitivas afectan la operación de una empresa.
                     </p>
                     <p class="about-story__text">
-                        Pronto entendimos que no era un problema exclusivo de la industria pesada: negocios comerciales, agencias y empresas de servicios operan con las mismas pérdidas por falta de herramientas diseñadas exactamente para su flujo de trabajo.
+                        Hoy desarrollamos software y soluciones de automatización a medida para ayudar a negocios a trabajar con más orden, control y eficiencia.
                     </p>
-                    <p class="about-story__text">
-                        Somos ingenieros mecatrónicos egresados del Instituto Politécnico Nacional. Desarrollamos software empresarial y plataformas web robustas, pero también dominamos sensores, telemetría y piso de operaciones. Esa disciplina técnica es la que garantiza que nuestras soluciones funcionen en el mundo real.
-                    </p>
-
-                    <div class="about-quote">
-                        <p class="about-quote__text">
-                            “No creamos tecnología por moda: diseñamos sistemas para resolver cuellos de botella reales con impacto directo en costos y tiempo.”
-                        </p>
-                    </div>
 
                     <div class="about-story__cta">
                         <a href="nosotros.html" class="btn btn--outline btn--square" id="btnAcercaDeNosotros">
-                            Conoce más sobre nuestra historia y equipo →
+                            Conoce nuestra historia y equipo →
                         </a>
                     </div>
                 </div>
 
-                <!-- Fundadores y Principio -->
+                <!-- Fundadores en módulo limpio minimalista -->
                 <div class="founders-col">
-                    <!-- Víctor -->
-                    <div class="founder-card">
-                        <div class="founder-card__header">
-                            <span class="founder-card__cred">[ IPN · MECATRÓNICA ]</span>
-                            <span class="founder-card__id">VYE-ENG-01</span>
-                        </div>
-                        <div class="founder-card__body">
-                            <div class="founder-card__avatar">V</div>
-                            <div class="founder-card__info">
-                                <h4 class="founder-card__name">Víctor Villafaña</h4>
-                                <span class="founder-card__role">Co-fundador · Ing. Mecatrónico IPN</span>
-                                <p class="founder-card__focus">Arquitectura de sistemas empresariales, diseño de bases de datos relacionales y plataformas ERP.</p>
-                                <div class="founder-card__tags">
-                                    <span>Software a Medida</span>
-                                    <span>Bases de Datos</span>
-                                    <span>Sistemas ERP</span>
-                                </div>
+                    <div class="founders-card">
+                        <span class="founders-card__cred">IPN · INGENIERÍA MECATRÓNICA</span>
+
+                        <!-- Fila Víctor Villafaña -->
+                        <div class="founder-entry">
+                            <div class="founder-entry__avatar">
+                                <img src="assets/victor_villafana.jpg" alt="Víctor Villafaña" class="founder-entry__avatar-img">
+                            </div>
+                            <div class="founder-entry__content">
+                                <h4 class="founder-entry__name">Víctor Villafaña</h4>
+                                <span class="founder-entry__role">COFUNDADOR</span>
+                                <p class="founder-entry__focus">Software empresarial, bases de datos y sistemas ERP.</p>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Edgar -->
-                    <div class="founder-card">
-                        <div class="founder-card__header">
-                            <span class="founder-card__cred">[ IPN · MECATRÓNICA ]</span>
-                            <span class="founder-card__id">VYE-ENG-02</span>
-                        </div>
-                        <div class="founder-card__body">
-                            <div class="founder-card__avatar">E</div>
-                            <div class="founder-card__info">
-                                <h4 class="founder-card__name">Edgar Pérez</h4>
-                                <span class="founder-card__role">Co-fundador · Ing. Mecatrónico IPN</span>
-                                <p class="founder-card__focus">Automatización de flujos de trabajo, control y telemetría de procesos, y desarrollo de plataformas web.</p>
-                                <div class="founder-card__tags">
-                                    <span>Automatización</span>
-                                    <span>Control Operativo</span>
-                                    <span>Desarrollo Web</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="founders-card__divider" aria-hidden="true"></div>
 
-                    <!-- Principio VyE -->
-                    <div class="founder-card founder-card--highlight">
-                        <div class="founder-card__header">
-                            <span class="founder-card__cred">[ PRINCIPIO RECTOR ]</span>
-                            <span class="founder-card__id">VYE-CORE</span>
-                        </div>
-                        <div class="founder-card__body">
-                            <div class="founder-card__avatar founder-card__avatar--gold">VyE</div>
-                            <div class="founder-card__info">
-                                <h4 class="founder-card__name">Diseñamos Eficiencia</h4>
-                                <span class="founder-card__role">Ingeniería que rinde resultados</span>
-                                <p class="founder-card__focus">Que la tecnología le quite trabajo y horas de estrés a tu equipo, no que le agregue complicaciones ni pasos innecesarios.</p>
-                                <div class="founder-card__tags">
-                                    <span>Impacto Medible</span>
-                                    <span>Cero Relleno</span>
-                                    <span>Soporte Directo</span>
-                                </div>
+                        <!-- Fila Edgar Cortés -->
+                        <div class="founder-entry">
+                            <div class="founder-entry__avatar" aria-hidden="true">E</div>
+                            <div class="founder-entry__content">
+                                <h4 class="founder-entry__name">Edgar Cortés</h4>
+                                <span class="founder-entry__role">COFUNDADOR</span>
+                                <p class="founder-entry__focus">Automatización, control y desarrollo web.</p>
                             </div>
                         </div>
                     </div>
@@ -779,24 +674,10 @@
                 <div class="contact-info" data-reveal>
                     <span class="sec-head-mono">CONTACTO</span>
                     <h2 class="contact-title">Cuéntanos qué te está <span class="text-gold">quitando tiempo</span></h2>
-                    <p class="contact-desc">
-                        ¿Dónde estás perdiendo dinero o perdiendo el control en tu operación? Analizamos tu caso a fondo y te decimos con honestidad técnica la ruta exacta para resolverlo.
-                    </p>
-
-                    <ul class="contact-highlights">
-                        <li>
-                            <span class="contact-check">✓</span>
-                            <span><strong>Trato directo con ingenieros</strong></span>
-                        </li>
-                        <li>
-                            <span class="contact-check">✓</span>
-                            <span><strong>Diagnóstico y cotización sin costo</strong></span>
-                        </li>
-                        <li>
-                            <span class="contact-check">✓</span>
-                            <span><strong>Respuesta el mismo día</strong></span>
-                        </li>
-                    </ul>
+                    <div class="contact-desc">
+                        <p class="contact-lead">¿Dónde estás perdiendo dinero? Cuéntanos qué está frenando tu negocio.</p>
+                        <p class="contact-sub">Analizamos tu caso y te decimos con honestidad técnica la ruta para recuperar el control.</p>
+                    </div>
 
                     <div class="contact-direct">
                         <span class="contact-direct__label">O contáctanos directamente:</span>
@@ -941,7 +822,7 @@
         </svg>
     </a>
 
-    <script src="script.js?v=vye-master-v45"></script>
+    <script src="script.js?v=vye-master-v65"></script>
 </body>
 
 </html>
