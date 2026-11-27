@@ -1,0 +1,125 @@
+/* ================================================================
+   VyE INGENIERÍA — SECCIÓN PROCESO (CÓMO TRABAJAMOS - MINIMAL)
+   También provee la grilla minimalista compartida por Filosofía en Nosotros.
+   ================================================================ */
+
+.section--proceso {
+    background: #080808;
+    position: relative;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.process-minimal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.2rem;
+}
+
+.process-minimal-card {
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: clamp(24px, 2.8vw, 32px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+}
+
+.process-minimal-card:hover,
+.process-minimal-card.is-active {
+    border-color: rgba(212, 175, 55, 0.55);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.process-minimal-num {
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold-classic);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.95rem;
+}
+
+.process-minimal-desc {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Cabecera y rotación horizontal dinámica */
+.section--proceso .sec-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: clamp(1.5rem, 3vw, 3rem);
+}
+
+.section--proceso .sec-head > div:first-child {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.section--proceso .sec-head h2,
+.section--proceso .sec-head .section__title {
+    font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    max-width: none;
+}
+
+.section--proceso .sec-head .section__subtitle {
+    max-width: 23rem;
+    font-size: clamp(0.88rem, 1vw, 0.96rem);
+    line-height: 1.5;
+    flex-shrink: 0;
+    margin-bottom: 0.2rem;
+}
+
+.process-dynamic-word {
+    display: inline-block;
+    white-space: nowrap;
+    margin-top: 0.18rem;
+    padding-right: 8px;
+    transition: opacity 0.12s ease;
+}
+
+.process-dynamic-word.text-gold {
+    background: linear-gradient(90deg, #FFE885 0%, #E6C252 35%, #D4AF37 70%, #FFE072 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.process-dynamic-word.is-fading {
+    opacity: 0;
+}
+
+@media (max-width: 860px) {
+    .section--proceso .sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .section--proceso .sec-head .section__subtitle {
+        max-width: 100%;
+        margin-top: 0;
+    }
+
+    .process-minimal-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .process-dynamic-word {
+        white-space: normal;
+    }
+}

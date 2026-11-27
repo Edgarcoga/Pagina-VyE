@@ -1,0 +1,21 @@
+{
+  "name": "VyE Ingeniería",
+  "short_name": "VyE",
+  "description": "Software a medida, automatización y soluciones tecnológicas para empresas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#D4AF37",
+  "icons": [
+    {
+      "src": "assets/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

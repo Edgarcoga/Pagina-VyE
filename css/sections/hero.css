@@ -1,0 +1,443 @@
+/* ================================================================
+   VyE INGENIERÍA — SECCIÓN HERO & BARRA DE CAPACIDADES INTERACTIVA
+   ================================================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: clamp(55px, 7vh, 75px) 0 clamp(16px, 2.5vh, 26px);
+    overflow: hidden;
+    background: #080808;
+}
+
+.hero__bg-grid,
+.hero__particles,
+.hero__glow {
+    display: none !important;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    width: 100%;
+}
+
+.hero__title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: clamp(10px, 1.4vh, 14px);
+}
+
+.hero__title-line {
+    display: block;
+    animation: fadeInUp 0.7s var(--ease-out) 0.25s both;
+}
+
+.hero__title-line--accent {
+    font-size: clamp(1.95rem, 3.6vw, 3.1rem);
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
+    letter-spacing: 2px;
+    padding-bottom: 0.08em;
+}
+
+.hero__marker-word {
+    display: inline;
+}
+
+.hero__marker-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero__brand-phrase {
+    margin-bottom: clamp(16px, 2.4vh, 24px);
+    animation: fadeInUp 0.7s var(--ease-out) 0.4s both;
+}
+
+.hero__brand-phrase-text {
+    font-family: var(--font-heading);
+    font-size: clamp(1rem, 1.45vw, 1.25rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+    position: relative;
+    padding-left: 18px;
+    border-left: 3px solid var(--gold);
+}
+
+.hero__actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    animation: fadeInUp 0.7s var(--ease-out) 0.55s both;
+}
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    gap: clamp(28px, 3.5vw, 48px);
+    align-items: center;
+    width: 100%;
+}
+
+.hero__text-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* ── Hero Showcase Interactivo (Monitor / Hardware Mockup) ── */
+.hero__visual-col {
+    position: relative;
+    width: 100%;
+    animation: fadeInUp 0.8s var(--ease-out) 0.4s both;
+}
+
+.hero-showcase {
+    position: relative;
+    width: 100%;
+    height: clamp(310px, 42vh, 380px);
+    border-radius: var(--radius-card);
+    background: #0D0D0D;
+    border: 1px solid #222222;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-showcase:hover {
+    border-color: rgba(212, 168, 67, 0.4);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.9);
+}
+
+.hero-showcase__header {
+    height: 38px;
+    background: #111111;
+    border-bottom: 1px solid #1E1E1E;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    z-index: 4;
+}
+
+.hero-showcase__dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.hero-showcase__dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2C2C2C;
+    display: inline-block;
+}
+
+.hero-showcase__dots span:first-child {
+    background: #3A3A3A;
+}
+
+.hero-showcase__tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9E9E9E;
+    transition: color 0.3s ease;
+}
+
+.hero-showcase__viewport {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #080808;
+}
+
+.hero-showcase__slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.02);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.hero-showcase__slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.hero-showcase__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: brightness(0.96) contrast(1.03);
+}
+
+/* ── Barrita inferior de progreso en tiempo real (4.5s) ── */
+.hero-showcase__progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 6;
+}
+
+.hero-showcase__progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--gold-classic);
+    will-change: width;
+    transition: width 0.05s linear;
+}
+
+/* ── BARRA DE CAPACIDADES INTERACTIVAS (TABS SHOWCASE) ── */
+.capabilities-bar {
+    border-top: 1px solid #1A1A1A;
+    border-bottom: 1px solid #1A1A1A;
+    background: #080808;
+    padding: 1.1rem 0;
+    width: 100%;
+}
+
+.capabilities-bar__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: clamp(16px, 2.5vw, 36px);
+}
+
+.capabilities-tab {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 6px 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #777777;
+    transition: color 0.22s ease, font-size 0.22s ease;
+    user-select: none;
+}
+
+.capabilities-tab:hover {
+    color: #CCCCCC;
+}
+
+.capabilities-tab.active {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    font-size: 0.92rem;
+}
+
+.capabilities-tab__num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gold-classic);
+    font-weight: 700;
+    opacity: 0.75;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.capabilities-tab.active .capabilities-tab__num {
+    color: var(--gold-classic);
+    opacity: 1;
+    transform: scale(1.06);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 769px) {
+    .homepage .hero {
+        min-height: calc(100vh - 58px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(90px, 11vh, 120px) 0 clamp(24px, 3vh, 36px);
+        box-sizing: border-box;
+    }
+
+    .homepage .hero__content {
+        padding-top: 155px;
+    }
+
+    .homepage .hero__grid {
+        align-items: center;
+        gap: clamp(32px, 4vw, 56px);
+    }
+
+    .homepage .hero__title {
+        margin-bottom: clamp(16px, 2.2vh, 24px);
+    }
+
+    .homepage .hero__title-line--accent {
+        font-size: clamp(2.35rem, 4.3vw, 3.8rem);
+        letter-spacing: 2px;
+        line-height: 1.08;
+    }
+
+    .homepage .hero__brand-phrase {
+        margin-bottom: clamp(22px, 3vh, 32px);
+    }
+
+    .homepage .hero__brand-phrase-text {
+        font-size: clamp(1.08rem, 1.55vw, 1.38rem);
+        line-height: 1.45;
+    }
+
+    .homepage .hero__actions {
+        margin-top: 0;
+        gap: 16px;
+    }
+
+    .homepage .hero-showcase {
+        height: clamp(330px, 45vh, 420px);
+    }
+
+    .homepage .capabilities-bar {
+        padding: 0.9rem 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 960px) {
+    .hero {
+        padding: 96px 0 40px;
+        min-height: auto;
+    }
+
+    .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero__text-col {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero__brand-phrase-text {
+        text-align: left;
+    }
+
+    .hero__actions {
+        justify-content: center;
+    }
+
+    .hero-showcase {
+        height: clamp(280px, 45vh, 340px);
+        max-width: 540px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 860px) {
+    .capabilities-bar__container {
+        gap: 0.8rem;
+        justify-content: center;
+    }
+
+    .capabilities-tab {
+        padding: 5px 8px;
+        font-size: 0.76rem;
+        gap: 6px;
+    }
+
+    .capabilities-tab.active {
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero__marker-word {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 580px) {
+    .hero-showcase {
+        height: 270px;
+    }
+
+    .hero-showcase__header {
+        height: 34px;
+        padding: 0 12px;
+    }
+
+    .hero-showcase__tag {
+        font-size: 0.7rem;
+        letter-spacing: 0.06em;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-showcase__slide {
+        transition: none !important;
+    }
+}

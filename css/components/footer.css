@@ -1,0 +1,173 @@
+/* ================================================================
+   VyE INGENIERÍA — FOOTER COMPARTIDO & CONTROLES LEGALES
+   ================================================================ */
+
+.footer {
+    background: var(--gray-950);
+    border-top: var(--border);
+    padding: 56px 0 28px;
+}
+
+.footer__container {
+    width: min(100%, calc(var(--container-max) + (var(--container-pad) * 2)));
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 36px;
+    border-bottom: var(--border);
+    margin-bottom: 24px;
+}
+
+.footer__brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer__logo-icon {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.footer__brand-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.footer__brand-tagline {
+    font-size: 0.82rem;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+}
+
+.footer__desc {
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+
+.footer__nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.footer__nav-link {
+    font-size: 0.82rem;
+    color: var(--gray-300);
+    text-decoration: none;
+    transition: color 0.16s ease;
+}
+
+.footer__nav-link:hover {
+    color: var(--gold);
+}
+
+.footer__contact h4 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 14px;
+}
+
+.footer__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    color: var(--gray-300);
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.footer__contact-item:hover {
+    color: var(--gold);
+}
+
+.footer__contact-item svg {
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer__bottom p {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+}
+
+.footer__legal {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.footer__legal-link,
+.footer__cookie-btn {
+    background: none;
+    border: none;
+    padding: 4px 0;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.16s ease;
+}
+
+.footer__legal-link:hover,
+.footer__cookie-btn:hover {
+    color: var(--gold);
+}
+
+.footer__phrases {
+    display: flex;
+    gap: 10px;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .footer__top {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .footer__bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 44px 0 24px;
+    }
+
+    .footer__phrases {
+        flex-wrap: wrap;
+    }
+}

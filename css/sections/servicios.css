@@ -1,0 +1,205 @@
+/* ================================================================
+   VyE INGENIERÍA — SECCIÓN SERVICIOS
+   ================================================================ */
+
+.section--servicios {
+    background: var(--black);
+    position: relative;
+}
+
+.svc {
+    border-top: 1px solid var(--border-subtle);
+    width: 100%;
+}
+
+.svc-row {
+    display: grid;
+    grid-template-columns: 80px 1.15fr 1.35fr auto;
+    gap: 2rem;
+    align-items: start;
+    padding: 2.4rem 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: background-color 0.2s var(--ease-smooth), border-color 0.2s;
+    position: relative;
+    border-radius: var(--radius-btn);
+}
+
+.svc-row:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-bottom-color: rgba(212, 168, 67, 0.35);
+}
+
+.svc-num {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gold);
+    padding-top: 0.3rem;
+    letter-spacing: 0.05em;
+}
+
+.svc-title-wrap {
+    min-width: 0;
+}
+
+.svc-row h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    color: var(--white);
+    margin: 0;
+}
+
+.svc-row h3 small {
+    display: block;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.svc-body {
+    min-width: 0;
+}
+
+.svc-body > p {
+    color: var(--gray-300);
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+.svc-body ul {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.45rem;
+    list-style: none;
+    padding: 0;
+}
+
+.svc-body li {
+    color: var(--gray-300);
+    font-size: 0.92rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.45;
+}
+
+.svc-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.52em;
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+}
+
+.svc-ex {
+    margin-top: 1.15rem;
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    border-left: 2px solid var(--gold);
+    padding: 0.45rem 0 0.45rem 1rem;
+    line-height: 1.5;
+    background: rgba(212, 168, 67, 0.03);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.svc-sublink {
+    margin-top: 0.85rem;
+    font-size: 0.86rem;
+    color: var(--gray-400);
+}
+
+.svc-sublink a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    transition: color 0.16s ease;
+}
+
+.svc-sublink a:hover {
+    color: var(--gold-light);
+}
+
+/* Botón de acción por servicio: rectangular técnico con desplazamiento lateral sobrio */
+.svc-go {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: var(--radius-btn);
+    border: 1px solid var(--border-strong);
+    background: var(--bg-elevated);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    text-decoration: none;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    margin-top: 0.2rem;
+    padding: 0;
+    line-height: 0;
+}
+
+.svc-go svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    stroke: currentColor;
+    stroke-width: 2;
+    transition: transform 0.16s ease;
+}
+
+.svc-row:hover .svc-go,
+.svc-go:hover {
+    background: var(--gold-classic);
+    border-color: var(--gold-classic);
+    color: #0B0B0D;
+}
+
+.svc-row:hover .svc-go svg,
+.svc-go:hover svg {
+    transform: translateX(2px);
+}
+
+@media (max-width: 960px) {
+    .svc-row {
+        grid-template-columns: 50px 1fr;
+        gap: 1.2rem;
+        padding: 2rem 0.5rem;
+    }
+
+    .svc-body {
+        grid-column: 2;
+    }
+
+    .svc-go {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .svc-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .svc-num {
+        display: inline-block;
+        padding-top: 0;
+    }
+
+    .svc-body {
+        grid-column: 1;
+    }
+}

@@ -1,0 +1,304 @@
+/* ================================================================
+   VyE INGENIERÍA — BASE, RESET, TIPOGRAFÍA Y UTILIDADES COMPARTIDAS
+   ================================================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--black);
+    color: var(--gray-300);
+    line-height: 1.7;
+    min-width: 320px;
+    overflow-x: clip;
+    cursor: default;
+}
+
+a, button, .btn, .navbar__toggle, [role="button"], input[type="submit"], input[type="button"], label, select, .clickable {
+    cursor: pointer;
+}
+
+::selection {
+    background: var(--gold);
+    color: #0A0A0A;
+}
+
+img, svg {
+    max-width: 100%;
+}
+
+img {
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s var(--ease-smooth);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--gold-classic);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── UTILIDADES DE TEXTO Y CONTENEDORES ── */
+.text-gold {
+    color: var(--gold-classic);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-classic), var(--gold-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mono {
+    font-family: var(--font-mono);
+}
+
+.section {
+    padding: var(--section-pad) 0;
+    position: relative;
+    scroll-margin-top: 76px;
+}
+
+.section__container {
+    width: min(100%, calc(var(--container-max) + (var(--container-pad) * 2)));
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.section__title,
+.hero__title,
+h1, h2, h3 {
+    text-wrap: balance;
+}
+
+.section__subtitle,
+.footer__desc,
+.footer__contact-item {
+    overflow-wrap: anywhere;
+}
+
+/* ── ENCABEZADOS EDITORIALES DE SECCIÓN ── */
+.sec-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-bottom: clamp(2rem, 3.5vw, 3.2rem);
+    text-align: left;
+    width: 100%;
+}
+
+.sec-head > div:first-child {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.sec-head-mono {
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.sec-head-mono::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+}
+
+.sec-head h2,
+.sec-head .section__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    color: var(--white);
+    margin: 0;
+    max-width: 24ch;
+    text-align: left;
+}
+
+.sec-head p,
+.sec-head .section__subtitle {
+    color: var(--gray-400);
+    font-size: clamp(0.92rem, 1.1vw, 1.05rem);
+    line-height: 1.55;
+    max-width: 28rem;
+    margin: 0;
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.section__header {
+    text-align: center;
+    margin-bottom: clamp(18px, 2.8vh, 28px);
+}
+
+.section__header > .section__subtitle {
+    max-width: var(--content-max);
+}
+
+.section__label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.section__title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.65rem, 2.7vw, 2.25rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.4px;
+}
+
+.section__subtitle {
+    font-size: clamp(0.88rem, 1.1vw, 0.96rem);
+    color: var(--gray-400);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.55;
+}
+
+.section__subtitle--small {
+    font-size: 0.88rem;
+    margin-top: 8px;
+    color: var(--gray-500);
+}
+
+/* ── SCROLL PROGRESS BAR ── */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--gold-classic);
+    z-index: var(--z-progress);
+    transition: width 0.1s linear;
+    width: 0%;
+    pointer-events: none;
+}
+
+/* ── REVEAL ANIMATIONS ── */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+[data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── CUSTOM SCROLLBAR ── */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray-800);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dark);
+}
+
+@media (max-width: 860px) {
+    .sec-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.9rem;
+        margin-bottom: 2rem;
+    }
+
+    .sec-head h2,
+    .sec-head .section__title,
+    .sec-head p,
+    .sec-head .section__subtitle {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section__header {
+        margin-bottom: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --container-pad: 20px;
+        --section-pad: clamp(48px, 12vw, 72px);
+    }
+}
+
+/* ── ACCESIBILIDAD: PREFERS-REDUCED-MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+    *:not(.preloader):not(.preloader *),
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+    }
+}

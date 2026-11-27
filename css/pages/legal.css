@@ -1,0 +1,212 @@
+/* ================================================================
+   VyE INGENIERÍA — PÁGINA DE PRIVACIDAD Y POLÍTICA DE COOKIES
+   ================================================================ */
+
+.legal-hero {
+    padding: clamp(110px, 14vh, 148px) 0 40px;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.legal-hero__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--gold-classic);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+}
+
+.legal-hero__title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin-bottom: 14px;
+    letter-spacing: -0.025em;
+}
+
+.legal-hero__lead {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 68ch;
+    line-height: 1.65;
+}
+
+.legal-section {
+    background: var(--bg-secondary);
+    padding: 48px 0 80px;
+}
+
+.legal-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 36px;
+    align-items: start;
+}
+
+.legal-sidebar {
+    position: sticky;
+    top: 92px;
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: 20px;
+}
+
+.legal-sidebar h2 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.legal-toc {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.legal-toc a {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: block;
+    padding: 4px 0;
+    transition: color 0.16s ease;
+}
+
+.legal-toc a:hover {
+    color: var(--gold-classic);
+}
+
+.legal-consent-box {
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.legal-consent-status {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.legal-consent-status strong {
+    color: var(--text-primary);
+}
+
+.legal-article {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    min-width: 0;
+}
+
+.legal-block {
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: clamp(22px, 3vw, 32px);
+}
+
+.legal-block h2 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.legal-block h3 {
+    font-family: var(--font-heading);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 18px 0 8px;
+}
+
+.legal-block p,
+.legal-block li {
+    font-size: 0.93rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.legal-block p + p {
+    margin-top: 10px;
+}
+
+.legal-block ul {
+    margin: 10px 0 0 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.legal-block a {
+    color: var(--gold-classic);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.cookie-table-wrap {
+    margin-top: 16px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+}
+
+.cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+.cookie-table th {
+    background: #161616;
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-color);
+    white-space: nowrap;
+}
+
+.cookie-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.cookie-table tr:last-child td {
+    border-bottom: none;
+}
+
+.cookie-table code {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--gold-classic);
+    background: rgba(212, 175, 55, 0.08);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+    .legal-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .legal-sidebar {
+        position: static;
+    }
+}

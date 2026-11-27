@@ -1,0 +1,183 @@
+/* ================================================================
+   VyE INGENIERÍA — SECCIÓN EL RETO / LA REALIDAD
+   ================================================================ */
+
+.section--reto {
+    background: var(--black);
+    position: relative;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.reto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.2rem;
+}
+
+.reto-col {
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: clamp(24px, 3.2vw, 36px);
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s ease;
+}
+
+.reto-col--bad {
+    background: #0E0E0E;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.reto-col--bad:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.reto-col--good {
+    background: #121212;
+    border: 1px solid rgba(212, 168, 67, 0.35);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.reto-col--good:hover {
+    border-color: rgba(212, 168, 67, 0.55);
+}
+
+.reto-col__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+
+.reto-col__header h3 {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 1.6vw, 1.35rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.reto-col__sub {
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    margin: 0 0 1.4rem 0;
+    line-height: 1.45;
+}
+
+.reto-col__badge {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+}
+
+.reto-col__badge--bad {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--gray-400);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.reto-col__badge--good {
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--gold);
+    border: 1px solid rgba(212, 168, 67, 0.4);
+}
+
+.reto-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+}
+
+.reto-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    color: var(--gray-300);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.reto-list li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.reto-list__icon {
+    width: 22px;
+    height: 22px;
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.reto-list__icon--bad {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #888890;
+}
+
+.reto-list__icon--good {
+    background: rgba(212, 175, 55, 0.12);
+    border: 1px solid rgba(212, 168, 67, 0.35);
+    color: var(--gold);
+}
+
+.reto-list__icon svg {
+    display: block;
+}
+
+.reto-list strong {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.reto-col__note {
+    margin-top: 1.4rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.85rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+}
+
+.reto-punchline {
+    margin-top: clamp(2rem, 3.5vw, 2.8rem);
+    text-align: center;
+}
+
+.reto-punchline p {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.45vw, 1.25rem);
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.01em;
+    margin: 0;
+    opacity: 0.95;
+}
+
+@media (max-width: 860px) {
+    .reto-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .reto-col {
+        padding: 1.6rem 1.4rem;
+    }
+}

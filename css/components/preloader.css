@@ -1,0 +1,92 @@
+/* ================================================================
+   VyE INGENIERÍA — PRELOADER COMPONENTE
+   ================================================================ */
+
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-preloader);
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.35s var(--ease-out), visibility 0.35s;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.preloader__logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    will-change: transform, opacity;
+    animation: preloaderEnter 0.85s var(--ease-out) forwards;
+}
+
+@keyframes preloaderEnter {
+    0% {
+        transform: scale(0.84);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.hex-draw {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: drawHex 1.2s var(--ease-out) forwards;
+}
+
+.hex-draw-inner {
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: drawHex 1.2s var(--ease-out) 0.15s forwards;
+}
+
+@keyframes drawHex {
+    to { stroke-dashoffset: 0; }
+}
+
+.preloader__bar {
+    width: 196px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.preloader__progress {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-classic);
+    transform-origin: left center;
+    transform: scaleX(0);
+    will-change: transform;
+    animation: preloaderBar 0.85s var(--ease-out) forwards;
+}
+
+@keyframes preloaderBar {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}

@@ -20,41 +20,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=vye-master-v65">
+    <link rel="stylesheet" href="style.css?v=2.0.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <style>
-        .strip-in span::after {
-            box-shadow: none !important;
-        }
-        .strip-in {
-            display: flex !important;
-            gap: 3.2rem;
-            padding: 1.05rem 0;
-            white-space: nowrap;
-            width: max-content;
-            will-change: transform;
-            animation: stripSlide 28s linear infinite !important;
-            -webkit-animation: stripSlide 28s linear infinite !important;
-            animation-duration: 28s !important;
-            animation-iteration-count: infinite !important;
-        }
-        @keyframes stripSlide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        @-webkit-keyframes stripSlide {
-            0% { -webkit-transform: translateX(0); }
-            100% { -webkit-transform: translateX(-50%); }
-        }
-    </style>
-
+    <link rel="manifest" href="site.webmanifest">
 </head>
 
-<body class="homepage">
+<body class="homepage" data-page="home">
     <!-- ===================== PRELOADER ===================== -->
     <div id="preloader" class="preloader">
         <div class="preloader__inner">
@@ -64,40 +38,9 @@
             </div>
         </div>
     </div>
-    <script>
-        document.body.style.overflow = 'hidden';
-        setTimeout(function() {
-            var p = document.getElementById('preloader');
-            if (p && !p.classList.contains('hidden')) {
-                p.classList.add('hidden');
-                document.body.style.overflow = '';
-            }
-        }, 2000);
-    </script>
 
-    <!-- ===================== NAVBAR ===================== -->
-    <nav id="navbar" class="navbar">
-        <div class="navbar__container">
-            <a href="#hero" class="navbar__logo" id="brandTransition"  aria-label="VyE Ingeniería - Inicio">
-                <img src="assets/Isotipo Vye.png" alt="VyE Isotipo" class="navbar__logo-icon" width="40" height="40">
-                <div class="navbar__logo-text">
-                    <img src="assets/Logotipo Vye.svg" alt="VYE" class="navbar__logotipo" height="18">
-                    <span class="navbar__sub">INGENIERÍA</span>
-                </div>
-            </a>
-            <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="navbar__menu" id="navMenu">
-                <li><a href="#reto" class="navbar__link">El Reto</a></li>
-                <li><a href="#servicios" class="navbar__link">Servicios</a></li>
-                <li><a href="#portafolio" class="navbar__link">Portafolio</a></li>
-                <li><a href="#proceso" class="navbar__link">Proceso</a></li>
-                <li><a href="#nosotros" class="navbar__link">Nosotros</a></li>
-                <li><a href="#contacto" class="navbar__cta-btn">Diagnóstico Gratis</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- ===================== NAVBAR (MODULAR) ===================== -->
+    <nav id="navbar" class="navbar" data-component="navbar" data-page="home"></nav>
 
     <!-- ===================== HERO ===================== -->
     <section id="hero" class="hero">
@@ -550,7 +493,7 @@
                         </div>
 
                         <div class="feat-actions">
-                            <button type="button" class="btn btn--outline btn--square" id="btnFeatViewAll" onclick="openLb('nissan', 1)">
+                            <button type="button" class="btn btn--outline btn--square" id="btnFeatViewAll">
                                 Ver las 7 pantallas completas →
                             </button>
                         </div>
@@ -732,63 +675,8 @@
         </div>
     </section>
 
-    <!-- ===================== FOOTER ===================== -->
-    <footer id="footer" class="footer">
-        <div class="footer__container">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <img src="assets/Isotipo Vye.png" alt="VyE Isotipo" class="footer__logo-icon" width="48"
-                        height="48">
-                    <div>
-                        <div class="footer__brand-name">VyE Ingeniería</div>
-                        <div class="footer__brand-tagline">Diseñamos eficiencia</div>
-                    </div>
-                </div>
-                <div class="footer__info">
-                    <p class="footer__desc">Software y automatización para empresas<br>Soluciones a medida ·
-                        Resultados reales</p>
-                </div>
-                <div class="footer__contact">
-                    <h4>Contacto</h4>
-                    <a href="https://wa.me/527718429946" class="footer__contact-item" target="_blank" rel="noopener">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-                        </svg>
-                        771 842 9946
-                    </a>
-                    <a href="mailto:contacto@vyeingenieria.com" class="footer__contact-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                        contacto@vyeingenieria.com
-                    </a>
-                    <a href="https://www.vyeingenieria.com" class="footer__contact-item" target="_blank" rel="noopener">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                        </svg>
-                        www.vyeingenieria.com
-                    </a>
-                </div>
-            </div>
-            <div class="footer__bottom">
-                <p>&copy; 2026 VyE Ingeniería. Todos los derechos reservados.</p>
-                <div class="footer__phrases">
-                    <span>Soluciones a medida</span>
-                    <span>·</span>
-                    <span>Resultados reales</span>
-                    <span>·</span>
-                    <span>Soporte continuo</span>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- ===================== FOOTER (MODULAR) ===================== -->
+    <footer id="footer" class="footer" data-component="footer"></footer>
 
     <!-- ===================== LIGHTBOX MODAL (PROYECTOS) ===================== -->
     <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Galería interactiva de proyectos VyE">
@@ -813,16 +701,25 @@
         <div class="lb-count" id="lbCount"></div>
     </div>
 
-    <!-- WhatsApp floating button -->
-    <a href="https://wa.me/527718429946" class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener"
-        aria-label="Contactar por WhatsApp">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-            <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-    </a>
+    <!-- WhatsApp floating button (modular) -->
+    <div data-component="whatsapp"></div>
 
-    <script src="script.js?v=vye-master-v65"></script>
+    <script defer src="js/core/config.js?v=2.0.0"></script>
+    <script defer src="js/core/dom.js?v=2.0.0"></script>
+    <script defer src="js/core/cookies.js?v=2.0.0"></script>
+    <script defer src="js/data/portfolio.js?v=2.0.0"></script>
+    <script defer src="js/components/preloader.js?v=2.0.0"></script>
+    <script defer src="js/components/navbar.js?v=2.0.0"></script>
+    <script defer src="js/components/footer.js?v=2.0.0"></script>
+    <script defer src="js/components/whatsapp.js?v=2.0.0"></script>
+    <script defer src="js/components/cookie-banner.js?v=2.0.0"></script>
+    <script defer src="js/modules/reveal.js?v=2.0.0"></script>
+    <script defer src="js/modules/hero-ink.js?v=2.0.0"></script>
+    <script defer src="js/modules/hero-showcase.js?v=2.0.0"></script>
+    <script defer src="js/modules/portfolio.js?v=2.0.0"></script>
+    <script defer src="js/modules/process.js?v=2.0.0"></script>
+    <script defer src="js/modules/contact.js?v=2.0.0"></script>
+    <script defer src="js/main.js?v=2.0.0"></script>
 </body>
 
 </html>

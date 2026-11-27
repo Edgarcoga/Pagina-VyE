@@ -1,0 +1,541 @@
+/* ================================================================
+   VyE INGENIERÍA — PÁGINA NOSOTROS (CARRIL 100VH, FILOSOFÍA Y CTA)
+   ================================================================ */
+
+.nosotros-carril-section {
+    height: 100vh;
+    min-height: 560px;
+    max-height: 100vh;
+    padding-top: clamp(72px, 9vh, 82px);
+    padding-bottom: clamp(6px, 1.2vh, 12px);
+    background: #000000;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.carril__container {
+    width: min(100%, calc(var(--container-max) + (var(--container-pad) * 2)));
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - clamp(80px, 10.5vh, 94px));
+    max-height: calc(100vh - clamp(80px, 10.5vh, 94px));
+    justify-content: space-between;
+}
+
+.carril__topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: clamp(6px, 0.9vh, 10px);
+    flex-shrink: 0;
+}
+
+.carril__tabs {
+    display: inline-flex;
+    gap: 4px;
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-btn);
+    padding: 3px;
+    flex-wrap: wrap;
+}
+
+.carril__tab {
+    background: transparent;
+    border: 1px solid transparent;
+    outline: none;
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--gray-400);
+    cursor: pointer;
+    transition: all 0.2s var(--ease-out);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.carril__tab .tab-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.carril__tab:hover {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.carril__tab.active {
+    background: #181818;
+    border-color: rgba(212, 175, 55, 0.4);
+    color: var(--white);
+    font-weight: 600;
+}
+
+/* Viewport & Track */
+.carril__viewport {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: #111111;
+    border: 1px solid var(--border-subtle);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+    cursor: grab;
+    user-select: none;
+    touch-action: pan-y;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+}
+
+.carril__viewport.is-dragging {
+    cursor: grabbing;
+}
+
+.carril__track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+
+.carril__track.is-dragging {
+    transition: none !important;
+}
+
+.carril__slide {
+    width: 100%;
+    min-width: 100%;
+    flex: 0 0 100%;
+    flex-shrink: 0;
+    height: 100%;
+    padding: clamp(20px, 3vh, 36px) clamp(28px, 4vw, 56px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.carril__slide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 4vw, 54px);
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carril__slide-grid--reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.carril__slide-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carril__slide-text .btn {
+    align-self: flex-start;
+}
+
+.carril__slide-text .sec-head-mono {
+    margin-bottom: clamp(6px, 1vh, 10px);
+}
+
+.carril__slide-text .section__title {
+    font-size: clamp(1.65rem, 2.4vw, 2.2rem);
+    line-height: 1.18;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: clamp(10px, 1.4vh, 16px);
+    letter-spacing: -0.02em;
+}
+
+.carril__slide-text .carril__paragraph {
+    font-size: clamp(0.92rem, 1.05vw, 1.02rem);
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin-bottom: clamp(8px, 1.2vh, 12px);
+}
+
+.carril__slide-text .carril__paragraph strong {
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+/* Línea callout minimalista */
+.carril__callout {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 14px;
+    margin: clamp(8px, 1.2vh, 14px) 0 clamp(12px, 1.6vh, 18px);
+}
+
+.carril__callout-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+.carril__callout-text {
+    font-size: clamp(0.88rem, 1vw, 0.96rem);
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.carril__callout-text strong {
+    color: #FFFFFF;
+}
+
+.carril__slide-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carril__slide-img-card {
+    width: 100%;
+    height: 100%;
+    max-height: clamp(280px, 46vh, 390px);
+    background: #161616;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.carril__slide-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Equipo dentro del carril (Slide 3) */
+.carril__team-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto clamp(6px, 1.2vh, 12px);
+}
+
+.carril__team-header .sec-head-mono {
+    margin-bottom: 4px;
+}
+
+.carril__team-header .section__title {
+    font-size: clamp(1.35rem, 1.9vw, 1.7rem);
+    line-height: 1.16;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+}
+
+.carril__team-header .section__subtitle {
+    margin: 0 auto;
+    font-size: clamp(0.8rem, 0.88vw, 0.86rem);
+    line-height: 1.35;
+    color: var(--text-secondary);
+    max-width: 680px;
+}
+
+.carril__team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(16px, 2.4vw, 28px);
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.carril__team-card {
+    background: #141414;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    padding: clamp(16px, 2.2vh, 24px) clamp(16px, 2vw, 22px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.carril__team-card:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-2px);
+}
+
+.carril__team-avatar {
+    width: clamp(68px, 9vh, 84px);
+    height: clamp(68px, 9vh, 84px);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    overflow: hidden;
+    margin-bottom: 10px;
+    position: relative;
+    background: #0A0A0A;
+    flex-shrink: 0;
+}
+
+.carril__team-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carril__team-avatar-img.team-avatar-victor {
+    object-position: center 20%;
+    transform: none;
+}
+
+.carril__team-avatar-img.team-avatar-edgar {
+    object-position: 75% 20%;
+    transform: scale(1.35);
+}
+
+.carril__team-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.08rem, 1.35vw, 1.25rem);
+    font-weight: 700;
+    color: var(--white);
+    margin: 0 0 3px;
+}
+
+.carril__team-role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    display: block;
+}
+
+.carril__team-desc {
+    font-size: clamp(0.85rem, 0.95vw, 0.92rem);
+    line-height: 1.48;
+    color: var(--gray-400);
+    margin: 0;
+}
+
+/* Controles inferiores minimalistas */
+.carril__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: clamp(6px, 0.8vh, 10px);
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+
+.carril__status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carril__counter {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    color: var(--gray-400);
+    letter-spacing: 0.5px;
+}
+
+.carril__counter strong {
+    color: var(--gold);
+    font-size: 0.9rem;
+}
+
+.carril__dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.carril__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    padding: 0;
+}
+
+.carril__dot:hover {
+    background: rgba(212, 168, 67, 0.55);
+}
+
+.carril__dot.active {
+    width: 18px;
+    background: var(--gold);
+}
+
+.carril__nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carril__arrow {
+    width: 36px;
+    height: 36px;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: var(--gray-400);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 0;
+    line-height: 0;
+}
+
+.carril__arrow svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+    transition: transform 0.2s ease;
+}
+
+.carril__arrow:hover:not(:disabled) {
+    background: transparent !important;
+    border: none !important;
+    color: var(--gold);
+    transform: scale(1.18);
+}
+
+.carril__arrow:disabled {
+    opacity: 0.18;
+    cursor: not-allowed;
+    transform: none;
+    color: var(--gray-600);
+}
+
+.carril__arrow--forward-highlight {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--gold);
+}
+
+/* ── FILOSOFÍA ── */
+.section--filosofia {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.filosofia-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+/* ── CTA FINAL (NOSOTROS) ── */
+.section--cta {
+    background: var(--black-soft);
+    border-top: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+    padding: clamp(64px, 8vw, 100px) 0;
+}
+
+.cta-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+@media (max-width: 900px) {
+    .nosotros-carril-section {
+        height: auto;
+        min-height: auto;
+        max-height: none;
+        padding-top: 86px;
+        padding-bottom: 36px;
+    }
+
+    .carril__container {
+        height: auto;
+        max-height: none;
+    }
+
+    .carril__viewport {
+        height: auto;
+    }
+
+    .carril__slide {
+        height: auto;
+        padding: 22px 18px;
+    }
+
+    .carril__slide-grid,
+    .carril__slide-grid--reverse {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .carril__slide-img-card {
+        height: 220px;
+        max-height: 220px;
+    }
+
+    .carril__team-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 580px) {
+    .cta-actions-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-actions-row .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

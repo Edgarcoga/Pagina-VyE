@@ -1,0 +1,99 @@
+/* ================================================================
+   VyE INGENIERÍA — DESIGN TOKENS
+   Sistema Black & Gold neutralizado (Manual de Diseño VyE)
+   ================================================================ */
+
+:root {
+    /* 1. Superficies y Fondos (Negro carbón neutro puro) */
+    --bg-primary: #080808;
+    --bg-secondary: #141414;
+    --bg-elevated: #161616;
+    --bg-card: #111111;
+    --bg-input: #111111;
+    --border-color: #222222;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.22);
+
+    /* 2. Textos y Contraste */
+    --text-primary: #FFFFFF;
+    --text-soft: #F5F5F5;
+    --text-secondary: #B4B4B8;
+    --text-muted: #777777;
+
+    /* 3. Acentos de Marca */
+    --gold-bright: #F0C94D;
+    --gold-classic: #D4AF37;
+    --gold-hover: #DFBC49;
+    --gold-active: #C59F2E;
+    --gold-soft: #B89646;
+    --gold-dark: #8C702A;
+
+    /* 4. Semánticos */
+    --green: #2ECC71;
+    --whatsapp-bg: #176F3C;
+    --whatsapp-bg-hover: #1C8347;
+    --whatsapp-border: #238C4F;
+    --red: #E74C3C;
+    --red-dim: rgba(231, 76, 60, 0.14);
+
+    /* 5. Aliases de compatibilidad */
+    --black: var(--bg-primary);
+    --black-soft: var(--bg-secondary);
+    --black-card: var(--bg-card);
+    --gray-950: #0D0D0D;
+    --gray-900: #141414;
+    --gray-800: #222222;
+    --gray-700: #333333;
+    --gray-600: #555555;
+    --gray-500: var(--text-muted);
+    --gray-400: #9E9E9E;
+    --gray-300: var(--text-secondary);
+    --gray-200: #DDDDDD;
+    --white: var(--text-primary);
+    --white-soft: var(--text-soft);
+
+    --gold: var(--gold-classic);
+    --gold-light: var(--gold-bright);
+    --gold-dim: rgba(212, 175, 55, 0.14);
+    --gold-glow: transparent;
+
+    /* 6. Tipografía */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* 7. Espaciado y Contenedores */
+    --section-pad: clamp(60px, 8vw, 105px);
+    --container-max: 1200px;
+    --container-pad: clamp(20px, 4vw, 40px);
+    --content-max: 760px;
+
+    /* 8. Radios consistentes (Escala unificada VyE) */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-btn: 10px;
+    --radius-card: 12px;
+    --radius-lg: 12px;
+    --radius-button: var(--radius-btn);
+
+    /* 9. Transiciones */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* 10. Bordes */
+    --border: 1px solid var(--border-subtle);
+    --border-hover: 1px solid var(--gold-soft);
+
+    /* 11. Z-index */
+    --z-sticky: 900;
+    --z-navbar: 1000;
+    --z-cookie-banner: 950;
+    --z-modal: 10050;
+    --z-preloader: 99999;
+    --z-progress: 10001;
+
+    /* 12. Homepage brand scroll variables */
+    --brand-scroll-progress: 0;
+    --brand-offset-y: 80px;
+    --brand-scale: 2.35;
+}

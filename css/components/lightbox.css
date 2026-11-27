@@ -1,0 +1,166 @@
+/* ================================================================
+   VyE INGENIERÍA — LIGHTBOX MODAL FULLSCREEN
+   ================================================================ */
+
+.lb {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-modal);
+    background: rgba(8, 8, 8, 0.96);
+    display: none;
+    flex-direction: column;
+    padding: 1.2rem 1.6rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.lb.open {
+    display: flex;
+    opacity: 1;
+}
+
+.lb-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.4rem 0 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lb-meta {
+    min-width: 0;
+}
+
+.lb-cat {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.lb-title {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--white);
+    font-weight: 700;
+}
+
+.lb-x,
+.lb-nav {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+    flex-shrink: 0;
+}
+
+.lb-x {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.lb-nav {
+    width: 44px;
+    height: 44px;
+    color: var(--gold);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.lb-x:hover,
+.lb-nav:hover {
+    border-color: var(--gold);
+    color: #0B0B0D;
+    background: var(--gold);
+}
+
+.lb-stage {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 0;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.lb-figure {
+    max-width: min(1120px, 100%);
+    text-align: center;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%;
+}
+
+.lb-figure img {
+    max-width: 100%;
+    max-height: 68vh;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    object-fit: contain;
+    background: #000;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.85);
+}
+
+.lb-caption {
+    margin-top: 0.8rem;
+    color: var(--gray-300);
+    font-size: 0.92rem;
+    max-width: 800px;
+}
+
+.lb-caption b {
+    color: var(--white);
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 2px;
+    font-family: var(--font-heading);
+}
+
+.lb-caption p {
+    margin: 0;
+    color: var(--gray-400);
+}
+
+.lb-count {
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--gray-400);
+    padding-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .lb {
+        padding: 0.8rem;
+    }
+
+    .lb-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .lb-stage {
+        gap: 0.4rem;
+    }
+
+    .lb-figure img {
+        max-height: 60vh;
+    }
+}

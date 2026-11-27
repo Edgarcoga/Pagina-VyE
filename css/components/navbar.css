@@ -1,0 +1,285 @@
+/* ================================================================
+   VyE INGENIERÍA — NAVBAR COMPARTIDA & MENÚ RESPONSIVE
+   ================================================================ */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-navbar);
+    padding: 14px 0;
+    background: transparent;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+/* Línea divisoria suave con pseudo-elemento para evitar parpadeos en Chromium */
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.navbar.scrolled {
+    background: rgba(10, 10, 11, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 0;
+}
+
+.navbar.scrolled::after {
+    opacity: 1;
+}
+
+.navbar__container {
+    width: min(100%, calc(var(--container-max) + (var(--container-pad) * 2)));
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.2s ease, transform 0.3s var(--ease-out);
+    flex-shrink: 0;
+}
+
+.navbar__logo:hover {
+    opacity: 0.9;
+}
+
+.navbar__logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.navbar__logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navbar__logotipo {
+    height: 18px;
+    object-fit: contain;
+}
+
+.navbar__sub {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.navbar__link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--gray-400);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    transition: color 0.18s ease, background-color 0.18s ease;
+    position: relative;
+    white-space: nowrap;
+}
+
+.navbar__link:hover,
+.navbar__link.active {
+    color: var(--white);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.navbar__link::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.25s var(--ease-out);
+    transform: translateX(-50%);
+}
+
+.navbar__link:hover::after,
+.navbar__link.active::after {
+    width: 58%;
+}
+
+/* CTA barra superior: blanco sólido con hover dorado (consistente con .btn--primary) */
+.navbar__cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #0A0A0A;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    padding: 9px 20px;
+    min-height: 40px;
+    border-radius: var(--radius-md);
+    transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+.navbar__cta-btn:hover {
+    background: var(--gold-classic) !important;
+    border-color: var(--gold-classic) !important;
+    color: #000000 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.navbar__cta-btn:active {
+    transform: translateY(0);
+    background: var(--gold-active) !important;
+    border-color: var(--gold-active) !important;
+}
+
+/* Hamburger */
+.navbar__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.navbar__toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--gold);
+    transition: transform 0.25s var(--ease-out), opacity 0.2s;
+    transform-origin: center;
+}
+
+.navbar__toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar__toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 900px) {
+    .navbar__toggle {
+        display: flex;
+    }
+
+    .navbar__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: min(84vw, 340px);
+        height: 100dvh;
+        padding: 96px 28px 32px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        background: #0A0A0A;
+        border-left: 1px solid var(--border-subtle);
+        box-shadow: -16px 0 40px rgba(0, 0, 0, 0.45);
+        transition: right 0.3s var(--ease-out);
+        overflow-y: auto;
+    }
+
+    .navbar__menu.active {
+        right: 0;
+    }
+
+    .navbar__link {
+        width: 100%;
+        padding: 12px 10px;
+        font-size: 0.98rem;
+    }
+
+    .navbar__link::after {
+        display: none;
+    }
+
+    .navbar__cta-btn {
+        display: inline-flex;
+        width: 100%;
+        margin-top: 12px;
+        min-height: 44px;
+    }
+}
+
+/* ── HOMEPAGE BRAND TRANSITION & CENTRADO MATEMÁTICO ── */
+@media (min-width: 769px) {
+    .homepage .navbar__menu {
+        margin-left: auto;
+    }
+
+    .homepage .navbar__logo {
+        position: fixed;
+        z-index: 1001;
+        top: 16px;
+        left: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+        transform-origin: left top;
+        transform: translateY(var(--brand-offset-y, 80px)) scale(var(--brand-scale, 2.35));
+        transition: transform 60ms linear;
+        will-change: transform;
+    }
+
+    .homepage .navbar.scrolled {
+        padding: 14px 0;
+    }
+
+    .homepage .navbar__link {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    .homepage .navbar__cta-btn {
+        font-size: 0.95rem;
+        padding: 12px 24px;
+    }
+
+    .homepage .navbar__logo:hover {
+        opacity: 0.9;
+    }
+}
